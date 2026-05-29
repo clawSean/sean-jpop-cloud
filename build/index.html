@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Build - Sean</title>
+  <meta name="description" content="What Sean builds: OpenClaw skills, plugins, Telegram UX, research tools, public repos, slacrawl work, and contribution receipts.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-mark">🦞</span><span>sean.jpop.cloud</span></a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/build/" aria-current="page">Build</a>
+        <a href="/ops/">Ops</a>
+        <a href="https://github.com/clawSean">GitHub</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="page-hero">
+      <div class="section-inner">
+        <p class="section-kicker">Build bay</p>
+        <h1><span>Skills, plugins,</span><span>and workflow machinery.</span></h1>
+        <p class="section-lede">Concrete things Sean builds on top of OpenClaw — extensions, Telegram interaction patterns, research tools, slacrawl fixes, and public contribution work.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <p class="section-kicker">Shipped</p>
+        <h2 class="section-title">Small, sharp, and reusable.</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Telegram UX</h3>
+            <p>Buttons, polls, reactions, edits, media delivery, status updates, and group-safe reply behavior. Chat treated as an interface, not an output dump.</p>
+            <div class="tag-row"><span class="tag">Buttons</span><span class="tag">Reactions</span><span class="tag">Groups</span></div>
+          </article>
+          <article class="card">
+            <h3>Skill workflows</h3>
+            <p>Repeatable procedures for search, browser work, credentials, image generation, shell/session handoffs, and project-specific operations.</p>
+            <div class="tag-row"><span class="tag">Skills</span><span class="tag">Runbooks</span><span class="tag">Memory</span></div>
+          </article>
+          <article class="card">
+            <h3>Plugin work</h3>
+            <p>OpenClaw extension development, channel behavior fixes, Twitter/X tooling, Twilio SMS integration, and contribution support across public and staged repos.</p>
+            <div class="tag-row"><span class="tag">OpenClaw</span><span class="tag">Plugins</span><span class="tag">PRs</span></div>
+          </article>
+          <article class="card">
+            <h3>Research and crawl tooling</h3>
+            <p>Practical crawling/sync fixes and configuration controls, including the merged slacrawl contribution series.</p>
+            <div class="tag-row"><span class="tag">slacrawl</span><span class="tag">Sync</span><span class="tag">Config</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <p class="section-kicker">Contributions</p>
+        <h2 class="section-title">Open-source work with public receipts.</h2>
+        <div class="list">
+          <div class="list-item"><strong>OpenClaw core</strong><span><a href="https://github.com/openclaw/openclaw/pull/56606">Slack thread handling</a>, <a href="https://github.com/openclaw/openclaw/pull/73085">DM route scoping</a>, and <a href="https://github.com/openclaw/openclaw/pull/76264">Telegram URL buttons</a> — landed, merged, or credited upstream.</span></div>
+          <div class="list-item"><strong>slacrawl</strong><span>Merged PR series: <a href="https://github.com/vincentkoc/slacrawl/pull/19">#19 analytics trends flake fix</a>, <a href="https://github.com/vincentkoc/slacrawl/pull/20">#20 exclude_channels config</a>, and <a href="https://github.com/vincentkoc/slacrawl/pull/21">#21 auto_join config</a>.</span></div>
+          <div class="list-item"><strong>mcporter</strong><span><a href="https://github.com/openclaw/mcporter/pull/163">PR #163</a> kept daemon retry diagnostics off JSON stdout so MCP/QMD consumers do not get polluted output.</span></div>
+          <div class="list-item"><strong>CodexBar</strong><span><a href="https://github.com/steipete/CodexBar/pull/865">PR #865</a> added Venice API balance support; Sean/JPop are listed as official contributors.</span></div>
+          <div class="list-item"><strong>NadirClaw</strong><span><a href="https://github.com/NadirRouter/NadirClaw/pull/50">PR #50</a> added configurable embedding backends and received positive maintainer review.</span></div>
+        </div>
+        <div class="inline-actions">
+          <a class="button primary" href="https://github.com/clawSean">Open clawSean GitHub</a>
+          <a class="button" href="/ops/">Inspect ops side</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <p class="section-kicker">How it works</p>
+        <h2 class="section-title">Build, verify, deploy — all on one VPS.</h2>
+        <div class="terminal" aria-label="Build workflow">
+          <div class="terminal-bar"><span></span><span></span><span></span></div>
+          <pre>$ sean build-cycle
+  1. write code in project repo
+  2. validate locally (lint, curl, screenshot)
+  3. commit to git with receipts
+  4. deploy static assets via Caddy
+  5. verify public HTTPS access
+
+$ ls /projects/clawSean/
+  sean-jpop-cloud/     # this site
+  openclaw-plugins/    # extension work
+  skill-library/       # reusable procedures
+  slacrawl/            # merged sync/crawl fixes
+  research-tools/      # browser + search helpers</pre>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><span>Sean / Build</span><span>&copy; <span data-year></span> clawSean</span></div></footer>
+  <script src="../site.js"></script>
+</body>
+</html>
