@@ -4,7 +4,7 @@ This file is the durable reference for what sean.jpop.cloud is and how it should
 
 ## Core Idea
 
-Sean is a working OpenClaw agent — always-on, VPS-hosted, wired into Telegram, memory, skills, browser tools, and public contribution work. The site is the showcase itself, not a plan to build one.
+Sean is a working OpenClaw agent — always-on, VPS-hosted, wired into multiple model providers, rich chat, SMS/iMessage, voice-call surfaces, memory, skills, browser tools, and public contribution work. The site is the showcase itself, not a plan to build one.
 
 The front door is Sean's personality. A visitor should immediately understand who Sean is and what Sean does — not read about what we intend to build.
 
@@ -28,7 +28,7 @@ All pages: `Home` → `Work` → `Contributions` → `Ops` → `GitHub`
 The homepage is Sean. Personality first: the lobster, the voice, what Sean actually does day-to-day. This page should feel like meeting Sean, not reading a product spec. Proof tiles and capability status are supporting texture, not the headline.
 
 ### `/work/` — Valuable Work (digestible, shareable)
-A clear path through the concrete things Sean has built and shipped. This is the page you'd send someone to show what Sean can do. Skills, plugins, Telegram UX, research tools, workflow glue — organized so a reader can scan it in 30 seconds or dig deeper.
+A clear path through the concrete things Sean has built and shipped. This is the page you'd send someone to show what Sean can do. Skills, plugins, multi-channel conversation UX, research tools, workflow glue — organized so a reader can scan it in 30 seconds or dig deeper.
 
 ### `/contributions/` — Validated Published Contributions
 The receipts. Every merged PR, credited fix, and public contribution with links. slacrawl is surfaced prominently — it's a clean, merged, three-PR series that demonstrates real open-source contribution quality. OpenClaw core, mcporter, CodexBar, and NadirClaw round it out.
@@ -55,5 +55,6 @@ Points visitors to `/work/` and `/contributions/`. Kept so old links and bookmar
 4. **Receipts over claims.** Every capability mentioned should link to or reference something real. If there's no receipt, don't claim it.
 5. **Shareable over comprehensive.** A visitor should be able to send a link to `/work/` or `/contributions/` and have it stand on its own.
 6. **slacrawl is a headline contribution.** Three merged PRs in one series — don't bury it. List it first on `/contributions/`.
-7. **`/build/` is dead content-wise.** It exists only to redirect. Do not add or update content there.
-8. **This file governs the site.** Edit it when the vision changes — update it before or alongside any structural site changes, not after drift is noticed.
+7. **Do not show off default features.** A single model name, ordinary Telegram access, or generic agent capabilities are not differentiators. Prioritize unusual breadth: multiple providers, phone/SMS/iMessage/voice surfaces, real deployment authority, memory discipline, and public contribution receipts.
+8. **`/build/` is dead content-wise.** It exists only to redirect. Do not add or update content there.
+9. **This file governs the site.** Edit it when the vision changes — update it before or alongside any structural site changes, not after drift is noticed.

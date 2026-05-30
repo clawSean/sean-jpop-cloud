@@ -92,3 +92,13 @@ New: `/`, `/work/`, `/contributions/`, `/ops/`, `/build/` (redirect)
 - `styles.css`: Added `.pathways.three` (3-column grid) and added it to the 820px breakpoint collapse rule.
 - `README.md`: Updated scope list to reflect all 5 routes. Added VISION.md reference.
 - No changes to `site.js` or assets.
+
+## 2026-05-30 - Differentiated Capability Framing
+
+JPop called out that the site should not show off default/table-stakes features like a single GPT model label or ordinary Telegram access. Updated `VISION.md` with an explicit anti-drift rule: do not prioritize default features; lead with differentiated breadth like multiple providers, SMS/iMessage/voice surfaces, deployment authority, memory discipline, and public receipts.
+
+Changes:
+- Replaced homepage proof tiles for `GPT-5.5` and plain `Telegram` with `Multi-provider` and `Phone + chat`.
+- Expanded homepage capability/status copy to include SMS, iMessage bridge, Twilio voice, and provider routing.
+- Renamed `Telegram UX` work card to `Conversation surfaces`.
+- Added provider/channel rows to `/ops/` runtime section.

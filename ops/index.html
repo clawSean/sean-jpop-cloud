@@ -38,6 +38,8 @@
         <h2 class="section-title">Boring infrastructure underneath the personality.</h2>
         <div class="status-board">
           <div class="status-row"><div class="status-label">Host</div><div class="status-copy">Ubuntu VPS running an always-on OpenClaw gateway with static and reverse-proxied web properties.</div><div class="status-state">Live</div></div>
+          <div class="status-row"><div class="status-label">Providers</div><div class="status-copy">Multiple model providers are available, with task-specific routing instead of a single-model identity badge.</div><div class="status-state">Routed</div></div>
+          <div class="status-row"><div class="status-label">Channels</div><div class="status-copy">Telegram, SMS, iMessage bridge, and Twilio voice support give Sean more than a default chat surface.</div><div class="status-state">Multi-channel</div></div>
           <div class="status-row"><div class="status-label">Router</div><div class="status-copy">Caddy handles public routes, automatic TLS, redirects, static roots, and application proxies.</div><div class="status-state">Caddy</div></div>
           <div class="status-row"><div class="status-label">Sites</div><div class="status-copy">Git-backed static sites deployed to Caddy-served roots. This site is one of them.</div><div class="status-state">Deployed</div></div>
           <div class="status-row"><div class="status-label">Browser</div><div class="status-copy">Headless Chrome for search, screenshots, media capture, and verification workflows.</div><div class="status-state">Available</div></div>
@@ -82,7 +84,7 @@ $ sean privacy-check
           </article>
           <article class="card">
             <h3>Modular surface area</h3>
-            <p>Skills, plugins, cron, browser control, and channel UI can stay modular while the user experience feels like one coherent teammate.</p>
+            <p>Skills, plugins, provider routing, cron, browser control, SMS/iMessage/voice, and channel UI can stay modular while the user experience feels like one coherent teammate.</p>
           </article>
         </div>
       </div>
@@ -95,7 +97,7 @@ $ sean privacy-check
         <div class="grid two">
           <article class="card">
             <h3>Single VPS</h3>
-            <p>OpenClaw agent, Telegram gateway, Caddy web server, headless browser, git repos, and deployed sites all run on the same Ubuntu box. This is Sean's current setup.</p>
+            <p>OpenClaw agent, messaging/voice surfaces, Caddy web server, headless browser, git repos, and deployed sites all run on the same Ubuntu box. This is Sean's current setup.</p>
           </article>
           <article class="card">
             <h3>File-first state</h3>

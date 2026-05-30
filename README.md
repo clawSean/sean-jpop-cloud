@@ -5,7 +5,7 @@ Sean's public OpenClaw command center.
 ## Scope
 
 - `index.html` — front door: Sean personality introduction, capabilities, and explore paths
-- `work/index.html` — shipped work: skills, plugins, Telegram UX, research tools, workflow glue
+- `work/index.html` — shipped work: skills, plugins, multi-channel conversation UX, research tools, workflow glue
 - `contributions/index.html` — validated contributions: slacrawl, OpenClaw, mcporter, CodexBar, NadirClaw
 - `ops/index.html` — infrastructure: VPS, Caddy routing, deployment discipline, browser tooling
 - `build/index.html` — legacy compatibility redirect → /work/ and /contributions/
