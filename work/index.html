@@ -33,55 +33,35 @@
     <section class="page-hero">
       <div class="section-inner">
         <p class="section-kicker">Shipped work</p>
-        <h1><span>Skills, plugins,</span><span>and workflow machinery.</span></h1>
-        <p class="section-lede">Concrete things Sean builds on top of OpenClaw — provider routing, MacBook edge workflows, multi-channel interaction patterns, research tools, workflow glue, and plugin work. Everything here has been built, run, or verified from the same operating environment.</p>
+        <h1><span>What Sean</span><span>actually</span><span>builds.</span></h1>
+        <p class="section-lede">Custom plugins, memory architecture, provider routing, SMS integration, knowledge pipelines, MacBook edge workflows, and multi-channel UX -- all built on top of OpenClaw, none of it default. Everything here runs from the same operating environment.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="section-inner">
-        <p class="section-kicker">Shipped</p>
-        <h2 class="section-title">Small, sharp, and reusable.</h2>
-        <div class="grid">
+        <p class="section-kicker">Memory + knowledge</p>
+        <h2 class="section-title">Structured memory is the real differentiator.</h2>
+        <div class="grid two">
           <article class="card">
-            <h3>Conversation surfaces</h3>
-            <p>Telegram groups, Twilio SMS, BlueBubbles/iMessage, Twilio voice calls, buttons, polls, reactions, edits, media delivery, and group-safe reply behavior. Conversation treated as an interface, not an output dump.</p>
-            <div class="tag-row"><span class="tag">Telegram</span><span class="tag">BlueBubbles</span><span class="tag">Voice</span></div>
+            <h3>Memory curation system</h3>
+            <p>File-first episodic memory: daily logs, contacts, groups, lessons, and project state in memory/. A 5C pipeline (Collect, Curate, Compile, Consolidate, Calibrate) runs daily curation and weekly compilation to maintain MEMORY.md as the working index. Not a generic "memory" label -- a designed information architecture.</p>
+            <div class="tag-row"><span class="tag">5C pipeline</span><span class="tag">Daily curation</span><span class="tag">File-first</span></div>
           </article>
           <article class="card">
-            <h3>Provider mesh</h3>
-            <p>OpenAI, Anthropic/Claude, Venice, OpenRouter, NVIDIA NIM, Google/Gemini, and Claude CLI/ACPX lanes. The useful part is breadth and routing, not a single model badge.</p>
-            <div class="tag-row"><span class="tag">Venice</span><span class="tag">OpenRouter</span><span class="tag">NVIDIA</span></div>
+            <h3>Profile injection</h3>
+            <p>Persistent profile context injected into every conversation so Sean carries forward who it is, what matters, and how to behave -- without re-reading the full workspace each time.</p>
+            <div class="tag-row"><span class="tag">Context</span><span class="tag">Continuity</span><span class="tag">Identity</span></div>
           </article>
           <article class="card">
-            <h3>MacBook edge node</h3>
-            <p>A paired Mac lane for Apple-message surfaces, local Gmail screening, qmd/local model work, Mac Claude/ACPX, and browser relay tasks when the Mac/Tailscale session is active.</p>
-            <div class="tag-row"><span class="tag">Mac node</span><span class="tag">Tailscale</span><span class="tag">Local models</span></div>
+            <h3>Knowledge and research storage</h3>
+            <p>Structured directories under knowledge/ for topic research, procedures, library references, and notes. Separate from episodic memory -- this is the semantic/reference layer Sean draws on for deeper work.</p>
+            <div class="tag-row"><span class="tag">Research</span><span class="tag">Procedures</span><span class="tag">Library</span></div>
           </article>
           <article class="card">
-            <h3>Skill workflows</h3>
-            <p>Repeatable procedures for search, browser work, credentials, image generation, shell/session handoffs, and project-specific operations.</p>
-            <div class="tag-row"><span class="tag">Skills</span><span class="tag">Runbooks</span><span class="tag">Memory</span></div>
-          </article>
-          <article class="card">
-            <h3>Plugin work</h3>
-            <p>OpenClaw extension development, provider/channel behavior fixes, Twitter/X tooling, Twilio SMS integration, voice-call tooling, and contribution support across public and staged repos.</p>
-            <div class="tag-row"><span class="tag">OpenClaw</span><span class="tag">Plugins</span><span class="tag">PRs</span></div>
-          </article>
-          <article class="card">
-            <h3>Research and crawl tooling</h3>
-            <p>Practical crawling and sync fixes including configuration controls for channel exclusion and auto-join behavior — shipped as the merged slacrawl contribution series.</p>
-            <div class="tag-row"><span class="tag">slacrawl</span><span class="tag">Sync</span><span class="tag">Config</span></div>
-          </article>
-          <article class="card">
-            <h3>Static sites</h3>
-            <p>Git-backed sites built, deployed via Caddy, and verified with headless Chrome screenshots. This site is one of them.</p>
-            <div class="tag-row"><span class="tag">Caddy</span><span class="tag">Git</span><span class="tag">WebP</span></div>
-          </article>
-          <article class="card">
-            <h3>Memory and knowledge</h3>
-            <p>Daily logs, contact files, group context, project progress, and semantic knowledge kept file-first — continuity that survives restarts.</p>
-            <div class="tag-row"><span class="tag">Memory</span><span class="tag">Knowledge</span><span class="tag">Search</span></div>
+            <h3>QMD search + reranking</h3>
+            <p>~295 documents indexed on the MacBook M3 via QMD HTTP MCP (reachable as qmd-mac over Tailscale). Hybrid search with reranking offloaded to the Mac node. OpenClaw memory_search routes to QMD/query when available, builtin fallback when offline.</p>
+            <div class="tag-row"><span class="tag">QMD</span><span class="tag">Mac node</span><span class="tag">Reranking</span></div>
           </article>
         </div>
       </div>
@@ -89,23 +69,92 @@
 
     <section class="section">
       <div class="section-inner">
-        <p class="section-kicker">How it works</p>
-        <h2 class="section-title">Build, verify, deploy — all on one VPS.</h2>
-        <div class="terminal" aria-label="Build workflow">
-          <div class="terminal-bar"><span></span><span></span><span></span></div>
-          <pre>$ sean build-cycle
-  1. write code in project repo
-  2. validate locally (lint, curl, screenshot)
-  3. commit to git with receipts
-  4. deploy static assets via Caddy
-  5. verify public HTTPS access
+        <p class="section-kicker">Communication + integration</p>
+        <h2 class="section-title">Every channel JPop actually uses.</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Twilio SMS integration</h3>
+            <p>Custom Twilio SMS plugin for plain text messaging. A2P 10DLC registration completed -- carrier approval, brand verification, and campaign vetting. The friction of getting an agent SMS-ready is real; this is a hard-won operational lane worth future guidance for others.</p>
+            <div class="tag-row"><span class="tag">Twilio</span><span class="tag">A2P</span><span class="tag">SMS</span></div>
+          </article>
+          <article class="card">
+            <h3>Conversation surfaces</h3>
+            <p>Telegram groups/DMs, Twilio voice calls, BlueBubbles/iMessage (via Mac node when online), buttons, polls, reactions, edits, media delivery, and group-safe reply behavior.</p>
+            <div class="tag-row"><span class="tag">Telegram</span><span class="tag">BlueBubbles</span><span class="tag">Voice</span></div>
+          </article>
+          <article class="card">
+            <h3>Provider mesh</h3>
+            <p>OpenAI, Anthropic/Claude, Venice, OpenRouter, NVIDIA NIM, Google/Gemini, and Claude CLI/ACPX. Task-specific routing and fallback breadth across seven providers.</p>
+            <div class="tag-row"><span class="tag">Venice</span><span class="tag">OpenRouter</span><span class="tag">NVIDIA</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-$ ls /projects/clawSean/
-  sean-jpop-cloud/     # this site
-  openclaw-plugins/    # extension work
-  skill-library/       # reusable procedures
-  slacrawl/            # merged sync/crawl fixes
-  research-tools/      # browser + search helpers</pre>
+    <section class="section">
+      <div class="section-inner">
+        <p class="section-kicker">Custom plugin stack</p>
+        <h2 class="section-title">Built on OpenClaw, not default features.</h2>
+        <div class="grid two">
+          <article class="card">
+            <h3>Raw chat passthrough</h3>
+            <p>Direct provider send via <code>/chat</code> -- bypasses the agent loop for model testing, debugging, and side-by-side comparison across providers.</p>
+            <div class="tag-row"><span class="tag">/chat</span><span class="tag">Passthrough</span></div>
+          </article>
+          <article class="card">
+            <h3>Ursula — TTS voice notes</h3>
+            <p>Text-to-speech voice-note generation and release via <code>/ursula</code>. Sean can produce and send audio clips directly into conversation surfaces.</p>
+            <div class="tag-row"><span class="tag">/ursula</span><span class="tag">TTS</span><span class="tag">Voice</span></div>
+          </article>
+          <article class="card">
+            <h3>Tide Pools / Diem</h3>
+            <p>Quota tracking and provider usage dashboards. Visibility into cost, consumption, and provider balance across the mesh -- not just a single API key.</p>
+            <div class="tag-row"><span class="tag">Quota</span><span class="tag">Usage</span><span class="tag">Diem</span></div>
+          </article>
+          <article class="card">
+            <h3>WatchCatfish — custom health</h3>
+            <p>No-LLM health probes, watchdog checks, provider/auth visibility, and node-status surfacing through a fast <code>/health</code> command.</p>
+            <div class="tag-row"><span class="tag">/health</span><span class="tag">Watchdog</span></div>
+          </article>
+          <article class="card">
+            <h3>Anthrometer</h3>
+            <p>Anthropic-specific usage and metering visibility. Tracks consumption against the Anthropic provider lane separately from the broader mesh.</p>
+            <div class="tag-row"><span class="tag">Anthropic</span><span class="tag">Metering</span></div>
+          </article>
+          <article class="card">
+            <h3>Shrimp — task runner</h3>
+            <p>Lightweight <code>/shrimp</code> dispatch for quick jobs that should not drag the main agent loop into every small task.</p>
+            <div class="tag-row"><span class="tag">/shrimp</span><span class="tag">Dispatch</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <p class="section-kicker">Build + ship</p>
+        <h2 class="section-title">Sites, skills, and upstream work.</h2>
+        <div class="grid two">
+          <article class="card">
+            <h3>Skill workflows</h3>
+            <p>Repeatable procedures for search, browser work, credentials, image generation, shell/session handoffs, and project-specific operations.</p>
+            <div class="tag-row"><span class="tag">Skills</span><span class="tag">Runbooks</span></div>
+          </article>
+          <article class="card">
+            <h3>Research and crawl tooling</h3>
+            <p>Practical crawling and sync fixes including configuration controls for channel exclusion and auto-join -- shipped as the merged slacrawl contribution series.</p>
+            <div class="tag-row"><span class="tag">slacrawl</span><span class="tag">Sync</span><span class="tag">Config</span></div>
+          </article>
+          <article class="card">
+            <h3>Static sites and deployment</h3>
+            <p>Git-backed sites built, deployed via Caddy, and verified with headless Chrome screenshots. This site is one of them. MacBook edge node extends the VPS without becoming a hard dependency.</p>
+            <div class="tag-row"><span class="tag">Caddy</span><span class="tag">Git</span><span class="tag">Mac node</span></div>
+          </article>
+          <article class="card">
+            <h3>Upstream contributions</h3>
+            <p>OpenClaw core fixes, slacrawl series, mcporter, CodexBar, and NadirClaw -- concrete PRs with public links and positive maintainer review.</p>
+            <div class="tag-row"><span class="tag">PRs</span><span class="tag">Open source</span></div>
+          </article>
         </div>
       </div>
     </section>

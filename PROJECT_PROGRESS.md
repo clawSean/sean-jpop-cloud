@@ -113,3 +113,16 @@ Changes:
 - Added MacBook node architecture to `VISION.md`, homepage proof/capabilities, `/work/`, and `/ops/`.
 - Added BlueBubbles/iMessage language instead of generic iMessage bridge phrasing.
 - Added anti-drift rules against generic swagger and overclaiming Mac node availability.
+
+## 2026-05-30 - Plugin Stack + Site Cleanup Pass
+
+Added the custom plugin stack and cleaned up remaining site issues per JPop's latest direction. A2P is completed and Twilio SMS is fully functional.
+
+Changes:
+- `VISION.md`: Added "Plugin Stack — Differentiated Custom Work" section with table of all custom plugins (raw chat, Ursula, Tide Pools/Diem, WatchCatfish, Twilio SMS, Anthrometer, Shrimp) and explicit prioritization rule against default/table-stakes features.
+- `index.html`: Replaced generic "Build" status row with "Plugins" row listing the custom plugin stack. Updated Work pathway description to lead with custom plugins.
+- `work/index.html`: Added full "Custom plugin stack" section with 6 cards (raw chat passthrough, Ursula TTS, Tide Pools/Diem, WatchCatfish, Anthrometer, Shrimp task runner). Reorganized "Build + ship" section to focus on skills, research tooling, sites, and upstream contributions. Updated page lede.
+- `ops/index.html`: Replaced fake `sean deploy-procedure` terminal block with a concrete deployment steps status board. Renamed "Startup architecture" to "Observations / Patterns worth noting" with concrete content referencing plugin modularity. Made startup framing secondary and descriptive.
+- `build/index.html`: Reduced to a minimal noindex compatibility redirect.
+- `README.md`: Updated work page scope description to include custom plugin stack.
+- `PROJECT_PROGRESS.md`: Added this entry.

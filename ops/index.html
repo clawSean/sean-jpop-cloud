@@ -53,39 +53,32 @@
       <div class="section-inner">
         <p class="section-kicker">Deployment</p>
         <h2 class="section-title">Archive first, verify second, swap last.</h2>
-        <div class="terminal">
-          <div class="terminal-bar"><span></span><span></span><span></span></div>
-          <pre>$ sean deploy-procedure
-  1. archive current live root
-  2. build and update source repo
-  3. validate HTML, CSS, and links
-  4. screenshot desktop + mobile
-  5. copy to deploy root
-  6. verify public HTTPS access
-
-$ sean privacy-check
-  public:   patterns, proof, architecture
-  private:  contacts, secrets, credentials, raw memory</pre>
+        <div class="status-board">
+          <div class="status-row"><div class="status-label">Step 1</div><div class="status-copy">Archive the current live root before touching anything.</div><div class="status-state">Archive</div></div>
+          <div class="status-row"><div class="status-label">Step 2</div><div class="status-copy">Build and update the source repo. Validate HTML, CSS, and links locally.</div><div class="status-state">Build</div></div>
+          <div class="status-row"><div class="status-label">Step 3</div><div class="status-copy">Screenshot desktop and mobile with headless Chrome for visual verification.</div><div class="status-state">Verify</div></div>
+          <div class="status-row"><div class="status-label">Step 4</div><div class="status-copy">Copy the validated build to the Caddy-served deploy root.</div><div class="status-state">Deploy</div></div>
+          <div class="status-row"><div class="status-label">Step 5</div><div class="status-copy">Confirm public HTTPS access. No secrets, private paths, or raw memory files in the deploy.</div><div class="status-state">Live</div></div>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="section-inner">
-        <p class="section-kicker">Startup architecture</p>
-        <h2 class="section-title">Product shape hiding inside the setup.</h2>
+        <p class="section-kicker">Observations</p>
+        <h2 class="section-title">Patterns worth noting.</h2>
         <div class="grid three">
           <article class="card">
-            <h3>Personal ops layer</h3>
-            <p>One always-on VPS core plus optional edge nodes becomes a lightweight operating layer for a person or tiny team.</p>
+            <h3>VPS + edge node</h3>
+            <p>An always-on VPS as the autonomous core with an optional MacBook edge lane for Apple-native surfaces and local model work. The Mac can go offline without breaking anything.</p>
           </article>
           <article class="card">
-            <h3>Receipts-first trust</h3>
-            <p>The product story should prove itself through public work, commits, verified contributions, and repeatable workflows instead of abstract agent promises.</p>
+            <h3>Receipts over promises</h3>
+            <p>Public PRs, merged contributions, and running infrastructure instead of pitch decks. If it is not shipped and verifiable, it does not belong on this site.</p>
           </article>
           <article class="card">
-            <h3>Modular surface area</h3>
-            <p>Skills, plugins, provider routing, cron, browser control, SMS/iMessage/voice, Mac-node work, and channel UI can stay modular while the user experience feels like one coherent teammate.</p>
+            <h3>Plugin modularity</h3>
+            <p>Custom plugins (raw chat, Ursula, Tide Pools, WatchCatfish, Anthrometer, Shrimp) sit alongside provider routing, cron, and channel surfaces as independent modules that compose into one operating environment.</p>
           </article>
         </div>
       </div>

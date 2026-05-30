@@ -2,11 +2,21 @@
 
 This file is the durable reference for what sean.jpop.cloud is and how it should read. If the site drifts, come back here.
 
+## Audience
+
+The primary readers are potential employers, technical peers, and people curious about JPop's work. They should leave understanding: (1) what Sean actually does and how it is built, (2) that the setup reflects real engineering judgment, and (3) that JPop is a person worth working with. The site is a portfolio and a playground, not a product pitch.
+
+## Voice and Tone
+
+Sean's voice is direct, slightly odd, system-grounded, and confident without bragging. Prefer concrete language over abstract claims. Use specific system details ("file-first memory surviving restarts") instead of vague marketing ("powerful AI memory"). Humor is fine when it comes naturally; forced cleverness is not. The lobster is the mascot, not a gimmick -- keep the personality anchored to real capability.
+
+JPop is the human behind Sean. The site should make that relationship clear without turning into a biography. A short human anchor on the homepage is enough.
+
 ## Core Idea
 
-Sean is a working OpenClaw agent — always-on, VPS-hosted, wired into a provider mesh, rich chat, SMS/iMessage, voice-call surfaces, a paired MacBook node, memory, skills, browser tools, hosted sites, and public contribution work. The site is the showcase itself, not a plan to build one.
+Sean is a working OpenClaw agent -- always-on, VPS-hosted, wired into a provider mesh, rich chat, SMS/iMessage, voice-call surfaces, a paired MacBook node, structured memory with curation pipelines, knowledge/research storage, profile injection, QMD-backed search with reranking, skills, browser tools, hosted sites, and public contribution work. The site is the showcase itself, not a plan to build one.
 
-The front door is Sean's personality. A visitor should immediately understand who Sean is and what Sean does — not read about what we intend to build.
+The front door is Sean's personality. A visitor should immediately understand who Sean is and what Sean does -- not read about what we intend to build.
 
 ## Route Strategy
 
@@ -14,7 +24,7 @@ The front door is Sean's personality. A visitor should immediately understand wh
 |---|---|
 | `/` | Front door. Sean personality introduction. Routes to Work, Contributions, Ops. |
 | `/work/` | Digestible path of valuable shipped work — the portfolio. Send this link to show what Sean can do. |
-| `/contributions/` | Validated/published contributions with concrete receipts. slacrawl is listed first. |
+| `/contributions/` | Validated/published contributions with concrete receipts. Three strong PR cards. |
 | `/ops/` | Infrastructure: VPS, MacBook node, Caddy, deployment, browser tooling. Architecture is descriptive, not prescriptive. |
 | `/build/` | Legacy compatibility redirect to /work/ and /contributions/. No content updates here. |
 
@@ -47,11 +57,31 @@ Points visitors to `/work/` and `/contributions/`. Kept so old links and bookmar
 - **CodexBar**: PR #865 — Venice API balance support; Sean/JPop listed as official contributors
 - **NadirClaw**: PR #50 — configurable embedding backends with positive maintainer review
 
+## Plugin Stack — Differentiated Custom Work
+
+These are Sean's custom plugins and extensions — the work that is not default OpenClaw table stakes. The site should surface these as concrete capability, not as a generic feature list.
+
+| Plugin / Capability | What it does | Slug / Surface |
+|---|---|---|
+| **Raw chat passthrough** | Direct provider send bypassing agent logic — useful for testing, debugging, and model comparison | `/chat` |
+| **Ursula** | TTS voice-note generation and release — Sean can produce and send audio clips | `/ursula` |
+| **Tide Pools / Diem** | Quota tracking and provider usage dashboards — visibility into cost and consumption | Usage monitoring |
+| **WatchCatfish / Custom health** | No-LLM health probes, watchdog checks, provider/auth visibility, and node-status surfacing | `/health` |
+| **Twilio SMS** | Custom Twilio SMS plugin for plain-text messaging with completed A2P 10DLC registration | SMS channel |
+| **Anthrometer** | Anthropic usage and metering visibility | Usage tracking |
+| **Shrimp** | Lightweight task-runner dispatch that routes quick jobs away from the main agent loop | `/shrimp` |
+
+**Prioritization rule:** The site should lead with these custom plugins, the memory/knowledge architecture, provider mesh, channel surfaces, and public contribution receipts. Do not prioritize default OpenClaw table-stakes features (single model access, basic Telegram chat, standard agent loop, default config) — those are assumed baseline, not differentiators.
+
 ## System Capabilities Worth Showing
 
+- **Memory curation system:** File-first structure -- workspace/MEMORY.md as working index, memory/ for episodic daily logs/contacts/groups/lessons, knowledge/ for semantic topics/research/procedures/library/notes. 5C pipeline (Collect, Curate, Compile, Consolidate, Calibrate) with daily curation and weekly compilation maintaining MEMORY.md. Profile injection gives Sean persistent context across conversations. This is a real differentiator -- not a generic "memory" label.
+- **QMD and Mac-node reranking:** The MacBook M3 runs a QMD HTTP MCP server (reachable via Tailscale as qmd-mac) with a corpus of ~295 indexed documents. Supports query, hybrid search, and rerank. OpenClaw's memory_search routes to QMD/query when available, falling back to builtin otherwise. Heavy reranking and corpus work offloads to the Mac node. The Mac is an enhancement, not a hard dependency.
 - **Provider mesh:** OpenAI, Anthropic/Claude, Venice, OpenRouter, NVIDIA NIM, Google/Gemini/Antigravity, and Claude CLI/ACPX. The interesting story is routing and fallback breadth, not one default model badge.
 - **Conversation and phone surfaces:** Telegram groups/DMs, Twilio SMS, BlueBubbles/iMessage, Twilio voice calls, TTS voice, buttons/reactions/polls/media/status updates.
+- **Twilio SMS integration:** Plain SMS uses a custom Twilio SMS plugin. BlueBubbles/Mac-node handles iMessage semantics separately. Twilio registration and A2P compliance was a hard-won operational achievement -- the friction of carrier registration, brand verification, and campaign approval is real and worth documenting as future guidance for others setting up agent SMS.
 - **VPS core + MacBook edge:** VPS stays autonomous. The paired MacBook node is an optional enhancement lane for BlueBubbles/iMessage, local Gmail prompt-injection screening, local models/qmd, Mac Claude/ACPX, and browser relay work when the Mac/Tailscale session is active.
+- **Knowledge and research storage:** Structured directories under knowledge/ for topic research, procedures, library references, and notes. Distinct from episodic memory -- this is the semantic/reference layer.
 - **Operational authority:** Source repos, Caddy deploy roots, browser verification, cron, skills, plugin work, public site deployment, and contribution workflow all live in the operating environment.
 
 ## Inspiration Reference: OpenClaw Integrations
@@ -72,6 +102,12 @@ What not to copy:
 - Do not reproduce the integrations page layout, card design, copy, ordering, icons, or exact category taxonomy.
 - Do not make Sean's site feel like a generic OpenClaw product page. Sean's site is still Sean's playground: personality, shipped work, odd details, local architecture, and public receipts should lead.
 - Do not use continuity as camouflage for imitation. Potential employers should see taste, judgment, and original execution.
+
+## Content Guardrails
+
+- **No self-referential terminal blocks.** Terminal-style blocks that pretend to show live system output are misleading unless they represent a real, reproducible command. If a terminal block is used for illustration, it must be clearly labeled as a layout/example, not as a live snapshot. Prefer status boards or plain copy for capability summaries.
+- **No unsupported artifact claims.** Do not link to repos, files, tools, or artifacts that do not exist publicly. If a work item does not have a public link, describe what it does without fabricating a URL. Internal/private work can be described architecturally without fake receipts.
+- **No provider comma soup in the hero.** The hero paragraph should not be a long comma-separated list of provider names and surface types. Use proof tiles or the status board for that detail. The hero copy should communicate personality and what Sean is, not enumerate every integration.
 
 ## Anti-Drift Rules
 
