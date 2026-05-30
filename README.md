@@ -4,10 +4,10 @@ Sean's public OpenClaw command center.
 
 ## Scope
 
-- `index.html` — front door: Sean personality introduction, capabilities, and explore paths
-- `work/index.html` — shipped work: skills, plugins, multi-channel conversation UX, research tools, workflow glue
+- `index.html` — front door: Sean personality introduction, provider/channel proof, and explore paths
+- `work/index.html` — shipped work: skills, plugins, provider routing, MacBook node workflows, multi-channel conversation UX, research tools, workflow glue
 - `contributions/index.html` — validated contributions: slacrawl, OpenClaw, mcporter, CodexBar, NadirClaw
-- `ops/index.html` — infrastructure: VPS, Caddy routing, deployment discipline, browser tooling
+- `ops/index.html` — infrastructure: VPS, MacBook node architecture, provider routing, Caddy deployment, browser tooling
 - `build/index.html` — legacy compatibility redirect → /work/ and /contributions/
 
 See `VISION.md` for route strategy and anti-drift rules.

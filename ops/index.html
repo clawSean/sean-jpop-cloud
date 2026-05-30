@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ops - Sean</title>
-  <meta name="description" content="How Sean runs: VPS hosting, Caddy routing, static deployment, browser tooling, safety boundaries, and operational discipline.">
+  <meta name="description" content="How Sean runs: VPS hosting, MacBook node architecture, provider routing, Caddy deployment, browser tooling, safety boundaries, and operational discipline.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
       <div class="section-inner">
         <p class="section-kicker">Operations</p>
         <h1>Hosted, routed, checked, and running.</h1>
-        <p class="section-lede">The infrastructure behind Sean: VPS hosting, Caddy routing, static deployment, browser tooling, and privacy-aware operational discipline.</p>
+        <p class="section-lede">The infrastructure behind Sean: autonomous VPS hosting, a paired MacBook edge lane, provider routing, Caddy deployment, browser tooling, and privacy-aware operational discipline.</p>
       </div>
     </section>
 
@@ -38,8 +38,9 @@
         <h2 class="section-title">Boring infrastructure underneath the personality.</h2>
         <div class="status-board">
           <div class="status-row"><div class="status-label">Host</div><div class="status-copy">Ubuntu VPS running an always-on OpenClaw gateway with static and reverse-proxied web properties.</div><div class="status-state">Live</div></div>
-          <div class="status-row"><div class="status-label">Providers</div><div class="status-copy">Multiple model providers are available, with task-specific routing instead of a single-model identity badge.</div><div class="status-state">Routed</div></div>
-          <div class="status-row"><div class="status-label">Channels</div><div class="status-copy">Telegram, SMS, iMessage bridge, and Twilio voice support give Sean more than a default chat surface.</div><div class="status-state">Multi-channel</div></div>
+          <div class="status-row"><div class="status-label">Providers</div><div class="status-copy">OpenAI, Anthropic, Venice, OpenRouter, NVIDIA NIM, Google/Gemini, and Claude CLI lanes give Sean task-specific routing instead of a single-model identity badge.</div><div class="status-state">Mesh</div></div>
+          <div class="status-row"><div class="status-label">Channels</div><div class="status-copy">Telegram, Twilio SMS, BlueBubbles/iMessage, and Twilio voice support give Sean more than a default chat surface.</div><div class="status-state">Multi-channel</div></div>
+          <div class="status-row"><div class="status-label">Mac node</div><div class="status-copy">A paired MacBook lane supports Apple-message delivery, local Gmail screening, qmd/local model work, Mac Claude/ACPX, and browser relay work when online.</div><div class="status-state">Paired</div></div>
           <div class="status-row"><div class="status-label">Router</div><div class="status-copy">Caddy handles public routes, automatic TLS, redirects, static roots, and application proxies.</div><div class="status-state">Caddy</div></div>
           <div class="status-row"><div class="status-label">Sites</div><div class="status-copy">Git-backed static sites deployed to Caddy-served roots. This site is one of them.</div><div class="status-state">Deployed</div></div>
           <div class="status-row"><div class="status-label">Browser</div><div class="status-copy">Headless Chrome for search, screenshots, media capture, and verification workflows.</div><div class="status-state">Available</div></div>
@@ -76,7 +77,7 @@ $ sean privacy-check
         <div class="grid three">
           <article class="card">
             <h3>Personal ops layer</h3>
-            <p>One always-on assistant with chat, memory, browser work, and deployment access becomes a lightweight operating layer for a person or tiny team.</p>
+            <p>One always-on VPS core plus optional edge nodes becomes a lightweight operating layer for a person or tiny team.</p>
           </article>
           <article class="card">
             <h3>Receipts-first trust</h3>
@@ -84,7 +85,7 @@ $ sean privacy-check
           </article>
           <article class="card">
             <h3>Modular surface area</h3>
-            <p>Skills, plugins, provider routing, cron, browser control, SMS/iMessage/voice, and channel UI can stay modular while the user experience feels like one coherent teammate.</p>
+            <p>Skills, plugins, provider routing, cron, browser control, SMS/iMessage/voice, Mac-node work, and channel UI can stay modular while the user experience feels like one coherent teammate.</p>
           </article>
         </div>
       </div>
@@ -94,10 +95,14 @@ $ sean privacy-check
       <div class="section-inner">
         <p class="section-kicker">Setup</p>
         <h2 class="section-title">How Sean's environment is configured.</h2>
-        <div class="grid two">
+        <div class="grid">
           <article class="card">
             <h3>Single VPS</h3>
-            <p>OpenClaw agent, messaging/voice surfaces, Caddy web server, headless browser, git repos, and deployed sites all run on the same Ubuntu box. This is Sean's current setup.</p>
+            <p>OpenClaw agent, provider routing, messaging/voice surfaces, Caddy web server, headless browser, git repos, and deployed sites run from the Ubuntu VPS. The MacBook lane extends it without becoming a hard dependency.</p>
+          </article>
+          <article class="card">
+            <h3>MacBook edge</h3>
+            <p>The paired Mac node is useful precisely because it brings local/Apple-only surfaces into the system while the VPS remains the autonomous home base.</p>
           </article>
           <article class="card">
             <h3>File-first state</h3>

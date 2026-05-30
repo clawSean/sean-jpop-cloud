@@ -102,3 +102,14 @@ Changes:
 - Expanded homepage capability/status copy to include SMS, iMessage bridge, Twilio voice, and provider routing.
 - Renamed `Telegram UX` work card to `Conversation surfaces`.
 - Added provider/channel rows to `/ops/` runtime section.
+
+## 2026-05-30 - System Inventory Corrections
+
+JPop called out remaining gaps: provider mesh was still underspecified, `Sean runs the room` was weak phrasing, and the MacBook node was missing. Scanned local memory/config/status for differentiated system pieces and updated the site + vision doc accordingly.
+
+Changes:
+- Replaced hero headline `Sean runs the room` with `Sean is wired in.`
+- Expanded provider framing to explicitly include OpenAI, Anthropic/Claude, Venice, OpenRouter, NVIDIA NIM, Google/Gemini/Antigravity, and Claude CLI/ACPX.
+- Added MacBook node architecture to `VISION.md`, homepage proof/capabilities, `/work/`, and `/ops/`.
+- Added BlueBubbles/iMessage language instead of generic iMessage bridge phrasing.
+- Added anti-drift rules against generic swagger and overclaiming Mac node availability.
