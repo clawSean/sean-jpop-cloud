@@ -1,21 +1,27 @@
 # Sean Site Rebuild - PROJECT_PROGRESS
 
-Status: Showcase site live.
+Status: Showcase site live, restructured around vision.
 
 ## Goal
 
-Replace the old `sean.jpop.cloud` Molt Report site with a bold, Sean-first OpenClaw command center:
+Sean's public showcase at sean.jpop.cloud — personality first, concrete work and contributions front and center.
 
-- homepage
-- `/build`
-- `/ops`
+## Route Structure
+
+- `/` — Sean personality and introduction (front door)
+- `/work/` — shipped skills, plugins, workflows, deliverables
+- `/contributions/` — validated open-source contributions (slacrawl headlined)
+- `/ops/` — supporting infrastructure and architecture
+- `/build/` — compatibility redirect to `/work/`
 
 ## Decisions
 
 - Keep v1 archived locally, not public.
 - Static curated status blocks; live-data automation deferred.
 - Company/workplace material anonymized; privacy boundaries enforced.
-- Contributions shown directly on build page with public links.
+- Contributions given their own page with slacrawl as headline.
+- Vision documented in VISION.md for anti-drift reference.
+- /build/ kept as redirect for link compatibility.
 
 ## Source Paths
 
@@ -67,3 +73,22 @@ Changes:
 - Added homepage cards for privacy-safe business workflows and upstream contributions.
 - Added slacrawl to /build/ shipped-work and contribution receipts.
 - Replaced generic contribution rows with concrete public links for OpenClaw, slacrawl, mcporter, CodexBar, and NadirClaw.
+
+## 2026-05-30 - Vision-Aligned Restructure
+
+Restructured site around the hard vision per JPop direction. Documented vision with anti-drift rules in VISION.md.
+
+**Route change: 3 pages → 5 routes**
+Old: `/`, `/build/`, `/ops/`
+New: `/`, `/work/`, `/contributions/`, `/ops/`, `/build/` (redirect)
+
+**Changes:**
+- `VISION.md`: Created/updated with route strategy table, nav order, site section descriptions, concrete receipts, and anti-drift rules.
+- `index.html`: Rewritten as Sean personality front door. Kept hero + proof strip + capabilities board + receipts terminal. Explore section now has 3 pathways: Work, Contributions, Ops. Hero CTA buttons updated to /work/ and /contributions/. Removed "What Sean does" grid (redundant with capabilities board). Nav updated.
+- `work/index.html`: New page — digestible path of shipped work. 6 cards (Telegram UX, Skill workflows, Plugin work, Research/crawl tooling, Static sites, Memory/knowledge). Build-cycle terminal. CTAs to /contributions/, /ops/, GitHub.
+- `contributions/index.html`: New page — slacrawl featured first as 4-card grid (one card per PR + summary card). Full contributions list with links below: OpenClaw, slacrawl, mcporter, CodexBar, NadirClaw.
+- `build/index.html`: Replaced with meta-refresh redirect to /work/. Fallback page has manual links to both /work/ and /contributions/. noindex set.
+- `ops/index.html`: Nav updated (Home, Work, Contributions, Ops, GitHub). Architecture section renamed to "Setup" with title "How Sean's environment is configured" — clearly descriptive, not prescriptive. Footer links updated to /work/ and /contributions/.
+- `styles.css`: Added `.pathways.three` (3-column grid) and added it to the 820px breakpoint collapse rule.
+- `README.md`: Updated scope list to reflect all 5 routes. Added VISION.md reference.
+- No changes to `site.js` or assets.

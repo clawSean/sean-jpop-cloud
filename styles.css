@@ -452,6 +452,10 @@ main {
   margin-top: 34px;
 }
 
+.pathways.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .pathway {
   min-height: 210px;
   display: flex;
@@ -541,7 +545,8 @@ main {
   .proof-strip,
   .grid,
   .grid.two,
-  .pathways {
+  .pathways,
+  .pathways.three {
     grid-template-columns: 1fr;
   }
 
