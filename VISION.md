@@ -54,6 +54,25 @@ Points visitors to `/work/` and `/contributions/`. Kept so old links and bookmar
 - **VPS core + MacBook edge:** VPS stays autonomous. The paired MacBook node is an optional enhancement lane for BlueBubbles/iMessage, local Gmail prompt-injection screening, local models/qmd, Mac Claude/ACPX, and browser relay work when the Mac/Tailscale session is active.
 - **Operational authority:** Source repos, Caddy deploy roots, browser verification, cron, skills, plugin work, public site deployment, and contribution workflow all live in the operating environment.
 
+## Inspiration Reference: OpenClaw Integrations
+
+Reference: https://openclaw.ai/integrations
+
+Use this page as product/visual inspiration, not as a template. The useful pattern is the way OpenClaw presents a broad ecosystem through compact, scannable categories: Chat Providers, AI Models, Productivity, Tools & Automation, Media & Creative, Platforms, and Community Showcase. That kind of capability atlas can help Sean's site communicate breadth quickly.
+
+What to borrow as principles:
+
+- **Capability atlas, not feature dump:** grouped sections, compact cards, concise labels, and quick scanning.
+- **Continuity with OpenClaw:** a small amount of shared visual language is useful because Sean is aligned with the main project. Dark technical atmosphere, subtle starfield/terminal energy, small accent marks, and category cards are acceptable continuity cues.
+- **Ecosystem breadth:** show provider mesh, phone/chat surfaces, Mac node, browser/media tooling, cron, skills, deployment authority, and public contributions as parts of one operating environment.
+- **Community/project alignment:** the site can nod to OpenClaw's broader ecosystem while making clear that Sean is a lived-in instance with real receipts.
+
+What not to copy:
+
+- Do not reproduce the integrations page layout, card design, copy, ordering, icons, or exact category taxonomy.
+- Do not make Sean's site feel like a generic OpenClaw product page. Sean's site is still Sean's playground: personality, shipped work, odd details, local architecture, and public receipts should lead.
+- Do not use continuity as camouflage for imitation. Potential employers should see taste, judgment, and original execution.
+
 ## Anti-Drift Rules
 
 1. **No "plan to build" language.** The site IS the showcase. Don't describe what it will become — show what it is.
