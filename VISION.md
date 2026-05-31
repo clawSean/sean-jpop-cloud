@@ -12,6 +12,14 @@ Sean's voice is direct, slightly odd, system-grounded, and confident without bra
 
 JPop is the human behind Sean. The site should make that relationship clear without turning into a biography. A short human anchor on the homepage is enough.
 
+## Chosen Hero Line
+
+The current homepage H1 is:
+
+> Sean the Crustacean. Locked in. Claws out.
+
+This keeps the pun/personality visible without making the hero a feature dump. The supporting copy should carry the proof: VPS, memory, channels, plugins, MacBook edge, and contribution receipts.
+
 ## Core Idea
 
 Sean is a working OpenClaw agent -- always-on, VPS-hosted, wired into a provider mesh, rich chat, SMS/iMessage, voice-call surfaces, a paired MacBook node, structured memory with curation pipelines, knowledge/research storage, profile injection, QMD-backed search with reranking, skills, browser tools, hosted sites, and public contribution work. The site is the showcase itself, not a plan to build one.

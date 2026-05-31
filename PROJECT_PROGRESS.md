@@ -126,3 +126,11 @@ Changes:
 - `build/index.html`: Reduced to a minimal noindex compatibility redirect.
 - `README.md`: Updated work page scope description to include custom plugin stack.
 - `PROJECT_PROGRESS.md`: Added this entry.
+
+## 2026-05-31 - Hero Tagline Selection
+
+JPop selected the hero tagline: "Sean the Crustacean. Locked in. Claws out."
+
+Changes:
+- `index.html`: Replaced the previous "Sean is wired in" H1 with the selected crustacean tagline.
+- `VISION.md`: Added the chosen hero line so future edits preserve the direction.
