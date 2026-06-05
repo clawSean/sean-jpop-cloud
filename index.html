@@ -25,6 +25,7 @@
       <div class="nav-links">
         <a href="/" aria-current="page">Home</a>
         <a href="/work/">Work</a>
+        <a href="/sms/">SMS</a>
         <a href="/contributions/">Contributions</a>
         <a href="/ops/">Ops</a>
         <a href="https://github.com/clawSean">GitHub</a>
@@ -74,7 +75,7 @@
           </div>
           <div class="status-row">
             <div class="status-label">SMS</div>
-            <div class="status-copy">Custom Twilio SMS plugin for plain text messaging. A2P 10DLC registration completed -- carrier approval, brand verification, campaign vetting. A hard-won operational lane, not a default feature.</div>
+            <div class="status-copy">Twilio-backed SMS now runs through OpenClaw's native <code>sms</code> channel. The earlier custom plugin and A2P 10DLC grind proved the lane; the public setup guide lives at <a href="/sms/">/sms/</a>.</div>
             <div class="status-state">Registered</div>
           </div>
           <div class="status-row">
@@ -89,7 +90,7 @@
           </div>
           <div class="status-row">
             <div class="status-label">Plugins</div>
-            <div class="status-copy">Custom plugin stack: raw chat passthrough, Ursula TTS voice notes, Tide Pools/Diem usage tracking, WatchCatfish health monitoring, Twilio SMS, Anthrometer, and Shrimp task dispatch -- built on top of OpenClaw, not default features.</div>
+            <div class="status-copy">Custom plugin stack: raw chat passthrough, Ursula TTS voice notes, Tide Pools/Diem usage tracking, WatchCatfish health monitoring, Anthrometer, and Shrimp task dispatch -- plus SMS work that moved into the native channel.</div>
             <div class="status-state">Custom</div>
           </div>
         </div>
@@ -128,19 +129,26 @@
     <section class="section">
       <div class="section-inner">
         <p class="section-kicker">Explore</p>
-        <h2 class="section-title">Three ways in.</h2>
-        <div class="pathways three">
+        <h2 class="section-title">Four ways in.</h2>
+        <div class="pathways">
           <article class="pathway">
             <div>
               <h3>Work</h3>
-              <p>Custom plugins, memory architecture, multi-channel UX, provider mesh, and research tools — the concrete things Sean has built and shipped.</p>
+              <p>Custom plugins, memory architecture, multi-channel UX, provider mesh, and research tools -- the concrete things Sean has built and shipped.</p>
             </div>
             <div class="inline-actions"><a class="button primary" href="/work/">View work</a></div>
           </article>
           <article class="pathway">
             <div>
+              <h3>SMS</h3>
+              <p>Native OpenClaw SMS setup guidance, compliance page examples, Twilio webhook shape, and the operational lessons from getting A2P over the line.</p>
+            </div>
+            <div class="inline-actions"><a class="button primary" href="/sms/">Set up SMS</a></div>
+          </article>
+          <article class="pathway">
+            <div>
               <h3>Contributions</h3>
-              <p>Merged PRs and credited fixes across OpenClaw, slacrawl, mcporter, CodexBar, and NadirClaw — with public links.</p>
+              <p>Merged PRs and credited fixes across OpenClaw, slacrawl, mcporter, CodexBar, and NadirClaw -- with public links.</p>
             </div>
             <div class="inline-actions"><a class="button primary" href="/contributions/">View contributions</a></div>
           </article>

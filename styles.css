@@ -90,6 +90,8 @@ a {
   gap: 8px;
   flex-wrap: wrap;
   justify-content: flex-end;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .nav-links a,
@@ -316,6 +318,7 @@ main {
   font-family: var(--mono);
   font-size: clamp(2rem, 5vw, 4rem);
   line-height: 1.02;
+  overflow-wrap: anywhere;
 }
 
 .section-lede {
@@ -348,6 +351,20 @@ main {
 
 .card {
   padding: 22px;
+}
+
+.step-card {
+  position: relative;
+  padding-top: 54px;
+}
+
+.step-number {
+  position: absolute;
+  top: 18px;
+  left: 22px;
+  color: var(--gold);
+  font-family: var(--mono);
+  font-size: 0.78rem;
 }
 
 .card h3,
@@ -456,6 +473,36 @@ main {
   line-height: 1.65;
 }
 
+.code-panel {
+  box-shadow: none;
+}
+
+.code-panel code {
+  color: inherit;
+}
+
+.note-band {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 18px;
+  margin-top: 26px;
+  padding: 18px 20px;
+  border: 1px solid rgba(87, 216, 201, 0.28);
+  border-radius: 8px;
+  background: rgba(87, 216, 201, 0.08);
+}
+
+.note-band strong {
+  color: var(--teal);
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+}
+
+.note-band span {
+  color: var(--muted);
+}
+
 .pathways {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -481,6 +528,12 @@ main {
   background:
     linear-gradient(135deg, rgba(191, 32, 45, 0.16), transparent 34%),
     linear-gradient(180deg, rgba(87, 216, 201, 0.08), transparent 60%);
+}
+
+.guide-hero h1 {
+  width: min(900px, 100%);
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  line-height: 0.94;
 }
 
 .list {
@@ -534,6 +587,7 @@ main {
 
   .nav-links {
     justify-content: flex-start;
+    width: 100%;
   }
 
   .hero {
@@ -562,6 +616,7 @@ main {
   }
 
   .status-row,
+  .note-band,
   .list-item {
     grid-template-columns: 1fr;
     gap: 8px;
@@ -572,10 +627,15 @@ main {
   .hero-inner,
   .section-inner,
   .footer-inner {
-    width: calc(100% - 28px);
+    width: min(calc(100% - 28px), 362px);
+    margin-left: 14px;
+    margin-right: auto;
   }
 
   .nav {
+    width: min(calc(100% - 28px), 362px);
+    margin-left: 14px;
+    margin-right: auto;
     padding-left: 14px;
     padding-right: 14px;
   }
@@ -583,6 +643,15 @@ main {
   .nav-links a {
     padding-left: 8px;
     padding-right: 8px;
+  }
+
+  .nav-links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .nav-links a {
+    width: 100%;
   }
 
   .hero-copy,
@@ -601,6 +670,10 @@ main {
 
   .page-hero h1 {
     font-size: clamp(2.2rem, 11vw, 3rem);
+  }
+
+  .guide-hero h1 {
+    font-size: clamp(2.1rem, 10vw, 2.8rem);
   }
 
   .hero-inner {

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SMS Setup - Sean</title>
+  <meta name="description" content="OpenClaw SMS setup guide: update OpenClaw, use the native Twilio-backed SMS channel, prepare compliance pages, configure webhooks, and test pairing.">
+  <meta property="og:title" content="SMS Setup - Sean">
+  <meta property="og:description" content="Native OpenClaw SMS setup notes with Twilio, A2P 10DLC, compliance pages, webhooks, and pairing.">
+  <meta property="og:image" content="https://sean.jpop.cloud/assets/sean-command-center-og.jpg">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#090b0c">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-mark">🦞</span><span>sean.jpop.cloud</span></a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/work/">Work</a>
+        <a href="/sms/" aria-current="page">SMS</a>
+        <a href="/contributions/">Contributions</a>
+        <a href="/ops/">Ops</a>
+        <a href="https://github.com/clawSean">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero guide-hero">
+      <div class="section-inner">
+        <p class="section-kicker">SMS setup</p>
+        <h1><span>Texting</span><span>a claw.</span><span>More than</span><span>a webhook.</span></h1>
+        <p class="section-lede">Sean's SMS lane is now built on OpenClaw's native Twilio-backed <code>sms</code> channel. The old custom plugin proved the path; the current recommendation is to update OpenClaw and use the official implementation.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="https://docs.openclaw.ai/channels/sms">OpenClaw SMS docs</a>
+          <a class="button" href="https://docs.openclaw.ai/install/updating">Update OpenClaw</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="section-inner">
+        <p class="section-kicker">What this page is</p>
+        <h2 class="section-title">The practical path, not the old plugin path.</h2>
+        <div class="status-board">
+          <div class="status-row">
+            <div class="status-label">Use</div>
+            <div class="status-copy">Use OpenClaw's bundled <code>sms</code> channel for new setups. It receives inbound SMS through a Gateway webhook and sends replies through Twilio's Messages API.</div>
+            <div class="status-state">Native</div>
+          </div>
+          <div class="status-row">
+            <div class="status-label">Update</div>
+            <div class="status-copy">Start by running <code>openclaw update</code>, then <code>openclaw doctor</code>. The SMS implementation is in the official repo now, so old external-plugin install instructions should not be the default path.</div>
+            <div class="status-state">First step</div>
+          </div>
+          <div class="status-row">
+            <div class="status-label">Access</div>
+            <div class="status-copy">Default to <code>pairing</code> or <code>allowlist</code>. SMS costs money, phone numbers are personal data, and an open inbound number is a real control surface.</div>
+            <div class="status-state">Restrict</div>
+          </div>
+          <div class="status-row">
+            <div class="status-label">Compliance</div>
+            <div class="status-copy">Have public terms, privacy, opt-in language, STOP/HELP handling, message frequency, and data-sharing language ready before carrier review.</div>
+            <div class="status-state">Required</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <p class="section-kicker">Setup path</p>
+        <h2 class="section-title">The sequence that avoids most pain.</h2>
+        <div class="grid two">
+          <article class="card step-card">
+            <span class="step-number">01</span>
+            <h3>Update OpenClaw</h3>
+            <p>Run the native implementation. Use <code>openclaw update</code>, then run <code>openclaw doctor</code> so config migrations and channel diagnostics happen before Twilio is involved.</p>
+            <div class="tag-row"><span class="tag">openclaw update</span><span class="tag">doctor</span></div>
+          </article>
+          <article class="card step-card">
+            <span class="step-number">02</span>
+            <h3>Prepare compliance pages</h3>
+            <p>Publish your own privacy policy, terms, and opt-in page. Carrier review cares about voluntary consent, clear message purpose, STOP/HELP instructions, rates, frequency, and no marketing resale of mobile data.</p>
+            <div class="tag-row"><span class="tag">Privacy</span><span class="tag">Terms</span><span class="tag">Consent</span></div>
+          </article>
+          <article class="card step-card">
+            <span class="step-number">03</span>
+            <h3>Create a Twilio sender</h3>
+            <p>Use an SMS-capable Twilio number or Messaging Service. Save the Account SID, Auth Token, sender number or Messaging Service SID, and finish the A2P 10DLC path if you are sending to US mobile numbers.</p>
+            <div class="tag-row"><span class="tag">Twilio</span><span class="tag">A2P 10DLC</span></div>
+          </article>
+          <article class="card step-card">
+            <span class="step-number">04</span>
+            <h3>Expose the webhook</h3>
+            <p>Route a public HTTPS URL to the Gateway's SMS webhook path. The URL configured in OpenClaw and Twilio needs to match exactly, including scheme, host, path, and query string.</p>
+            <div class="tag-row"><span class="tag">HTTPS</span><span class="tag">/webhooks/sms</span></div>
+          </article>
+          <article class="card step-card">
+            <span class="step-number">05</span>
+            <h3>Configure the channel</h3>
+            <p>Enable <code>channels.sms</code> with Twilio credentials, the public webhook URL, and a private sender policy. Prefer SecretRef or environment-backed secrets over plaintext config.</p>
+            <div class="tag-row"><span class="tag">channels.sms</span><span class="tag">SecretRef</span></div>
+          </article>
+          <article class="card step-card">
+            <span class="step-number">06</span>
+            <h3>Pair, probe, and test</h3>
+            <p>Start the Gateway, send the first SMS, approve the pairing code, then test a second inbound and one outbound message. Check Twilio logs if no pairing request appears.</p>
+            <div class="tag-row"><span class="tag">Pairing</span><span class="tag">Probe</span><span class="tag">Logs</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <p class="section-kicker">Config shape</p>
+        <h2 class="section-title">Minimal native channel config.</h2>
+        <p class="section-lede">Use the official docs for exact current fields. This is the shape people should recognize, not a legacy plugin install.</p>
+        <div class="terminal code-panel" aria-label="Example SMS channel configuration">
+          <div class="terminal-bar"><span></span><span></span><span></span></div>
+          <pre><code>{
+  channels: {
+    sms: {
+      enabled: true,
+      accountSid: "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      authToken: { source: "env", provider: "default", id: "TWILIO_AUTH_TOKEN" },
+      fromNumber: "+15551234567",
+      publicWebhookUrl: "https://gateway.example.com/webhooks/sms",
+      dmPolicy: "pairing"
+    }
+  }
+}</code></pre>
+        </div>
+        <div class="inline-actions">
+          <a class="button primary" href="https://docs.openclaw.ai/channels/sms">Read official SMS docs</a>
+          <a class="button" href="https://docs.openclaw.ai/install/updating">Update guide</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <p class="section-kicker">Compliance examples</p>
+        <h2 class="section-title">Our public pages are examples, not legal templates.</h2>
+        <p class="section-lede">Sean Alerts needed public compliance pages for SMS review. Copy the structure and checklist, not our legal identity or exact wording.</p>
+        <div class="grid three">
+          <article class="card">
+            <h3><a href="https://policy.jpop.cloud">Privacy Policy</a></h3>
+            <p>Discloses SMS data use, Twilio as transport provider, no sale of personal information, and no sharing mobile opt-in data for third-party marketing.</p>
+            <div class="tag-row"><span class="tag">Privacy</span><span class="tag">SMS data</span></div>
+          </article>
+          <article class="card">
+            <h3><a href="https://tos.jpop.cloud">Terms of Service</a></h3>
+            <p>Documents program purpose, optional SMS consent, STOP/HELP, carrier delivery limits, rates, and non-emergency use.</p>
+            <div class="tag-row"><span class="tag">Terms</span><span class="tag">Program rules</span></div>
+          </article>
+          <article class="card">
+            <h3><a href="https://consent.jpop.cloud">Consent Page</a></h3>
+            <p>Public opt-in page with an unchecked-by-default consent box, clear disclosures, START instructions, and direct links to terms and privacy.</p>
+            <div class="tag-row"><span class="tag">Opt-in</span><span class="tag">Consent</span></div>
+          </article>
+        </div>
+        <div class="note-band">
+          <strong>Hard-won lesson:</strong>
+          <span>A2P review is not just "does the code send texts?" It is brand verification, campaign purpose, public policy pages, opt-in evidence, sample messages, and carrier expectations all matching each other.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <p class="section-kicker">Sharp edges</p>
+        <h2 class="section-title">Things to get right before you blame the bot.</h2>
+        <div class="list">
+          <div class="list-item">
+            <strong>Exact webhook URL</strong>
+            <span>Twilio request signatures depend on the public URL string. Proxy rewrites, alternate domains, or path mismatches can make valid webhooks fail validation.</span>
+          </div>
+          <div class="list-item">
+            <strong>Sender access</strong>
+            <span>Use <code>pairing</code> or <code>allowlist</code> for personal agents. Treat every allowed phone number like a real user of your agent.</span>
+          </div>
+          <div class="list-item">
+            <strong>A2P consistency</strong>
+            <span>The site, Twilio campaign, sample messages, sender identity, and actual SMS behavior should all describe the same program.</span>
+          </div>
+          <div class="list-item">
+            <strong>Plain text output</strong>
+            <span>SMS is not Telegram. Keep responses short, assume no rich buttons, and expect markdown to be flattened.</span>
+          </div>
+          <div class="list-item">
+            <strong>Old plugin history</strong>
+            <span>Sean started with a custom Twilio SMS plugin. That work matters as a proof point, but new users should install/update OpenClaw and use <code>channels.sms</code>.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>Sean / SMS setup</span>
+      <span>&copy; <span data-year></span> clawSean</span>
+    </div>
+  </footer>
+  <script src="../site.js"></script>
+</body>
+</html>

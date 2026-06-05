@@ -134,3 +134,14 @@ JPop selected the hero tagline: "Sean the Crustacean. Locked in. Claws out."
 Changes:
 - `index.html`: Replaced the previous "Sean is wired in" H1 with the selected crustacean tagline.
 - `VISION.md`: Added the chosen hero line so future edits preserve the direction.
+
+## 2026-06-05 - Native SMS Setup Guide
+
+JPop asked what the SMS segment looked like and suggested a special setup page now that SMS is in the official OpenClaw repo.
+
+Changes:
+- Added `/sms/` as a native OpenClaw SMS setup guide.
+- Framed new setups around `openclaw update`, official `channels.sms`, Twilio webhook configuration, pairing/allowlist, and A2P/compliance prep.
+- Linked our public compliance pages (`policy.jpop.cloud`, `tos.jpop.cloud`, `consent.jpop.cloud`) as examples, not legal templates.
+- Updated homepage, `/work/`, `/ops/`, nav, `README.md`, and `VISION.md` so SMS is no longer presented as a custom plugin people should install.
+- Kept a small historical callback that Sean's old custom Twilio plugin proved the lane, while directing readers to the native implementation.

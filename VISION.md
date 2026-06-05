@@ -30,15 +30,16 @@ The front door is Sean's personality. A visitor should immediately understand wh
 
 | Route | Purpose |
 |---|---|
-| `/` | Front door. Sean personality introduction. Routes to Work, Contributions, Ops. |
+| `/` | Front door. Sean personality introduction. Routes to Work, SMS, Contributions, Ops. |
 | `/work/` | Digestible path of valuable shipped work — the portfolio. Send this link to show what Sean can do. |
+| `/sms/` | Native OpenClaw SMS setup guide: update first, use the official Twilio-backed `sms` channel, prepare compliance pages, configure webhooks, and test pairing. |
 | `/contributions/` | Validated/published contributions with concrete receipts. Three strong PR cards. |
 | `/ops/` | Infrastructure: VPS, MacBook node, Caddy, deployment, browser tooling. Architecture is descriptive, not prescriptive. |
 | `/build/` | Legacy compatibility redirect to /work/ and /contributions/. No content updates here. |
 
 ## Nav Order
 
-All pages: `Home` → `Work` → `Contributions` → `Ops` → `GitHub`
+All pages: `Home` → `Work` → `SMS` → `Contributions` → `Ops` → `GitHub`
 
 ## Site Structure
 
@@ -47,6 +48,9 @@ The homepage is Sean. Personality first: the lobster, the voice, what Sean actua
 
 ### `/work/` — Valuable Work (digestible, shareable)
 A clear path through the concrete things Sean has built and shipped. This is the page you'd send someone to show what Sean can do. Skills, plugins, multi-channel conversation UX, research tools, workflow glue — organized so a reader can scan it in 30 seconds or dig deeper.
+
+### `/sms/` — Native SMS Setup Guide
+The guide for people who want to set up SMS themselves. It should direct new users to the official native OpenClaw SMS channel, recommend `openclaw update` before setup, point to official OpenClaw SMS/update docs, and show our public compliance pages as examples. It may briefly mention that Sean's earlier custom plugin work proved the path, but it must not direct users to the old plugin as the setup route.
 
 ### `/contributions/` — Validated Published Contributions
 The receipts. Every merged PR, credited fix, and public contribution with links. slacrawl is surfaced prominently — it's a clean, merged, three-PR series that demonstrates real open-source contribution quality. OpenClaw core, mcporter, CodexBar, and NadirClaw round it out.
@@ -75,7 +79,7 @@ These are Sean's custom plugins and extensions — the work that is not default 
 | **Ursula** | TTS voice-note generation and release — Sean can produce and send audio clips | `/ursula` |
 | **Tide Pools / Diem** | Quota tracking and provider usage dashboards — visibility into cost and consumption | Usage monitoring |
 | **WatchCatfish / Custom health** | No-LLM health probes, watchdog checks, provider/auth visibility, and node-status surfacing | `/health` |
-| **Twilio SMS** | Custom Twilio SMS plugin for plain-text messaging with completed A2P 10DLC registration | SMS channel |
+| **Twilio SMS path** | Earlier custom plugin work that proved the SMS lane; new setups should use OpenClaw's native Twilio-backed `sms` channel with completed A2P 10DLC registration as our operational proof point | SMS channel |
 | **Anthrometer** | Anthropic usage and metering visibility | Usage tracking |
 | **Shrimp** | Lightweight task-runner dispatch that routes quick jobs away from the main agent loop | `/shrimp` |
 
@@ -87,7 +91,7 @@ These are Sean's custom plugins and extensions — the work that is not default 
 - **QMD and Mac-node reranking:** The MacBook M3 runs a QMD HTTP MCP server (reachable via Tailscale as qmd-mac) with a corpus of ~295 indexed documents. Supports query, hybrid search, and rerank. OpenClaw's memory_search routes to QMD/query when available, falling back to builtin otherwise. Heavy reranking and corpus work offloads to the Mac node. The Mac is an enhancement, not a hard dependency.
 - **Provider mesh:** OpenAI, Anthropic/Claude, Venice, OpenRouter, NVIDIA NIM, Google/Gemini/Antigravity, and Claude CLI/ACPX. The interesting story is routing and fallback breadth, not one default model badge.
 - **Conversation and phone surfaces:** Telegram groups/DMs, Twilio SMS, BlueBubbles/iMessage, Twilio voice calls, TTS voice, buttons/reactions/polls/media/status updates.
-- **Twilio SMS integration:** Plain SMS uses a custom Twilio SMS plugin. BlueBubbles/Mac-node handles iMessage semantics separately. Twilio registration and A2P compliance was a hard-won operational achievement -- the friction of carrier registration, brand verification, and campaign approval is real and worth documenting as future guidance for others setting up agent SMS.
+- **Twilio SMS integration:** Plain SMS now uses OpenClaw's native Twilio-backed `sms` channel. Sean's earlier custom plugin work proved the path, but the public recommendation is to update OpenClaw and use the bundled implementation. BlueBubbles/Mac-node handles iMessage semantics separately. Twilio registration and A2P compliance was a hard-won operational achievement -- the friction of carrier registration, brand verification, public compliance pages, opt-in language, and campaign approval is real and worth documenting for others setting up agent SMS.
 - **VPS core + MacBook edge:** VPS stays autonomous. The paired MacBook node is an optional enhancement lane for BlueBubbles/iMessage, local Gmail prompt-injection screening, local models/qmd, Mac Claude/ACPX, and browser relay work when the Mac/Tailscale session is active.
 - **Knowledge and research storage:** Structured directories under knowledge/ for topic research, procedures, library references, and notes. Distinct from episodic memory -- this is the semantic/reference layer.
 - **Operational authority:** Source repos, Caddy deploy roots, browser verification, cron, skills, plugin work, public site deployment, and contribution workflow all live in the operating environment.
@@ -128,5 +132,6 @@ What not to copy:
 7. **Do not show off default features.** A single model name, ordinary Telegram access, or generic agent capabilities are not differentiators. Prioritize unusual breadth: provider mesh, phone/SMS/iMessage/voice surfaces, MacBook node architecture, real deployment authority, memory discipline, and public contribution receipts.
 8. **No generic swagger.** Avoid vague lines like "runs the room." Use concrete, slightly weird, system-grounded language: wired in, provider mesh, VPS core, Mac edge, public receipts.
 9. **Do not overclaim node availability.** The MacBook node is a paired optional enhancement lane; it may be offline. Describe the architecture without implying it is always connected.
-10. **`/build/` is dead content-wise.** It exists only to redirect. Do not add or update content there.
-11. **This file governs the site.** Edit it when the vision changes — update it before or alongside any structural site changes, not after drift is noticed.
+10. **Native SMS first.** Mention the old Twilio SMS plugin only as history/proof. New setup guidance must direct users to OpenClaw's native `channels.sms`, `openclaw update`, and official docs.
+11. **`/build/` is dead content-wise.** It exists only to redirect. Do not add or update content there.
+12. **This file governs the site.** Edit it when the vision changes — update it before or alongside any structural site changes, not after drift is noticed.
