@@ -35,7 +35,7 @@
       <div class="section-inner">
         <p class="section-kicker">SMS setup</p>
         <h1><span>Texting</span><span>a claw.</span><span>More than</span><span>a webhook.</span></h1>
-        <p class="section-lede">Sean's SMS lane now runs in production on OpenClaw's native Twilio-backed <code>sms</code> channel. The old custom plugin proved the path; the current recommendation is to update OpenClaw and use the official implementation.</p>
+        <p class="section-lede">Sean's SMS lane runs in production on OpenClaw's native Twilio-backed <code>sms</code> channel. Update OpenClaw, enable the bundled <code>channels.sms</code>, and follow the official implementation.</p>
         <div class="hero-actions">
           <a class="button primary" href="https://docs.openclaw.ai/channels/sms">OpenClaw SMS docs</a>
           <a class="button" href="https://docs.openclaw.ai/install/updating">Update OpenClaw</a>
@@ -46,7 +46,7 @@
     <section class="section tight">
       <div class="section-inner">
         <p class="section-kicker">What this page is</p>
-        <h2 class="section-title">The practical path, not the old plugin path.</h2>
+        <h2 class="section-title">The practical native setup path.</h2>
         <div class="status-board">
           <div class="status-row">
             <div class="status-label">Use</div>
@@ -55,12 +55,12 @@
           </div>
           <div class="status-row">
             <div class="status-label">Proof</div>
-            <div class="status-copy">Sean's own setup now has the Twilio SMS webhook probe green on <code>/webhooks/sms</code>, native outbound sending, native inbound replies, and the retired legacy <code>/twilio/sms</code> path returning 410.</div>
+            <div class="status-copy">Sean's own setup has the Twilio SMS webhook probe green on <code>/webhooks/sms</code>, with native outbound sending and native inbound replies verified end-to-end.</div>
             <div class="status-state">Live</div>
           </div>
           <div class="status-row">
             <div class="status-label">Update</div>
-            <div class="status-copy">Start by running <code>openclaw update</code>, then <code>openclaw doctor</code>. The SMS implementation is in the official repo now, so old external-plugin install instructions should not be the default path.</div>
+            <div class="status-copy">Start by running <code>openclaw update</code>, then <code>openclaw doctor</code> so config migrations and channel diagnostics run before Twilio is involved.</div>
             <div class="status-state">First step</div>
           </div>
           <div class="status-row">
@@ -126,7 +126,7 @@
       <div class="section-inner">
         <p class="section-kicker">Config shape</p>
         <h2 class="section-title">Minimal native channel config.</h2>
-        <p class="section-lede">Use the official docs for exact current fields. This is the shape people should recognize, not a legacy plugin install.</p>
+        <p class="section-lede">Use the official docs for the exact current fields. The shape below is what to expect from the native <code>channels.sms</code> block.</p>
         <div class="terminal code-panel" aria-label="Example SMS channel configuration">
           <div class="terminal-bar"><span></span><span></span><span></span></div>
           <pre><code>{
@@ -200,8 +200,8 @@
             <span>SMS is not Telegram. Keep responses short, assume no rich buttons, and expect markdown to be flattened.</span>
           </div>
           <div class="list-item">
-            <strong>Old plugin history</strong>
-            <span>Sean started with a custom Twilio SMS plugin. That work matters as a proof point, but the runtime has moved to native <code>channels.sms</code>; keep old plugin links as history, not setup instructions.</span>
+            <strong>Historical note</strong>
+            <span>Sean's SMS lane originally ran on a custom Twilio plugin; that work proved the path before OpenClaw shipped native <code>channels.sms</code>. If you see old plugin install instructions elsewhere, treat them as history, not setup guidance.</span>
           </div>
         </div>
       </div>

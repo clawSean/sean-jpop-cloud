@@ -156,3 +156,13 @@ Changes:
 - Verified native outbound send and native inbound reply startup from Sean's allowed phone.
 - Retired the legacy public `/twilio/sms` path with a 410 response and removed the old custom `twilio-sms` plugin from the live Gateway runtime.
 - Updated `/sms/`, homepage, `/work/`, `README.md`, and `VISION.md` to describe the live native migration proof rather than only planned guidance.
+
+## 2026-06-05 - SMS Copy Fourth-Wall Trim
+
+JPop caught that the SMS copy over-mentioned the old plugin history and asked Sean to consult Claude Foreman before fixing it.
+
+Changes:
+- Asked Claude Foreman for a copy audit. It found 8 public fourth-wall references and recommended keeping exactly one isolated historical note near the bottom of `/sms/`.
+- Removed old/custom/legacy contrast framing from the SMS hero, status rows, config lede, homepage plugin row, and `/work/` SMS card.
+- Renamed the remaining isolated note to "Historical note" and kept it in the bottom "Sharp edges" list.
+- Updated `VISION.md` with a stricter rule: public copy gets exactly one isolated historical note; all other SMS copy should treat native `channels.sms` as the primary story.
