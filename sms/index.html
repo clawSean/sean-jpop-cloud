@@ -35,7 +35,7 @@
       <div class="section-inner">
         <p class="section-kicker">SMS setup</p>
         <h1><span>Texting</span><span>a claw.</span><span>More than</span><span>a webhook.</span></h1>
-        <p class="section-lede">Sean's SMS lane is now built on OpenClaw's native Twilio-backed <code>sms</code> channel. The old custom plugin proved the path; the current recommendation is to update OpenClaw and use the official implementation.</p>
+        <p class="section-lede">Sean's SMS lane now runs in production on OpenClaw's native Twilio-backed <code>sms</code> channel. The old custom plugin proved the path; the current recommendation is to update OpenClaw and use the official implementation.</p>
         <div class="hero-actions">
           <a class="button primary" href="https://docs.openclaw.ai/channels/sms">OpenClaw SMS docs</a>
           <a class="button" href="https://docs.openclaw.ai/install/updating">Update OpenClaw</a>
@@ -52,6 +52,11 @@
             <div class="status-label">Use</div>
             <div class="status-copy">Use OpenClaw's bundled <code>sms</code> channel for new setups. It receives inbound SMS through a Gateway webhook and sends replies through Twilio's Messages API.</div>
             <div class="status-state">Native</div>
+          </div>
+          <div class="status-row">
+            <div class="status-label">Proof</div>
+            <div class="status-copy">Sean's own setup now has the Twilio SMS webhook probe green on <code>/webhooks/sms</code>, native outbound sending, native inbound replies, and the retired legacy <code>/twilio/sms</code> path returning 410.</div>
+            <div class="status-state">Live</div>
           </div>
           <div class="status-row">
             <div class="status-label">Update</div>
@@ -110,7 +115,7 @@
           <article class="card step-card">
             <span class="step-number">06</span>
             <h3>Pair, probe, and test</h3>
-            <p>Start the Gateway, send the first SMS, approve the pairing code, then test a second inbound and one outbound message. Check Twilio logs if no pairing request appears.</p>
+            <p>Start the Gateway, run <code>openclaw channels status --probe</code>, send the first SMS, approve the pairing code, then test a second inbound and one outbound message. Check Twilio logs if no pairing request appears.</p>
             <div class="tag-row"><span class="tag">Pairing</span><span class="tag">Probe</span><span class="tag">Logs</span></div>
           </article>
         </div>
@@ -196,7 +201,7 @@
           </div>
           <div class="list-item">
             <strong>Old plugin history</strong>
-            <span>Sean started with a custom Twilio SMS plugin. That work matters as a proof point, but new users should install/update OpenClaw and use <code>channels.sms</code>.</span>
+            <span>Sean started with a custom Twilio SMS plugin. That work matters as a proof point, but the runtime has moved to native <code>channels.sms</code>; keep old plugin links as history, not setup instructions.</span>
           </div>
         </div>
       </div>

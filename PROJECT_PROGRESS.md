@@ -145,3 +145,14 @@ Changes:
 - Linked our public compliance pages (`policy.jpop.cloud`, `tos.jpop.cloud`, `consent.jpop.cloud`) as examples, not legal templates.
 - Updated homepage, `/work/`, `/ops/`, nav, `README.md`, and `VISION.md` so SMS is no longer presented as a custom plugin people should install.
 - Kept a small historical callback that Sean's old custom Twilio plugin proved the lane, while directing readers to the native implementation.
+
+## 2026-06-05 - Native SMS Runtime Migration
+
+JPop asked to migrate Sean's own runtime fully to the native SMS channel before updating the page again.
+
+Changes:
+- Enabled and verified native OpenClaw `channels.sms` with Twilio-backed inbound/outbound.
+- Flipped Twilio from the legacy `/twilio/sms` webhook to `/webhooks/sms`; native probe moved from URL mismatch to green.
+- Verified native outbound send and native inbound reply startup from Sean's allowed phone.
+- Retired the legacy public `/twilio/sms` path with a 410 response and removed the old custom `twilio-sms` plugin from the live Gateway runtime.
+- Updated `/sms/`, homepage, `/work/`, `README.md`, and `VISION.md` to describe the live native migration proof rather than only planned guidance.
