@@ -204,6 +204,16 @@
             <span>Sean's SMS lane originally ran on a custom Twilio plugin; that work proved the path before OpenClaw shipped native <code>channels.sms</code>. If you see old plugin install instructions elsewhere, treat them as history, not setup guidance.</span>
           </div>
         </div>
+        <div class="note-band">
+          <strong>SMS receipts</strong>
+          <span>
+            <a href="https://github.com/openclaw/openclaw/issues/85857">Original SMS RFC #85857</a> proposed Twilio-backed SMS as an official OpenClaw text channel.
+            <a href="https://github.com/openclaw/openclaw/pull/88601">Merged follow-up #88601</a> fixed proof-discovered native SMS behavior.
+            <a href="https://github.com/openclaw/openclaw/pull/88743">A2P docs PR #88743</a> captures the carrier-delivery lessons.
+            <a href="https://github.com/openclaw/openclaw/pull/90998">SMS command auth PR #90998</a> tracks the current text-command fix.
+            The maintainer native channel landed in <a href="https://github.com/openclaw/openclaw/pull/88476">#88476</a>.
+          </span>
+        </div>
       </div>
     </section>
   </main>

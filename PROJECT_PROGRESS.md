@@ -166,3 +166,12 @@ Changes:
 - Removed old/custom/legacy contrast framing from the SMS hero, status rows, config lede, homepage plugin row, and `/work/` SMS card.
 - Renamed the remaining isolated note to "Historical note" and kept it in the bottom "Sharp edges" list.
 - Updated `VISION.md` with a stricter rule: public copy gets exactly one isolated historical note; all other SMS copy should treat native `channels.sms` as the primary story.
+
+## 2026-06-06 - SMS Contribution Receipts
+
+JPop asked to add links to the public SMS contribution trail and the original SMS proposal, grouped near the bottom of the website instead of scattered through the copy.
+
+Changes:
+- Added a bottom-of-page SMS receipts band to `/sms/` linking the original RFC #85857, merged follow-up #88601, A2P docs PR #88743, current command-auth PR #90998, and upstream native-channel PR #88476.
+- Added an `/contributions/` list item for OpenClaw SMS channel work, including the guarded egress PR #88515 and the same public trail.
+- Updated `VISION.md` and `README.md` so future edits keep SMS receipts grouped and visible.

@@ -53,7 +53,7 @@ A clear path through the concrete things Sean has built and shipped. This is the
 The guide for people who want to set up SMS themselves. It should direct new users to the official native OpenClaw SMS channel, recommend `openclaw update` before setup, point to official OpenClaw SMS/update docs, and show our public compliance pages as examples. Keep old plugin history to one isolated note near the bottom of `/sms/`; never put it in hero, status, Work, or homepage copy.
 
 ### `/contributions/` — Validated Published Contributions
-The receipts. Every merged PR, credited fix, and public contribution with links. slacrawl is surfaced prominently — it's a clean, merged, three-PR series that demonstrates real open-source contribution quality. OpenClaw core, mcporter, CodexBar, and NadirClaw round it out.
+The receipts. Every merged PR, credited fix, proposal worth keeping on the public record, and public contribution with links. slacrawl is surfaced prominently — it's a clean, merged, three-PR series that demonstrates real open-source contribution quality. OpenClaw core, OpenClaw SMS channel work, mcporter, CodexBar, and NadirClaw round it out.
 
 ### `/ops/` — Supporting Infrastructure + Architecture Notes
 VPS hosting, Caddy routing, deployment discipline, browser tooling, MacBook node architecture, safety boundaries, and lightweight startup/product architecture suggestions. This is supporting material that shows how Sean runs and how the pattern could become a product — important context, but not the main pitch. It backs up the showcase; it doesn't lead it.
@@ -65,6 +65,7 @@ Points visitors to `/work/` and `/contributions/`. Kept so old links and bookmar
 
 - **slacrawl**: Merged PRs #19 (analytics trends flake fix), #20 (exclude_channels config), #21 (auto_join config) — vincentkoc/slacrawl
 - **OpenClaw core**: Slack thread handling (PR #56606), DM route scoping (PR #73085), Telegram URL buttons (PR #76264)
+- **OpenClaw SMS channel work**: Original SMS RFC #85857, guarded Twilio egress PR #88515, merged proof follow-up PR #88601, A2P docs PR #88743, SMS command auth PR #90998, and upstream native channel context PR #88476
 - **mcporter**: PR #163 — daemon retry diagnostics kept off JSON stdout
 - **CodexBar**: PR #865 — Venice API balance support; Sean/JPop listed as official contributors
 - **NadirClaw**: PR #50 — configurable embedding backends with positive maintainer review

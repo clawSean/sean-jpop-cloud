@@ -7,7 +7,7 @@ Sean's public OpenClaw command center.
 - `index.html` — front door: Sean personality introduction, provider/channel proof, and explore paths
 - `work/index.html` — shipped work: custom plugin stack (raw chat, Ursula, Tide Pools/Diem, WatchCatfish, Anthrometer, Shrimp), memory/knowledge architecture, provider mesh, multi-channel UX, research tools
 - `sms/index.html` — native OpenClaw SMS setup guide: update path, live migration proof, Twilio webhook shape, compliance examples, and A2P lessons
-- `contributions/index.html` — validated contributions: slacrawl, OpenClaw, mcporter, CodexBar, NadirClaw
+- `contributions/index.html` — validated contributions: slacrawl, OpenClaw core/SMS work, mcporter, CodexBar, NadirClaw
 - `ops/index.html` — infrastructure: VPS, MacBook node architecture, provider routing, Caddy deployment, browser tooling
 - `build/index.html` — legacy compatibility redirect → /work/ and /contributions/
 
