@@ -82,6 +82,13 @@ a {
   border: 1px solid rgba(224, 195, 143, 0.34);
   border-radius: 50%;
   background: rgba(191, 32, 45, 0.2);
+  overflow: hidden;
+}
+
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .nav-links {
@@ -133,7 +140,7 @@ a {
   inset: 0;
   z-index: -2;
   background-image:
-    linear-gradient(90deg, rgba(9, 11, 12, 0.48), rgba(9, 11, 12, 0.72) 44%, rgba(9, 11, 12, 0.2)),
+    linear-gradient(90deg, rgba(9, 11, 12, 0.52), rgba(9, 11, 12, 0.76) 44%, rgba(9, 11, 12, 0.1)),
     linear-gradient(180deg, rgba(9, 11, 12, 0.06), var(--bg) 94%),
     url("assets/sean-command-center-hero.webp");
   background-size: cover;
@@ -281,6 +288,40 @@ h1 {
   margin-top: 10px;
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+.identity-section {
+  padding: 58px 0 72px;
+  background:
+    linear-gradient(135deg, rgba(87, 216, 201, 0.13), transparent 34%),
+    linear-gradient(180deg, rgba(191, 32, 45, 0.08), transparent 72%);
+}
+
+.identity-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+  gap: 34px;
+  align-items: center;
+}
+
+.identity-copy .section-title {
+  width: min(700px, 100%);
+}
+
+.profile-photo-wrap {
+  margin: 0;
+  justify-self: end;
+  width: min(360px, 100%);
+}
+
+.profile-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 1px solid rgba(224, 195, 143, 0.5);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
 }
 
 main {
@@ -595,7 +636,7 @@ main {
   }
 
   .hero::before {
-    background-position: 58% center;
+    background-position: 64% center;
   }
 
   .hero-inner {
@@ -608,11 +649,17 @@ main {
   }
 
   .proof-strip,
+  .identity-inner,
   .grid,
   .grid.two,
   .pathways,
   .pathways.three {
     grid-template-columns: 1fr;
+  }
+
+  .profile-photo-wrap {
+    justify-self: start;
+    width: min(260px, 78vw);
   }
 
   .status-row,
