@@ -232,6 +232,45 @@ h1 {
   margin-top: 28px;
 }
 
+.creation-mark {
+  width: min(360px, 58vw);
+  margin-top: 30px;
+  opacity: 0.82;
+  filter: drop-shadow(0 0 18px rgba(87, 216, 201, 0.22));
+}
+
+.creation-mark svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hand-line {
+  fill: none;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hand-line-gold {
+  stroke: rgba(224, 195, 143, 0.74);
+}
+
+.hand-line-teal {
+  stroke: rgba(87, 216, 201, 0.68);
+}
+
+.creation-spark {
+  fill: var(--gold);
+  filter: drop-shadow(0 0 10px rgba(224, 195, 143, 0.86));
+}
+
+.creation-spark-soft {
+  fill: rgba(87, 216, 201, 0.16);
+  stroke: rgba(87, 216, 201, 0.42);
+  stroke-width: 1;
+}
+
 .button {
   min-height: 46px;
   display: inline-flex;
@@ -708,6 +747,11 @@ main {
 
   .hero-copy {
     width: min(330px, 100%);
+  }
+
+  .creation-mark {
+    width: min(280px, 100%);
+    margin-top: 22px;
   }
 
   h1 {
