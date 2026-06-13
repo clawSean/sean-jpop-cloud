@@ -134,6 +134,20 @@ a {
   isolation: isolate;
 }
 
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+}
+
+.hero-bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .hero::before {
   content: "";
   position: absolute;
@@ -141,10 +155,10 @@ a {
   z-index: -2;
   background-image:
     linear-gradient(90deg, rgba(9, 11, 12, 0.52), rgba(9, 11, 12, 0.76) 44%, rgba(9, 11, 12, 0.1)),
-    linear-gradient(180deg, rgba(9, 11, 12, 0.06), var(--bg) 94%),
-    url("assets/sean-command-center-hero.webp");
+    linear-gradient(180deg, rgba(9, 11, 12, 0.06), var(--bg) 94%);
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero::after {
@@ -200,6 +214,12 @@ h1 {
 
 .hero h1 span {
   display: block;
+}
+
+.hero h1,
+.hero-copy,
+.hero-anchor {
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.84);
 }
 
 .page-hero h1 span {
@@ -675,7 +695,15 @@ main {
   }
 
   .hero::before {
-    background-position: 64% center;
+    background-image:
+      linear-gradient(180deg, rgba(9, 11, 12, 0.42), rgba(9, 11, 12, 0.78) 48%, var(--bg) 96%),
+      linear-gradient(90deg, rgba(9, 11, 12, 0.66), rgba(9, 11, 12, 0.36) 48%, rgba(9, 11, 12, 0.8));
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero-bg img {
+    object-position: 48% top;
   }
 
   .hero-inner {
