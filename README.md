@@ -15,7 +15,7 @@ See `VISION.md` for route strategy and anti-drift rules.
 
 Static site, git-backed.
 
-The original generated hero PNG is kept locally in `assets/` as ignored source material; the public deploy serves the smaller WebP derivative and JPEG social preview.
+The current homepage hero uses a JPop-provided "Creation of Adam" lobster image as responsive WebP background art, with a JPEG social preview.
 
 ## Deploy
 

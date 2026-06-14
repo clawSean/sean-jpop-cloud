@@ -127,11 +127,14 @@ a {
 
 .hero {
   position: relative;
-  min-height: 82svh;
+  min-height: 86svh;
   display: grid;
   align-items: end;
   overflow: hidden;
   isolation: isolate;
+  background:
+    radial-gradient(circle at 16% 26%, rgba(191, 32, 45, 0.22), transparent 24%),
+    linear-gradient(180deg, #17130e 0%, var(--bg) 88%);
 }
 
 .hero-bg {
@@ -145,7 +148,8 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
+  filter: saturate(1.08) contrast(1.06);
 }
 
 .hero::before {
@@ -154,8 +158,8 @@ a {
   inset: 0;
   z-index: -2;
   background-image:
-    linear-gradient(90deg, rgba(9, 11, 12, 0.52), rgba(9, 11, 12, 0.76) 44%, rgba(9, 11, 12, 0.1)),
-    linear-gradient(180deg, rgba(9, 11, 12, 0.06), var(--bg) 94%);
+    linear-gradient(90deg, rgba(9, 11, 12, 0.8), rgba(9, 11, 12, 0.56) 36%, rgba(9, 11, 12, 0.24) 68%, rgba(9, 11, 12, 0.5)),
+    linear-gradient(180deg, rgba(9, 11, 12, 0.05), rgba(9, 11, 12, 0.34) 45%, var(--bg) 96%);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -166,11 +170,10 @@ a {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-image:
-    linear-gradient(rgba(224, 195, 143, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(224, 195, 143, 0.04) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: linear-gradient(180deg, rgba(0,0,0,0.7), transparent 72%);
+  background:
+    radial-gradient(circle at 46% 33%, rgba(224, 195, 143, 0.13), transparent 16%),
+    linear-gradient(180deg, rgba(224, 195, 143, 0.08), transparent 38%);
+  mask-image: linear-gradient(180deg, rgba(0,0,0,0.62), transparent 76%);
 }
 
 .hero-inner,
@@ -180,7 +183,7 @@ a {
 }
 
 .hero-inner {
-  padding: 118px 0 78px;
+  padding: 35svh 0 70px;
 }
 
 .eyebrow {
@@ -210,6 +213,12 @@ h1 {
   line-height: 0.86;
   letter-spacing: 0;
   overflow-wrap: anywhere;
+}
+
+.hero h1 {
+  width: min(760px, 100%);
+  font-size: clamp(3rem, 6vw, 5.4rem);
+  line-height: 0.92;
 }
 
 .hero h1 span {
@@ -250,45 +259,6 @@ h1 {
   gap: 12px;
   flex-wrap: wrap;
   margin-top: 28px;
-}
-
-.creation-mark {
-  width: min(360px, 58vw);
-  margin-top: 30px;
-  opacity: 0.82;
-  filter: drop-shadow(0 0 18px rgba(87, 216, 201, 0.22));
-}
-
-.creation-mark svg {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.hand-line {
-  fill: none;
-  stroke-width: 6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.hand-line-gold {
-  stroke: rgba(224, 195, 143, 0.74);
-}
-
-.hand-line-teal {
-  stroke: rgba(87, 216, 201, 0.68);
-}
-
-.creation-spark {
-  fill: var(--gold);
-  filter: drop-shadow(0 0 10px rgba(224, 195, 143, 0.86));
-}
-
-.creation-spark-soft {
-  fill: rgba(87, 216, 201, 0.16);
-  stroke: rgba(87, 216, 201, 0.42);
-  stroke-width: 1;
 }
 
 .button {
@@ -691,28 +661,33 @@ main {
   }
 
   .hero {
-    min-height: 74svh;
+    min-height: 100svh;
   }
 
   .hero::before {
     background-image:
-      linear-gradient(180deg, rgba(9, 11, 12, 0.42), rgba(9, 11, 12, 0.78) 48%, var(--bg) 96%),
-      linear-gradient(90deg, rgba(9, 11, 12, 0.66), rgba(9, 11, 12, 0.36) 48%, rgba(9, 11, 12, 0.8));
+      linear-gradient(180deg, rgba(9, 11, 12, 0.02) 0%, rgba(9, 11, 12, 0.14) 23%, rgba(9, 11, 12, 0.86) 42%, var(--bg) 92%),
+      linear-gradient(90deg, rgba(9, 11, 12, 0.24), rgba(9, 11, 12, 0.1) 48%, rgba(9, 11, 12, 0.34));
     background-size: cover;
     background-position: center;
   }
 
   .hero-bg img {
-    object-position: 48% top;
+    object-position: center top;
   }
 
   .hero-inner {
-    padding-top: 150px;
+    padding-top: 48svh;
   }
 
   h1 {
     font-size: clamp(2.6rem, 14vw, 4.6rem);
     line-height: 0.92;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 12vw, 4rem);
+    line-height: 0.95;
   }
 
   .proof-strip,
@@ -777,14 +752,13 @@ main {
     width: min(330px, 100%);
   }
 
-  .creation-mark {
-    width: min(280px, 100%);
-    margin-top: 22px;
-  }
-
   h1 {
     font-size: clamp(2.45rem, 13vw, 3.35rem);
     line-height: 0.95;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.25rem, 10.6vw, 3rem);
   }
 
   .page-hero h1 {
@@ -796,7 +770,7 @@ main {
   }
 
   .hero-inner {
-    padding-top: 136px;
+    padding-top: max(46svh, 330px);
     padding-bottom: 44px;
   }
 
