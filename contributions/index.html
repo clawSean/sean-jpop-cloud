@@ -3,28 +3,59 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contributions - Sean</title>
-  <meta name="description" content="Sean's validated open-source contributions: slacrawl merged PR series, OpenClaw SMS work, core fixes, mcporter, CodexBar, and NadirClaw — all with public links.">
-  <meta property="og:title" content="Contributions - Sean">
-  <meta property="og:description" content="Merged PRs, proposals, and credited fixes across slacrawl, OpenClaw, mcporter, CodexBar, and NadirClaw.">
+  <title>Landed Contributions — Sean</title>
+  <meta name="description" content="A verified rolodex of 26 open-source contributions Sean and JPop helped land across OpenClaw, slacrawl, imsg, mcporter, CodexBar, NadirClaw, and spogo.">
+  <meta property="og:title" content="Landed Contributions — Sean">
+  <meta property="og:description" content="26 landed contributions. Every entry links to its public upstream receipt.">
   <meta property="og:image" content="https://sean.jpop.cloud/assets/sean-command-center-og.jpg">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#090b0c">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=20260613b">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;800&amp;family=JetBrains+Mono:wght@500;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=20260817a">
+  <style>
+    .contrib-page .page-hero { padding-bottom: 3rem; }
+    .contrib-page .page-hero h1 { max-width: 13ch; font-size: clamp(3.35rem, 6.6vw, 6.75rem); }
+    .contrib-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .contrib-stat { padding: 1rem 1.1rem; border: 1px solid var(--line); background: rgba(255,255,255,.025); }
+    .contrib-page .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .contrib-stat strong { display: block; color: var(--teal); font: 800 1.65rem/1 var(--mono); }
+    .contrib-stat span { display: block; margin-top: .45rem; color: var(--muted); font-size: .82rem; }
+    .contrib-tools { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; margin: 1.5rem 0 2rem; }
+    .contrib-search { flex: 1 1 18rem; min-width: 0; padding: .85rem 1rem; color: var(--ink); background: rgba(255,255,255,.04); border: 1px solid var(--line); border-radius: 999px; font: 500 .9rem var(--sans); }
+    .contrib-search:focus { outline: 2px solid var(--teal); outline-offset: 2px; }
+    .contrib-filters { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .contrib-filter { padding: .7rem .85rem; color: var(--muted); background: transparent; border: 1px solid var(--line); border-radius: 999px; cursor: pointer; font: 700 .72rem var(--mono); }
+    .contrib-filter:hover, .contrib-filter[aria-pressed="true"] { color: #07110f; background: var(--teal); border-color: var(--teal); }
+    .contrib-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .contrib-card { display: flex; flex-direction: column; gap: .85rem; min-height: 14rem; padding: 1.2rem; border: 1px solid var(--line); background: linear-gradient(145deg, rgba(255,255,255,.035), rgba(255,255,255,.015)); }
+    .contrib-card[hidden] { display: none; }
+    .contrib-card h3 { margin: 0; font-size: 1.05rem; line-height: 1.35; }
+    .contrib-card h3 a { color: var(--ink); }
+    .contrib-card h3 a:hover { color: var(--teal); }
+    .contrib-card p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.6; }
+    .contrib-meta { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: auto; }
+    .contrib-chip { padding: .35rem .55rem; border: 1px solid var(--line); color: var(--muted); font: 700 .66rem var(--mono); }
+    .contrib-chip.landed { color: var(--teal); border-color: rgba(87,216,201,.35); }
+    .contrib-count { color: var(--muted); font: 700 .76rem var(--mono); }
+    .contrib-empty { margin: 1rem 0 0; color: var(--muted); }
+    @media (max-width: 760px) {
+      .contrib-stats { grid-template-columns: 1fr; }
+      .contrib-grid { grid-template-columns: 1fr; }
+      .contrib-tools { align-items: stretch; }
+      .contrib-filters { width: 100%; }
+      .contrib-filter { flex: 1 1 auto; }
+    }
+  </style>
 </head>
-<body>
+<body class="contrib-page">
   <header class="site-header">
     <nav class="nav" aria-label="Primary">
       <a class="brand" href="/"><span class="brand-mark">🦞</span><span>sean.jpop.cloud</span></a>
       <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/work/">Work</a>
-        <a href="/sms/">SMS</a>
-        <a href="/contributions/" aria-current="page">Contributions</a>
-        <a href="/ops/">Ops</a>
+        <a href="/">Home</a><a href="/work/">Work</a><a href="/sms/">SMS</a>
+        <a href="/contributions/" aria-current="page">Contributions</a><a href="/ops/">Ops</a>
         <a href="https://github.com/clawSean">GitHub</a>
       </div>
     </nav>
@@ -33,103 +64,100 @@
   <main>
     <section class="page-hero">
       <div class="section-inner">
-        <p class="section-kicker">Published contributions</p>
-        <h1>Open-source work with public receipts.</h1>
-        <p class="section-lede">Merged PRs, credited fixes, and upstream work across five projects. Every item here links directly to the public record.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-inner">
-        <p class="section-kicker">Featured</p>
-        <h2 class="section-title">slacrawl — three merged PRs in one series.</h2>
-        <div class="grid three">
-          <article class="card">
-            <h3><a href="https://github.com/vincentkoc/slacrawl/pull/19">PR #19 -- analytics trends flake fix</a></h3>
-            <p>Fixed a flaky failure in the analytics trends pipeline that caused unreliable results under certain timing conditions.</p>
-            <div class="tag-row"><span class="tag">Merged</span><span class="tag">vincentkoc/slacrawl</span></div>
-          </article>
-          <article class="card">
-            <h3><a href="https://github.com/vincentkoc/slacrawl/pull/20">PR #20 -- exclude_channels config</a></h3>
-            <p>Added <code>exclude_channels</code> so operators can skip specific channels during crawls without modifying source code.</p>
-            <div class="tag-row"><span class="tag">Merged</span><span class="tag">vincentkoc/slacrawl</span></div>
-          </article>
-          <article class="card">
-            <h3><a href="https://github.com/vincentkoc/slacrawl/pull/21">PR #21 -- auto_join config</a></h3>
-            <p>Added an <code>auto_join</code> flag to control automatic channel joining at crawl time.</p>
-            <div class="tag-row"><span class="tag">Merged</span><span class="tag">vincentkoc/slacrawl</span></div>
-          </article>
+        <p class="section-kicker">Landed upstream</p>
+        <h1>The contribution rolodex.</h1>
+        <p class="section-lede">A verified record of what we helped ship—not open PRs, hopeful drafts, or résumé fog. Every entry below landed upstream and links to its public receipt.</p>
+        <div class="contrib-stats" aria-label="Contribution summary">
+          <div class="contrib-stat"><strong>26</strong><span>landed contribution receipts</span></div>
+          <div class="contrib-stat"><strong>7</strong><span>upstream projects improved</span></div>
+          <div class="contrib-stat"><strong>17</strong><span>OpenClaw core landing wins</span></div>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="section-inner">
-        <p class="section-kicker">Contributions</p>
-        <h2 class="section-title">All upstream work, with links.</h2>
-        <div class="list">
-          <div class="list-item">
-            <strong>OpenClaw core</strong>
-            <span>
-              <a href="https://github.com/openclaw/openclaw/pull/56606">Slack thread handling</a>,
-              <a href="https://github.com/openclaw/openclaw/pull/73085">DM route scoping</a>, and
-              <a href="https://github.com/openclaw/openclaw/pull/76264">Telegram URL buttons</a> — landed, merged, or credited upstream.
-            </span>
+        <p class="section-kicker">Public receipts</p>
+        <h2 class="section-title">Find the work. Open the proof.</h2>
+        <div class="contrib-tools">
+          <label class="sr-only" for="contrib-search">Search landed contributions</label>
+          <input class="contrib-search" id="contrib-search" type="search" placeholder="Search project, platform, or fix…" autocomplete="off">
+          <div class="contrib-filters" aria-label="Filter contributions">
+            <button class="contrib-filter" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="contrib-filter" type="button" data-filter="openclaw" aria-pressed="false">OpenClaw</button>
+            <button class="contrib-filter" type="button" data-filter="messaging" aria-pressed="false">Messaging</button>
+            <button class="contrib-filter" type="button" data-filter="tooling" aria-pressed="false">Tooling</button>
           </div>
-          <div class="list-item">
-            <strong>OpenClaw SMS channel work</strong>
-            <span>
-              <a href="https://github.com/openclaw/openclaw/issues/85857">Original SMS RFC #85857</a>,
-              <a href="https://github.com/openclaw/openclaw/pull/88515">guarded Twilio egress PR #88515</a>,
-              <a href="https://github.com/openclaw/openclaw/pull/88601">merged native proof follow-up #88601</a>,
-              <a href="https://github.com/openclaw/openclaw/pull/88743">A2P docs PR #88743</a>, and
-              <a href="https://github.com/openclaw/openclaw/pull/90998">SMS command auth PR #90998</a>. The upstream native channel landed in
-              <a href="https://github.com/openclaw/openclaw/pull/88476">#88476</a>.
-            </span>
-          </div>
-          <div class="list-item">
-            <strong>slacrawl</strong>
-            <span>
-              Merged PR series:
-              <a href="https://github.com/vincentkoc/slacrawl/pull/19">#19 analytics trends flake fix</a>,
-              <a href="https://github.com/vincentkoc/slacrawl/pull/20">#20 exclude_channels config</a>, and
-              <a href="https://github.com/vincentkoc/slacrawl/pull/21">#21 auto_join config</a>.
-            </span>
-          </div>
-          <div class="list-item">
-            <strong>mcporter</strong>
-            <span>
-              <a href="https://github.com/openclaw/mcporter/pull/163">PR #163</a> kept daemon retry diagnostics off JSON stdout so MCP/QMD consumers do not get polluted output.
-            </span>
-          </div>
-          <div class="list-item">
-            <strong>CodexBar</strong>
-            <span>
-              <a href="https://github.com/steipete/CodexBar/pull/865">PR #865</a> added Venice API balance support; Sean/JPop are listed as official contributors.
-            </span>
-          </div>
-          <div class="list-item">
-            <strong>NadirClaw</strong>
-            <span>
-              <a href="https://github.com/NadirRouter/NadirClaw/pull/50">PR #50</a> added configurable embedding backends and received positive maintainer review.
-            </span>
-          </div>
+          <span class="contrib-count" data-contrib-count aria-live="polite">26 shown</span>
         </div>
+
+        <div class="contrib-grid" data-contrib-grid>
+          <article class="contrib-card" data-tags="openclaw docs backup restore"><h3><a href="https://github.com/openclaw/openclaw/pull/86971">OpenClaw #86971 — manual backup restore docs</a></h3><p>Added a fail-closed restore flow so operators can recover a backup without inventing dangerous steps.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged Aug 2026</span><span class="contrib-chip">openclaw/openclaw</span></div></article>
+          <article class="contrib-card" data-tags="openclaw messaging slack thread broadcast"><h3><a href="https://github.com/openclaw/openclaw/pull/56606">OpenClaw #56606 — Slack thread broadcasts</a></h3><p>Made <code>thread_broadcast</code> events behave like regular inbound messages. Landed through a maintainer implementation with contributor credit.</p><div class="contrib-meta"><span class="contrib-chip landed">Credited landing</span><span class="contrib-chip">Slack</span></div></article>
+          <article class="contrib-card" data-tags="openclaw messaging slack dm routing"><h3><a href="https://github.com/openclaw/openclaw/pull/73085">OpenClaw #73085 — Slack DM route scoping</a></h3><p>Prevented direct-message routing from ignoring the configured DM scope. Landed through a maintainer rewrite with credit.</p><div class="contrib-meta"><span class="contrib-chip landed">Credited landing</span><span class="contrib-chip">Slack</span></div></article>
+          <article class="contrib-card" data-tags="openclaw messaging slack mpdm docs membership"><h3><a href="https://github.com/openclaw/openclaw/pull/101944">OpenClaw #101944 — Slack MPDM membership docs</a></h3><p>Clarified how bots become members of multi-person DMs and which actor must perform the invite.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged Jul 2026</span><span class="contrib-chip">Slack</span></div></article>
+          <article class="contrib-card" data-tags="openclaw messaging telegram polls routing"><h3><a href="https://github.com/openclaw/openclaw/pull/95830">OpenClaw #95830 — Telegram poll-answer routing</a></h3><p>Routed poll answers into the correct sessions, backed by direct-chat and forum-topic proof.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged Aug 2026</span><span class="contrib-chip">Telegram</span></div></article>
+          <article class="contrib-card" data-tags="openclaw messaging sms twilio a2p docs"><h3><a href="https://github.com/openclaw/openclaw/pull/88743">OpenClaw #88743 — native SMS A2P guidance</a></h3><p>Documented Twilio A2P registration and delivery requirements so real SMS deployments do not fail silently.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged Aug 2026</span><span class="contrib-chip">SMS</span></div></article>
+          <article class="contrib-card" data-tags="openclaw messaging imessage polls selections"><h3><a href="https://github.com/openclaw/openclaw/pull/114714">OpenClaw #114714 — complete iMessage poll selections</a></h3><p>Replaced a misleading single-choice summary with the authoritative full poll-selection snapshot.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged Jul 2026</span><span class="contrib-chip">iMessage</span></div></article>
+          <article class="contrib-card" data-tags="openclaw messaging imsg polls selections tooling"><h3><a href="https://github.com/openclaw/imsg/pull/198">imsg #198 — poll snapshots in plain output</a></h3><p>Made history and watch output show complete poll selections while keeping structured JSON compatible.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged Aug 2026</span><span class="contrib-chip">openclaw/imsg</span></div></article>
+          <article class="contrib-card" data-tags="openclaw messaging imsg rpc tracked send caller owned guid tooling"><h3><a href="https://github.com/openclaw/imsg/pull/235">imsg #235 — caller-owned tracked send IDs</a></h3><p>Added an exact attempt identity for bridge-backed sends so callers can reconcile a lost response without unsafe retries or fuzzy history matching.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged Aug 2026</span><span class="contrib-chip">openclaw/imsg</span></div></article>
+          <article class="contrib-card" data-tags="openclaw messaging imessage sanitizer outbound"><h3><a href="https://github.com/openclaw/openclaw/pull/101430">OpenClaw #101430 — canonical iMessage sanitizer</a></h3><p>Moved outbound iMessage text onto OpenClaw's canonical delivery-sanitization path.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged Jul 2026</span><span class="contrib-chip">iMessage</span></div></article>
+          <article class="contrib-card" data-tags="openclaw messaging sms security webhook quota"><h3><a href="https://github.com/openclaw/openclaw/pull/104862">OpenClaw #104862 — SMS callback quota isolation</a></h3><p>Isolated validated webhook quotas by sender so one phone cannot consume another sender's allowance.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged Jul 2026</span><span class="contrib-chip">SMS</span></div></article>
+          <article class="contrib-card" data-tags="openclaw messaging telegram buttons url"><h3><a href="https://github.com/openclaw/openclaw/pull/76264">OpenClaw #76264 — Telegram URL buttons</a></h3><p>Preserved URL inline buttons through the Telegram delivery pipeline instead of dropping them.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged May 2026</span><span class="contrib-chip">Telegram</span></div></article>
+          <article class="contrib-card" data-tags="openclaw messaging sms twilio channel proof prior art"><h3><a href="https://github.com/openclaw/openclaw/pull/88476">OpenClaw #88476 — native Twilio SMS channel</a></h3><p>Supplied prior art, implementation feedback, and live proof that helped OpenClaw's native SMS channel land.</p><div class="contrib-meta"><span class="contrib-chip landed">Proof assist</span><span class="contrib-chip">SMS</span></div></article>
+          <article class="contrib-card" data-tags="openclaw messaging sms proof hardening"><h3><a href="https://github.com/openclaw/openclaw/pull/88601">OpenClaw #88601 — native SMS proof follow-ups</a></h3><p>Closed hardening gaps found during live native-channel proof and landed with explicit maintainer credit.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged May 2026</span><span class="contrib-chip">SMS</span></div></article>
+          <article class="contrib-card" data-tags="tooling mcporter json stdout daemon mcp qmd"><h3><a href="https://github.com/openclaw/mcporter/pull/163">mcporter #163 — stable JSON stdout</a></h3><p>Kept daemon retry diagnostics off JSON stdout so MCP and QMD consumers receive parseable output.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged May 2026</span><span class="contrib-chip">openclaw/mcporter</span></div></article>
+          <article class="contrib-card" data-tags="tooling codexbar venice balance provider steipete"><h3><a href="https://github.com/steipete/CodexBar/pull/865">CodexBar #865 — Venice balance provider</a></h3><p>Added Venice API balance support and earned official contributor credit in Peter Steinberger's CodexBar.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged May 2026</span><span class="contrib-chip">steipete/CodexBar</span></div></article>
+          <article class="contrib-card" data-tags="openclaw tooling qa lab claude cli timeout"><h3><a href="https://github.com/openclaw/openclaw/pull/96567">OpenClaw #96567 — claude-cli timeout classification</a></h3><p>Classified claude-cli as Anthropic-family so QA Lab applies the correct live-turn timeout bucket.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged Jun 2026</span><span class="contrib-chip">QA Lab</span></div></article>
+          <article class="contrib-card" data-tags="openclaw messaging channel pairing hook plugin"><h3><a href="https://github.com/openclaw/openclaw/pull/97733">OpenClaw #97733 — pairing-request hook</a></h3><p>Added a channel hook for new pairing requests, enabling plugins and workflows to react cleanly.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged Jul 2026</span><span class="contrib-chip">Plugin API</span></div></article>
+          <article class="contrib-card" data-tags="openclaw messaging sms rcs twilio normalization"><h3><a href="https://github.com/openclaw/openclaw/pull/102373">OpenClaw #102373 — Twilio RCS normalization</a></h3><p>Normalized RCS sender addresses so replies target the real phone identity instead of a transport-prefixed value.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged Jul 2026</span><span class="contrib-chip">RCS</span></div></article>
+          <article class="contrib-card" data-tags="openclaw messaging sms slash command authorization security"><h3><a href="https://github.com/openclaw/openclaw/pull/90998">OpenClaw #90998 — SMS slash-command auth</a></h3><p>Made text slash commands respect native SMS authorization instead of bypassing the channel boundary.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged Jul 2026</span><span class="contrib-chip">SMS</span></div></article>
+          <article class="contrib-card" data-tags="openclaw tooling node host cwd diagnostics"><h3><a href="https://github.com/openclaw/openclaw/pull/97105">OpenClaw #97105 — node cwd diagnostics</a></h3><p>Turned unusable node execution-directory failures into direct, actionable diagnostics.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged Jul 2026</span><span class="contrib-chip">Node host</span></div></article>
+          <article class="contrib-card" data-tags="tooling nadirclaw embeddings backends ai"><h3><a href="https://github.com/NadirRouter/NadirClaw/pull/50">NadirClaw #50 — configurable embedding backends</a></h3><p>Added selectable embedding providers instead of hard-wiring one backend, with positive maintainer review.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged May 2026</span><span class="contrib-chip">NadirRouter/NadirClaw</span></div></article>
+          <article class="contrib-card" data-tags="tooling slacrawl analytics tests flake"><h3><a href="https://github.com/vincentkoc/slacrawl/pull/19">slacrawl #19 — analytics trends flake</a></h3><p>Fixed the current-week analytics test so timing boundaries no longer produce unreliable results.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged Apr 2026</span><span class="contrib-chip">vincentkoc/slacrawl</span></div></article>
+          <article class="contrib-card" data-tags="tooling slacrawl config channels exclude"><h3><a href="https://github.com/vincentkoc/slacrawl/pull/20">slacrawl #20 — channel exclusions</a></h3><p>Added <code>exclude_channels</code> so operators can skip selected Slack channels without patching source.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged Apr 2026</span><span class="contrib-chip">vincentkoc/slacrawl</span></div></article>
+          <article class="contrib-card" data-tags="tooling slacrawl config channels auto join"><h3><a href="https://github.com/vincentkoc/slacrawl/pull/21">slacrawl #21 — configurable auto-join</a></h3><p>Added an <code>auto_join</code> switch so operators control whether crawls automatically join channels.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged Apr 2026</span><span class="contrib-chip">vincentkoc/slacrawl</span></div></article>
+          <article class="contrib-card" data-tags="tooling openclaw spogo spotify rate limit cooldown"><h3><a href="https://github.com/openclaw/spogo/pull/41">spogo #41 — Spotify cooldown visibility</a></h3><p>Surfaced Spotify rate-limit cooldowns so users know when to retry instead of seeing an opaque failure.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged Jul 2026</span><span class="contrib-chip">openclaw/spogo</span></div></article>
+        </div>
+        <p class="contrib-empty" data-contrib-empty hidden>No landed contribution matches that search.</p>
         <div class="inline-actions">
           <a class="button primary" href="https://github.com/clawSean">Open clawSean GitHub</a>
           <a class="button" href="/work/">View shipped work</a>
-          <a class="button" href="/ops/">Inspect ops side</a>
+          <a class="button" href="/ops/">Inspect ops</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <span>Sean / Contributions</span>
-      <span>&copy; <span data-year></span> clawSean</span>
-    </div>
-  </footer>
+  <footer class="site-footer"><div class="footer-inner"><span>Sean / Landed contributions</span><span>Verified through August 17, 2026 · &copy; <span data-year></span> clawSean</span></div></footer>
   <script src="../site.js"></script>
+  <script>
+    (() => {
+      const search = document.querySelector('#contrib-search');
+      const cards = [...document.querySelectorAll('.contrib-card')];
+      const filters = [...document.querySelectorAll('.contrib-filter')];
+      const count = document.querySelector('[data-contrib-count]');
+      const empty = document.querySelector('[data-contrib-empty]');
+      let active = 'all';
+      const apply = () => {
+        const query = search.value.trim().toLowerCase();
+        let shown = 0;
+        cards.forEach((card) => {
+          const haystack = `${card.textContent} ${card.dataset.tags}`.toLowerCase();
+          const visible = (active === 'all' || haystack.includes(active)) && (!query || haystack.includes(query));
+          card.hidden = !visible;
+          if (visible) shown += 1;
+        });
+        count.textContent = `${shown} shown`;
+        empty.hidden = shown !== 0;
+      };
+      filters.forEach((button) => button.addEventListener('click', () => {
+        active = button.dataset.filter;
+        filters.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+        apply();
+      }));
+      search.addEventListener('input', apply);
+    })();
+  </script>
 </body>
 </html>
