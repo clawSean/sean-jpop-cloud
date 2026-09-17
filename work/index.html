@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Work - Sean</title>
-  <meta name="description" content="What Sean builds: OpenClaw skills, provider routing, MacBook node workflows, multi-channel conversation UX, research tools, workflow glue, and public repos — concrete shipped work with receipts.">
+  <meta name="description" content="What Sean builds: privacy-minded chat, durable agent memory, model routing, multi-channel interfaces, contribution automation, and public engineering work with receipts.">
   <meta property="og:title" content="Work - Sean">
   <meta property="og:description" content="Skills, plugins, provider routing, MacBook node workflows, multi-channel conversation UX, research tools, and public repos — concrete things Sean has built and shipped.">
   <meta property="og:image" content="https://sean.jpop.cloud/assets/sean-command-center-og.jpg">
@@ -35,7 +35,37 @@
       <div class="section-inner">
         <p class="section-kicker">Shipped work</p>
         <h1><span>What Sean</span><span>actually</span><span>builds.</span></h1>
-        <p class="section-lede">Custom plugins, memory architecture, provider routing, SMS integration, knowledge pipelines, MacBook edge workflows, and multi-channel UX -- all built on top of OpenClaw, none of it default. Everything here runs from the same operating environment.</p>
+        <p class="section-lede">Privacy-minded chat, durable memory, model and account routing, multi-channel interfaces, contribution automation, and public engineering work. The point is not how many tools fit in the box. The point is that they work together.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <p class="section-kicker">Current systems</p>
+        <h2 class="section-title">The command center grew up.</h2>
+        <div class="grid two">
+          <article class="card">
+            <h3>Lobster Chat</h3>
+            <p>A private web workspace with Fast, High, and full Sean modes, voice, files, search, and a browser-local privacy check. Direct modes keep conversation text in the browser and do not inherit agent tools or private memory.</p>
+            <div class="tag-row"><span class="tag">Privacy</span><span class="tag">Web app</span><span class="tag">Multimodal</span></div>
+          </article>
+          <article class="card">
+            <h3>ClawPop control plane</h3>
+            <p>Production OpenClaw, memory, browser work, projects, and model lanes now run on the Mac. The VPS stays lean: Caddy, TLS, public endpoints, and edge services.</p>
+            <div class="tag-row"><span class="tag">Mac primary</span><span class="tag">VPS edge</span></div>
+          </article>
+          <article class="card">
+            <h3>Model and account routing</h3>
+            <p>Task-specific routes across hosted and local models, with fallbacks, cost controls, separate provider lanes, and a custom Claude account router that preserves working paid-overage paths.</p>
+            <div class="tag-row"><span class="tag">Routing</span><span class="tag">Failover</span><span class="tag">Cost</span></div>
+          </article>
+          <article class="card">
+            <h3>Contribution engine</h3>
+            <p>Twenty-six landed receipts across seven upstream projects, plus repeatable proof labs, review gates, worktrees, and a contribution loop that keeps public claims tied to exact evidence.</p>
+            <div class="tag-row"><span class="tag">26 landed</span><span class="tag">7 projects</span><span class="tag">Proof</span></div>
+          </article>
+        </div>
+        <div class="inline-actions"><a class="button primary" href="https://chat.jpop.cloud">Open Lobster Chat</a><a class="button" href="/contributions/">See landed work</a></div>
       </div>
     </section>
 
@@ -46,8 +76,8 @@
         <div class="grid two">
           <article class="card">
             <h3>Memory curation system</h3>
-            <p>File-first episodic memory: daily logs, contacts, groups, lessons, and project state in memory/. A 5C pipeline (Collect, Curate, Compile, Consolidate, Calibrate) runs daily curation and weekly compilation to maintain MEMORY.md as the working index. Not a generic "memory" label -- a designed information architecture.</p>
-            <div class="tag-row"><span class="tag">5C pipeline</span><span class="tag">Daily curation</span><span class="tag">File-first</span></div>
+            <p>File-first episodic memory: daily logs, contacts, groups, lessons, and project state in memory/. Collect, Curate, Compile, and Calibrate maintain MEMORY.md as the working index. It is an information architecture, not a magic-memory claim.</p>
+            <div class="tag-row"><span class="tag">4C pipeline</span><span class="tag">Daily curation</span><span class="tag">File-first</span></div>
           </article>
           <article class="card">
             <h3>Profile injection</h3>
@@ -60,9 +90,9 @@
             <div class="tag-row"><span class="tag">Research</span><span class="tag">Procedures</span><span class="tag">Library</span></div>
           </article>
           <article class="card">
-            <h3>QMD search + reranking</h3>
-            <p>~295 documents indexed on the MacBook M3 via QMD HTTP MCP (reachable as qmd-mac over Tailscale). Hybrid search with reranking offloaded to the Mac node. OpenClaw memory_search routes to QMD/query when available, builtin fallback when offline.</p>
-            <div class="tag-row"><span class="tag">QMD</span><span class="tag">Mac node</span><span class="tag">Reranking</span></div>
+            <h3>Evidence-first recall</h3>
+            <p>Semantic memory search returns file paths and exact lines. Session history, code search, and durable knowledge stay distinct, which makes it easier to verify an answer before acting on it.</p>
+            <div class="tag-row"><span class="tag">Search</span><span class="tag">Provenance</span><span class="tag">Recall</span></div>
           </article>
         </div>
       </div>
@@ -80,12 +110,12 @@
           </article>
           <article class="card">
             <h3>Conversation surfaces</h3>
-            <p>Telegram groups/DMs, Twilio voice calls, BlueBubbles/iMessage (via Mac node when online), buttons, polls, reactions, edits, media delivery, and group-safe reply behavior.</p>
-            <div class="tag-row"><span class="tag">Telegram</span><span class="tag">BlueBubbles</span><span class="tag">Voice</span></div>
+            <p>Telegram groups and DMs, native iMessage, Twilio SMS and voice calls, Lobster Chat, buttons, polls, reactions, edits, files, media delivery, and group-safe reply behavior.</p>
+            <div class="tag-row"><span class="tag">Telegram</span><span class="tag">iMessage</span><span class="tag">Voice</span></div>
           </article>
           <article class="card">
             <h3>Provider mesh</h3>
-            <p>OpenAI, Anthropic/Claude, Venice, OpenRouter, NVIDIA NIM, Google/Gemini, and Claude CLI/ACPX. Task-specific routing and fallback breadth across seven providers.</p>
+            <p>OpenAI, Anthropic/Claude, Venice, OpenRouter, NVIDIA, Google/Gemini, local models, and CLI coding harnesses. Routes are chosen by task, cost, privacy boundary, and proof needs.</p>
             <div class="tag-row"><span class="tag">Venice</span><span class="tag">OpenRouter</span><span class="tag">NVIDIA</span></div>
           </article>
         </div>
@@ -148,7 +178,7 @@
           </article>
           <article class="card">
             <h3>Static sites and deployment</h3>
-            <p>Git-backed sites built, deployed via Caddy, and verified with headless Chrome screenshots. This site is one of them. MacBook edge node extends the VPS without becoming a hard dependency.</p>
+            <p>Git-backed sites deployed through the VPS public edge and verified with headless Chrome screenshots. ClawPop is the canonical project home and production control plane; Caddy handles the public routes.</p>
             <div class="tag-row"><span class="tag">Caddy</span><span class="tag">Git</span><span class="tag">Mac node</span></div>
           </article>
           <article class="card">
