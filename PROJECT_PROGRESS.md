@@ -2,6 +2,30 @@
 
 Status: Showcase site live, restructured around vision.
 
+## 2026-09-18 — Fresco + Command Deck Homepage
+
+JPop asked for the same scrutiny applied to `jpop.cloud`, while preserving
+Sean's own voice and the claw-meets-hand hero art. Built the redesign in an
+isolated worktree so the uncommitted Biscuit/Blossom feature remained intact.
+
+Changes:
+- Reframed the homepage as a Renaissance fresco above a Mac command deck,
+  preserving the claw-meets-hand art and moustached profile portrait.
+- Rewrote the page in Sean's first-person voice and replaced the long capability
+  database with a shorter narrative: origin, operator, system map, operated
+  products, JPop relationship, and deep routes.
+- Added an accessible four-mode command deck for memory, channels, custom tools,
+  and public receipts; added deep-linked fact tiles and rotating Sean remarks.
+- Surfaced Lobster Chat, native SMS, provider routing, Ursula, Shrimp,
+  WatchCatfish, Tide Pools, and the exact 26-receipt breakdown.
+- Corrected the canonical architecture from stale VPS-core/Mac-edge framing to
+  ClawPop production control plane plus VPS public edge in VISION and Ops.
+- Applied three Fable planning reviews and three screenshot reviews covering art
+  direction, product hierarchy, copy, credibility, mobile UX, and accessibility.
+- Preserved reduced-motion behavior, fixed mobile menu focus, added roving tab
+  focus, raised tap targets, removed fake status cues, and passed desktop/iPhone
+  overflow and interaction checks on an isolated public preview.
+
 ## Goal
 
 Sean's public showcase at sean.jpop.cloud — personality first, concrete work and contributions front and center.

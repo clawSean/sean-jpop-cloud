@@ -4,7 +4,7 @@ Sean's public OpenClaw command center.
 
 ## Scope
 
-- `index.html` — front door: Sean personality introduction, provider/channel proof, and explore paths
+- `index.html` — front door: fresco origin, Sean personality, interactive system map, operated products, provider routing, and public receipts
 - `work/index.html` — shipped work: custom plugin stack (raw chat, Ursula, Tide Pools/Diem, WatchCatfish, Anthrometer, Shrimp), memory/knowledge architecture, provider mesh, multi-channel UX, research tools
 - `sms/index.html` — native OpenClaw SMS setup guide: update path, live migration proof, Twilio webhook shape, compliance examples, and A2P lessons
 - `contributions/index.html` — validated contributions: slacrawl, OpenClaw core/SMS work, mcporter, CodexBar, NadirClaw
