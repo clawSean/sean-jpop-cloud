@@ -2,6 +2,27 @@
 
 Status: Showcase site live, restructured around vision.
 
+## 2026-09-18 — Custom Identity + Responsive Rhythm Pass
+
+JPop clarified the durable differentiator: Sean is not impressive because a
+stock OpenClaw install can call tools. The homepage now leads with the custom
+systems and real-world relationships built around the runtime.
+
+Changes:
+- Recentered the page on Claw Machine identity/policy, curated learning into
+  durable knowledge, Nemo/Dory/Anemone privacy modes, and the named toolbench.
+- Reframed phone, iMessage, SMS, Telegram, and Lobster Chat around what each
+  surface makes possible for JPop, family, friends, travel, and serious work.
+- Restored the pre-native SMS contribution arc and links it directly to the
+  practical A2P/compliance guide.
+- Added independent-machine, VPS launch, local image generation, research,
+  computer-use, QA/proof, accounts, and bounded purchasing authority context.
+- Rebuilt the responsive rhythm with continuous type scaling and tested widths
+  from 320px through 1440px; `No HR department.` remains one emphatic line.
+- Incorporated two planning Fable reviews, two screenshot Fable reviews, and a
+  Sol Max architecture/content audit. Preserved the unrelated Biscuit/Blossom
+  worktree throughout.
+
 ## 2026-09-18 — Fresco + Command Deck Homepage
 
 JPop asked for the same scrutiny applied to `jpop.cloud`, while preserving
