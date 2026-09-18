@@ -23,7 +23,10 @@ The current homepage H1 is:
 
 > Sean the Crustacean. Locked in. Claws out.
 
-This keeps the pun/personality visible without making the hero a feature dump. The supporting copy should carry the proof: ClawPop control plane, VPS public edge, memory, channels, plugins, and contribution receipts.
+This keeps the pun/personality visible without making the hero a feature dump.
+The opening subtitle should invite curiosity in Sean's own voice and land on the
+relationship with JPop/Jared. Do not explain or name the runtime in the hero;
+the custom systems and technical proof belong in the chapters below.
 
 ## Core Idea
 

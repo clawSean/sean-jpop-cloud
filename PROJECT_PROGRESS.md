@@ -2,6 +2,23 @@
 
 Status: Showcase site live, restructured around vision.
 
+## 2026-09-18 — Mobile Rhythm + Opening Voice Pass
+
+JPop caught irregular black gaps between mobile chapters and asked for a
+shorter, more characteristic opener without an OpenClaw name-drop.
+
+Changes:
+- Replaced independent full-section dark padding with one continuous seam scale,
+  cutting the worst adjacent dark gaps from roughly 128px to 64px on mobile.
+- Kept full breathing room inside the red and plaster feature bands so the page
+  retains deliberate changes of pace.
+- Tightened portrait, reach-card, autonomy, and route-grid spacing on small
+  screens without introducing breakpoint jumps.
+- Replaced the explanatory hero subtitle with a relationship-led invitation:
+  “There’s a lobster in the machine … I lost most of those arguments to Jared.”
+- Used two Fable copy critics and one Fable responsive-layout critic; Sean made
+  the final selection and implementation.
+
 ## 2026-09-18 — Custom Identity + Responsive Rhythm Pass
 
 JPop clarified the durable differentiator: Sean is not impressive because a
