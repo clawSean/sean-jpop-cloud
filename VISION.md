@@ -18,11 +18,11 @@ The current homepage H1 is:
 
 > Sean the Crustacean. Locked in. Claws out.
 
-This keeps the pun/personality visible without making the hero a feature dump. The supporting copy should carry the proof: VPS, memory, channels, plugins, MacBook edge, and contribution receipts.
+This keeps the pun/personality visible without making the hero a feature dump. The supporting copy should carry the proof: ClawPop control plane, VPS public edge, memory, channels, plugins, and contribution receipts.
 
 ## Core Idea
 
-Sean is a working OpenClaw agent -- always-on, VPS-hosted, wired into a provider mesh, rich chat, SMS/iMessage, voice-call surfaces, a paired MacBook node, structured memory with curation pipelines, knowledge/research storage, profile injection, QMD-backed search with reranking, skills, browser tools, hosted sites, and public contribution work. The site is the showcase itself, not a plan to build one.
+Sean is a working OpenClaw agent whose production home is ClawPop, a MacBook control plane running the Gateway, memory, tools, browser, projects, and model lanes. A retained VPS handles the public edge: Caddy, TLS, hosted sites, and a small set of network services. Sean also works across rich chat, SMS/iMessage, voice-call surfaces, structured memory, knowledge/research storage, profile injection, local search and reranking, skills, browser tools, and public contribution work. The site is the showcase itself, not a plan to build one.
 
 The front door is Sean's personality. A visitor should immediately understand who Sean is and what Sean does -- not read about what we intend to build.
 
@@ -93,7 +93,7 @@ These are Sean's custom plugins and extensions — the work that is not default 
 - **Provider mesh:** OpenAI, Anthropic/Claude, Venice, OpenRouter, NVIDIA NIM, Google/Gemini/Antigravity, and Claude CLI/ACPX. The interesting story is routing and fallback breadth, not one default model badge.
 - **Conversation and phone surfaces:** Telegram groups/DMs, Twilio SMS, BlueBubbles/iMessage, Twilio voice calls, TTS voice, buttons/reactions/polls/media/status updates.
 - **Twilio SMS integration:** Plain SMS now uses OpenClaw's native Twilio-backed `sms` channel in production. BlueBubbles/Mac-node handles iMessage semantics separately. Twilio registration, A2P compliance, exact webhook routing, inbound replies, and outbound sends are verified operational achievements -- the friction of carrier registration, brand verification, public compliance pages, opt-in language, and campaign approval is real and worth documenting for others setting up agent SMS.
-- **VPS core + MacBook edge:** VPS stays autonomous. The paired MacBook node is an optional enhancement lane for BlueBubbles/iMessage, local Gmail prompt-injection screening, local models/qmd, Mac Claude/ACPX, and browser relay work when the Mac/Tailscale session is active.
+- **ClawPop core + VPS public edge:** ClawPop is the production control plane for the Gateway, memory, tools, browser, projects, providers, BlueBubbles/iMessage, local screening, local models/search, and coding harnesses. The retained VPS is the public edge for Caddy, TLS, hosted sites, and selected network services.
 - **Knowledge and research storage:** Structured directories under knowledge/ for topic research, procedures, library references, and notes. Distinct from episodic memory -- this is the semantic/reference layer.
 - **Operational authority:** Source repos, Caddy deploy roots, browser verification, cron, skills, plugin work, public site deployment, and contribution workflow all live in the operating environment.
 
@@ -131,8 +131,8 @@ What not to copy:
 5. **Shareable over comprehensive.** A visitor should be able to send a link to `/work/` or `/contributions/` and have it stand on its own.
 6. **slacrawl is a headline contribution.** Three merged PRs in one series — don't bury it. List it first on `/contributions/`.
 7. **Do not show off default features.** A single model name, ordinary Telegram access, or generic agent capabilities are not differentiators. Prioritize unusual breadth: provider mesh, phone/SMS/iMessage/voice surfaces, MacBook node architecture, real deployment authority, memory discipline, and public contribution receipts.
-8. **No generic swagger.** Avoid vague lines like "runs the room." Use concrete, slightly weird, system-grounded language: wired in, provider mesh, VPS core, Mac edge, public receipts.
-9. **Do not overclaim node availability.** The MacBook node is a paired optional enhancement lane; it may be offline. Describe the architecture without implying it is always connected.
+8. **No generic swagger.** Avoid vague lines like "runs the room." Use concrete, slightly weird, system-grounded language: wired in, provider mesh, ClawPop control plane, VPS public edge, public receipts.
+9. **Keep architecture current.** ClawPop is the production home; the VPS is the retained public edge. Do not restore the retired VPS-core/Mac-edge framing.
 10. **Native SMS first.** Public copy gets exactly one isolated historical note about the old Twilio SMS plugin, at the bottom of `/sms/`. Everywhere else must treat native `channels.sms`, `openclaw update`, and official docs as the primary story with no contrast against the old path.
 11. **`/build/` is dead content-wise.** It exists only to redirect. Do not add or update content there.
 12. **This file governs the site.** Edit it when the vision changes — update it before or alongside any structural site changes, not after drift is noticed.
