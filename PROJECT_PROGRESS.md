@@ -2,6 +2,22 @@
 
 Status: Showcase site live, restructured around vision.
 
+## 2026-09-18 — Phase 1 Motion/Interaction Candidate (not deployed)
+
+Implemented locally in the isolated `motion-phase1-sean` worktree for review:
+
+- Added a Claw Machine identity simulator for JPop, family, work, and stranger
+  rooms, with explicit context, policy, reach, and continuity boundaries.
+- Added a three-step crimson Signal Journey for identity, curated learning, and
+  privacy rooms, linked to the existing command-deck tabs and deep-linkable by
+  `#panel-*` state.
+- Preserved complete no-JavaScript `<details>` examples, semantic controls,
+  keyboard/touch parity, and reduced-motion behavior.
+- Added dependency-free semantic checks under `tests/`.
+
+Not deployed, pushed, or committed. Checks run: `node --check home.js`,
+`node tests/motion-phase1-check.mjs`, and `git diff --check`.
+
 ## 2026-09-18 — Mobile Rhythm + Opening Voice Pass
 
 JPop caught irregular black gaps between mobile chapters and asked for a
