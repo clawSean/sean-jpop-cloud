@@ -2,6 +2,33 @@
 
 Status: Showcase site live, restructured around vision.
 
+## 2026-09-21 — Motion Preview Copy Audit
+
+- Kept the Signal Journey and Claw Machine simulator implementation unchanged.
+- Removed the implementation-scoped public label `FIRST THREE CHAPTERS` and
+  replaced it with `IDENTITY TO PRIVACY`.
+- Re-scanned the homepage for phase, experiment, prototype, and redesign
+  narration; none remains in visitor-facing copy.
+- Re-verified the live preview at 390px with zero horizontal overflow.
+
+## 2026-09-18 — Phase 1 Motion/Interaction Candidate (not deployed)
+
+Implemented locally in the isolated `motion-phase1-sean` worktree for review:
+
+- Added a Claw Machine identity simulator for JPop, family, work, and stranger
+  rooms, with explicit context, policy, reach, and continuity boundaries.
+- Added a three-step crimson Signal Journey for identity, curated learning, and
+  privacy rooms, linked to the existing command-deck tabs and deep-linkable by
+  `#panel-*` state.
+- Preserved complete no-JavaScript `<details>` examples, semantic controls,
+  keyboard/touch parity, and reduced-motion behavior.
+- Added dependency-free semantic checks under `tests/`.
+
+Committed and pushed to draft PR #4, with a noindex live preview at
+`https://sean.jpop.cloud/_motion-phase1/`. Production remains unchanged. Checks
+run: `node --check home.js`, `node tests/motion-phase1-check.mjs`, responsive
+browser proof, and `git diff --check`.
+
 ## 2026-09-18 — Mobile Rhythm + Opening Voice Pass
 
 JPop caught irregular black gaps between mobile chapters and asked for a
