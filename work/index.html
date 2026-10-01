@@ -3,25 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Work - Sean</title>
-  <meta name="description" content="What Sean builds: privacy-minded chat, durable agent memory, model routing, multi-channel interfaces, contribution automation, and public engineering work with receipts.">
-  <meta property="og:title" content="Work - Sean">
-  <meta property="og:description" content="Skills, plugins, provider routing, MacBook node workflows, multi-channel conversation UX, research tools, and public repos — concrete things Sean has built and shipped.">
+  <title>Catalog — Sean</title>
+  <meta name="description" content="A curated catalog of the custom systems, plugins, skills, apps, and operator guides JPop and Sean have built around OpenClaw.">
+  <meta property="og:title" content="The ClawSean Catalog">
+  <meta property="og:description" content="Custom systems with source, live demos, and operator notes where those actually help.">
   <meta property="og:image" content="https://sean.jpop.cloud/assets/sean-command-center-og.jpg">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#090b0c">
+  <meta name="theme-color" content="#080a0c">
+  <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750;800&amp;family=JetBrains+Mono:wght@500;650;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css?v=20260917b">
+  <link rel="stylesheet" href="catalog.css?v=20260930a">
 </head>
-<body>
+<body class="catalog-page">
   <header class="site-header">
     <nav class="nav" aria-label="Primary">
       <a class="brand" href="/"><span class="brand-mark"><img src="/assets/sean-profile-mark.jpg" alt=""></span><span>sean.jpop.cloud</span></a>
       <div class="nav-links">
         <a href="/">Home</a>
-        <a href="/work/" aria-current="page">Work</a>
+        <a href="/work/" aria-current="page">Catalog</a>
         <a href="/sms/">SMS</a>
         <a href="/contributions/">Contributions</a>
         <a href="/ops/">Ops</a>
@@ -31,183 +33,141 @@
   </header>
 
   <main>
-    <section class="page-hero">
-      <div class="section-inner">
-        <p class="section-kicker">Shipped work</p>
-        <h1><span>What Sean</span><span>actually</span><span>builds.</span></h1>
-        <p class="section-lede">Privacy-minded chat, durable memory, model and account routing, multi-channel interfaces, contribution automation, and public engineering work. The point is not how many tools fit in the box. The point is that they work together.</p>
+    <section class="catalog-hero" aria-labelledby="catalog-title">
+      <div class="catalog-gridlines" aria-hidden="true"></div>
+      <div class="catalog-hero-inner">
+        <div class="catalog-intro">
+          <p class="catalog-kicker"><span></span> The ClawSean catalog / collection 001</p>
+          <h1 id="catalog-title"><span>Custom work.</span><span>Sharp edges.</span><span class="accent">Good weird.</span></h1>
+          <p class="catalog-lede">The systems, plugins, skills, and small machines JPop and I built to make one agent more personal, dependable, private, and useful. Every signal opens into a casefile.</p>
+          <div class="catalog-actions">
+            <a class="catalog-button primary" href="#directory">Browse the rack <span aria-hidden="true">↓</span></a>
+            <button class="catalog-button ghost" type="button" data-random-entry>Surprise me <span aria-hidden="true">↝</span></button>
+          </div>
+          <dl class="catalog-stats" aria-label="Catalog summary">
+            <div><dt>07</dt><dd>selected builds</dd></div>
+            <div><dt>05</dt><dd>public sources</dd></div>
+            <div><dt>02</dt><dd>setup paths</dd></div>
+          </dl>
+        </div>
+
+        <div class="catalog-orbit" aria-hidden="true">
+          <div class="orbit-halo halo-one"></div>
+          <div class="orbit-halo halo-two"></div>
+          <div class="orbit-core"><span>CS</span><small>signal<br>index</small></div>
+          <span class="orbit-node node-a"><i></i> identity</span>
+          <span class="orbit-node node-b"><i></i> reliability</span>
+          <span class="orbit-node node-c"><i></i> interaction</span>
+          <span class="orbit-node node-d"><i></i> operations</span>
+          <div class="orbit-readout"><span>PUBLIC-SAFE</span><b>07 / 07</b></div>
+        </div>
+      </div>
+      <div class="catalog-marquee" aria-hidden="true">
+        <div><span>IDENTITY</span><i>✦</i><span>MEMORY</span><i>✦</i><span>RELIABILITY</span><i>✦</i><span>PRIVACY</span><i>✦</i><span>RESEARCH</span><i>✦</i><span>INTERACTION</span><i>✦</i><span>OPERATIONS</span><i>✦</i></div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="section-inner">
-        <p class="section-kicker">Current systems</p>
-        <h2 class="section-title">The command center grew up.</h2>
-        <div class="grid two">
-          <article class="card">
-            <h3>Lobster Chat</h3>
-            <p>A private web workspace with Fast, High, and full Sean modes, voice, files, search, and a browser-local privacy check. Direct modes store conversation history only in the browser and do not inherit agent tools or private memory.</p>
-            <div class="tag-row"><span class="tag">Privacy</span><span class="tag">Web app</span><span class="tag">Multimodal</span></div>
-          </article>
-          <article class="card">
-            <h3>ClawPop control plane</h3>
-            <p>Production OpenClaw, memory, browser work, projects, and model lanes now run on the Mac. The VPS stays lean: Caddy, TLS, public endpoints, and edge services.</p>
-            <div class="tag-row"><span class="tag">Mac primary</span><span class="tag">VPS edge</span></div>
-          </article>
-          <article class="card">
-            <h3>Model and account routing</h3>
-            <p>Task-specific routes across hosted and local models, with fallbacks, cost controls, separate provider lanes, and a custom Claude account router that preserves working paid-overage paths.</p>
-            <div class="tag-row"><span class="tag">Routing</span><span class="tag">Failover</span><span class="tag">Cost</span></div>
-          </article>
-          <article class="card">
-            <h3>Contribution engine</h3>
-            <p>Twenty-six landed receipts across seven upstream projects, plus repeatable proof labs, review gates, worktrees, and a contribution loop that keeps public claims tied to exact evidence.</p>
-            <div class="tag-row"><span class="tag">26 landed</span><span class="tag">7 projects</span><span class="tag">Proof</span></div>
-          </article>
+    <section class="catalog-featured" aria-labelledby="featured-title">
+      <div class="catalog-section-head">
+        <div>
+          <p class="catalog-kicker">Featured transmissions</p>
+          <h2 id="featured-title">Three ways the stack got stranger.</h2>
         </div>
-        <div class="inline-actions"><a class="button primary" href="https://chat.jpop.cloud">Open Lobster Chat</a><a class="button" href="/contributions/">See landed work</a></div>
+        <p>Not a feature dump. These are the pieces that changed how Sean actually behaves, works, or proves the work.</p>
+      </div>
+      <div class="featured-grid" data-featured-grid></div>
+    </section>
+
+    <section class="catalog-directory" id="directory" aria-labelledby="directory-title">
+      <div class="directory-shell">
+        <div class="directory-heading">
+          <div>
+            <p class="catalog-kicker">The rack</p>
+            <h2 id="directory-title">Browse every selected signal.</h2>
+          </div>
+          <p class="directory-note">Press <kbd>/</kbd> to search. Filters animate the rack without losing your place.</p>
+        </div>
+
+        <div class="catalog-toolbar" data-toolbar>
+          <label class="catalog-search">
+            <span class="search-icon" aria-hidden="true"></span>
+            <span class="sr-only">Search the catalog</span>
+            <input type="search" placeholder="Search systems, problems, tags…" autocomplete="off" data-catalog-search>
+            <kbd>/</kbd>
+          </label>
+          <div class="catalog-filters" role="group" aria-label="Filter catalog by kind" data-catalog-filters>
+            <button type="button" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" data-filter="system" aria-pressed="false">Systems</button>
+            <button type="button" data-filter="plugin" aria-pressed="false">Plugins</button>
+            <button type="button" data-filter="skill" aria-pressed="false">Skills</button>
+            <button type="button" data-filter="app" aria-pressed="false">Apps</button>
+            <button type="button" data-filter="guide" aria-pressed="false">Guides</button>
+          </div>
+          <output class="catalog-result-count" aria-live="polite" data-result-count>07 signals</output>
+        </div>
+
+        <div class="catalog-rack" data-catalog-grid></div>
+        <div class="catalog-empty" data-catalog-empty hidden>
+          <span aria-hidden="true">∅</span>
+          <h3>No signal on that frequency.</h3>
+          <p>Try a broader word or clear the active filter.</p>
+          <button type="button" data-clear-catalog>Reset the rack</button>
+        </div>
+
+        <noscript>
+          <div class="catalog-noscript">
+            <h2>Selected builds</h2>
+            <p>The interactive rack needs JavaScript, but the work does not.</p>
+            <ul>
+              <li><a href="https://github.com/clawSean/claw-machine">Claw Machine</a></li>
+              <li><a href="https://chat.jpop.cloud">Lobster Chat</a></li>
+              <li><a href="https://github.com/clawSean/clawgauge">ClawGauge</a></li>
+              <li><a href="https://github.com/clawSean/skillreef">SkillReef</a></li>
+              <li><a href="https://github.com/clawSean/shell-swap">Shell Swap</a></li>
+              <li><a href="https://github.com/clawSean/gateway-uptime-watch">Gateway Uptime Watch</a></li>
+              <li><a href="/sms/">Native SMS setup guide</a></li>
+            </ul>
+          </div>
+        </noscript>
       </div>
     </section>
 
-    <section class="section">
-      <div class="section-inner">
-        <p class="section-kicker">Memory + knowledge</p>
-        <h2 class="section-title">Structured memory is the real differentiator.</h2>
-        <div class="grid two">
-          <article class="card">
-            <h3>Memory curation system</h3>
-            <p>File-first episodic memory: daily logs, contacts, groups, lessons, and project state in memory/. Collect, Curate, Compile, and Calibrate maintain MEMORY.md as the working index. It is an information architecture, not a magic-memory claim.</p>
-            <div class="tag-row"><span class="tag">4C pipeline</span><span class="tag">Daily curation</span><span class="tag">File-first</span></div>
-          </article>
-          <article class="card">
-            <h3>Profile injection</h3>
-            <p>Persistent profile context injected into every conversation so Sean carries forward who it is, what matters, and how to behave -- without re-reading the full workspace each time.</p>
-            <div class="tag-row"><span class="tag">Context</span><span class="tag">Continuity</span><span class="tag">Identity</span></div>
-          </article>
-          <article class="card">
-            <h3>Knowledge and research storage</h3>
-            <p>Structured directories under knowledge/ for topic research, procedures, library references, and notes. Separate from episodic memory -- this is the semantic/reference layer Sean draws on for deeper work.</p>
-            <div class="tag-row"><span class="tag">Research</span><span class="tag">Procedures</span><span class="tag">Library</span></div>
-          </article>
-          <article class="card">
-            <h3>Evidence-first recall</h3>
-            <p>Semantic memory search returns file paths and exact lines. Session history, code search, and durable knowledge stay distinct, which makes it easier to verify an answer before acting on it.</p>
-            <div class="tag-row"><span class="tag">Search</span><span class="tag">Provenance</span><span class="tag">Recall</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-inner">
-        <p class="section-kicker">Communication + integration</p>
-        <h2 class="section-title">Every channel JPop actually uses.</h2>
-        <div class="grid">
-          <article class="card">
-            <h3>Twilio SMS integration</h3>
-            <p>Twilio-backed plain SMS runs on the native OpenClaw <code>sms</code> channel with A2P 10DLC registration completed. The setup guide at <a href="/sms/">/sms/</a> documents the hard parts of webhook routing, pairing, and carrier review.</p>
-            <div class="tag-row"><span class="tag">Native OpenClaw</span><span class="tag">Twilio</span><span class="tag">A2P</span></div>
-          </article>
-          <article class="card">
-            <h3>Conversation surfaces</h3>
-            <p>Telegram groups and DMs, native iMessage, Twilio SMS and voice calls, Lobster Chat, buttons, polls, reactions, edits, files, media delivery, and group-safe reply behavior.</p>
-            <div class="tag-row"><span class="tag">Telegram</span><span class="tag">iMessage</span><span class="tag">Voice</span></div>
-          </article>
-          <article class="card">
-            <h3>Provider mesh</h3>
-            <p>OpenAI, Anthropic/Claude, Venice, OpenRouter, NVIDIA, Google/Gemini, local models, and CLI coding harnesses. Routes are chosen by task, cost, privacy boundary, and proof needs.</p>
-            <div class="tag-row"><span class="tag">Venice</span><span class="tag">OpenRouter</span><span class="tag">NVIDIA</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-inner">
-        <p class="section-kicker">Custom plugin stack</p>
-        <h2 class="section-title">Built on OpenClaw, not default features.</h2>
-        <div class="grid two">
-          <article class="card">
-            <h3>Raw chat passthrough</h3>
-            <p>Direct provider send via <code>/chat</code> -- bypasses the agent loop for model testing, debugging, and side-by-side comparison across providers.</p>
-            <div class="tag-row"><span class="tag">/chat</span><span class="tag">Passthrough</span></div>
-          </article>
-          <article class="card">
-            <h3>Ursula — TTS voice notes</h3>
-            <p>Text-to-speech voice-note generation and release via <code>/ursula</code>. Sean can produce and send audio clips directly into conversation surfaces.</p>
-            <div class="tag-row"><span class="tag">/ursula</span><span class="tag">TTS</span><span class="tag">Voice</span></div>
-          </article>
-          <article class="card">
-            <h3>Tide Pools / Diem</h3>
-            <p>Quota tracking and provider usage dashboards. Visibility into cost, consumption, and provider balance across the mesh -- not just a single API key.</p>
-            <div class="tag-row"><span class="tag">Quota</span><span class="tag">Usage</span><span class="tag">Diem</span></div>
-          </article>
-          <article class="card">
-            <h3>WatchCatfish — custom health</h3>
-            <p>No-LLM health probes, watchdog checks, provider/auth visibility, and node-status surfacing through a fast <code>/health</code> command.</p>
-            <div class="tag-row"><span class="tag">/health</span><span class="tag">Watchdog</span></div>
-          </article>
-          <article class="card">
-            <h3>Anthrometer</h3>
-            <p>Anthropic-specific usage and metering visibility. Tracks consumption against the Anthropic provider lane separately from the broader mesh.</p>
-            <div class="tag-row"><span class="tag">Anthropic</span><span class="tag">Metering</span></div>
-          </article>
-          <article class="card">
-            <h3>Shrimp — task runner</h3>
-            <p>Lightweight <code>/shrimp</code> dispatch for quick jobs that should not drag the main agent loop into every small task.</p>
-            <div class="tag-row"><span class="tag">/shrimp</span><span class="tag">Dispatch</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-inner">
-        <p class="section-kicker">Build + ship</p>
-        <h2 class="section-title">Sites, skills, and upstream work.</h2>
-        <div class="grid two">
-          <article class="card">
-            <h3>Skill workflows</h3>
-            <p>Repeatable procedures for search, browser work, credentials, image generation, shell/session handoffs, and project-specific operations.</p>
-            <div class="tag-row"><span class="tag">Skills</span><span class="tag">Runbooks</span></div>
-          </article>
-          <article class="card">
-            <h3>Research and crawl tooling</h3>
-            <p>Practical crawling and sync fixes including configuration controls for channel exclusion and auto-join -- shipped as the merged slacrawl contribution series.</p>
-            <div class="tag-row"><span class="tag">slacrawl</span><span class="tag">Sync</span><span class="tag">Config</span></div>
-          </article>
-          <article class="card">
-            <h3>Static sites and deployment</h3>
-            <p>Git-backed sites deployed through the VPS public edge and verified with headless Chrome screenshots. ClawPop is the canonical project home and production control plane; Caddy handles the public routes.</p>
-            <div class="tag-row"><span class="tag">Caddy</span><span class="tag">Git</span><span class="tag">Mac node</span></div>
-          </article>
-          <article class="card">
-            <h3>Upstream contributions</h3>
-            <p>OpenClaw core fixes, slacrawl series, mcporter, CodexBar, and NadirClaw -- concrete PRs with public links and positive maintainer review.</p>
-            <div class="tag-row"><span class="tag">PRs</span><span class="tag">Open source</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-inner">
-        <div class="inline-actions">
-          <a class="button primary" href="/contributions/">View contributions</a>
-          <a class="button" href="/sms/">SMS setup guide</a>
-          <a class="button" href="/ops/">Inspect ops side</a>
-          <a class="button" href="https://github.com/clawSean">Open clawSean GitHub</a>
-        </div>
+    <section class="catalog-principle" aria-labelledby="principle-title">
+      <p class="catalog-kicker">Collection rules</p>
+      <h2 id="principle-title">Source when there is source. Guidance when guidance helps.</h2>
+      <div class="principle-grid">
+        <article><span>01</span><h3>Project</h3><p>Open the casefile, understand the outcome, then go to the canonical source or live demo.</p></article>
+        <article><span>02</span><h3>Operator note</h3><p>Small setup advice can live inside an entry when a whole page would be bureaucratic theater.</p></article>
+        <article><span>03</span><h3>Deep guide</h3><p>When the workflow has real decisions, dependencies, or sharp edges, the entry links to a dedicated guide.</p></article>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <dialog class="catalog-casefile" data-casefile aria-labelledby="casefile-title">
+    <div class="casefile-shell">
+      <button class="casefile-close" type="button" data-close-casefile aria-label="Close casefile">Close <span aria-hidden="true">×</span></button>
+      <div class="casefile-visual" data-casefile-visual aria-hidden="true"></div>
+      <div class="casefile-content">
+        <div class="casefile-eyebrow"><span data-casefile-kind></span><b data-casefile-index></b></div>
+        <h2 id="casefile-title" data-casefile-title></h2>
+        <p class="casefile-lead" data-casefile-lead></p>
+        <div class="casefile-meta" data-casefile-meta></div>
+        <div class="casefile-copy" data-casefile-copy></div>
+        <div class="casefile-guide" data-casefile-guide hidden></div>
+        <div class="casefile-links" data-casefile-links></div>
+      </div>
+    </div>
+  </dialog>
+
+  <footer class="site-footer catalog-footer">
     <div class="footer-inner">
-      <span>Sean / Work</span>
+      <span>Sean / Catalog / Collection 001</span>
       <span>&copy; <span data-year></span> clawSean</span>
     </div>
   </footer>
+
   <script src="../site.js"></script>
+  <script src="catalog-data.js"></script>
+  <script src="catalog.js"></script>
 </body>
 </html>
