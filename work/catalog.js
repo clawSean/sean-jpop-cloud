@@ -42,7 +42,7 @@
         <h3>${escapeHtml(entry.name)}</h3>
         <p>${escapeHtml(entry.lead)}</p>
         <div class="tag-strip">${entry.tags.map(tag => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
-        <button type="button" data-open-entry="${escapeHtml(entry.id)}">Open casefile <span aria-hidden="true">↗</span></button>
+        <button type="button" data-open-entry="${escapeHtml(entry.id)}">Explore casefile <span aria-hidden="true">↗</span></button>
       </div>
       <span class="feature-index" aria-hidden="true">${escapeHtml(entry.index)}</span>
     </article>`;
@@ -52,10 +52,10 @@
       ${visualMarkup(entry)}
       <div class="card-overline"><span>${escapeHtml(entry.kindLabel)}</span>${statusMarkup(entry)}</div>
       <h3>${escapeHtml(entry.name)}</h3>
-      <p>${escapeHtml(entry.lead)}</p>
+      <p>${escapeHtml(entry.teaser || entry.lead)}</p>
       <div class="catalog-card-bottom">
         <span>${escapeHtml(entry.authorship)}</span>
-        <button type="button" data-open-entry="${escapeHtml(entry.id)}" aria-label="Open ${escapeHtml(entry.name)} casefile">Inspect <i aria-hidden="true">↗</i></button>
+        <button type="button" data-open-entry="${escapeHtml(entry.id)}" aria-label="Learn why ${escapeHtml(entry.name)} matters">Learn why <i aria-hidden="true">↗</i></button>
       </div>
     </article>`;
 
@@ -68,7 +68,8 @@
 
   const matches = (entry) => {
     const query = search.value.trim().toLowerCase();
-    const haystack = [entry.name, entry.kind, entry.kindLabel, entry.lead, entry.summary, entry.authorship, ...entry.tags].join(" ").toLowerCase();
+    const storyText = entry.story ? JSON.stringify(entry.story) : "";
+    const haystack = [entry.name, entry.kind, entry.kindLabel, entry.lead, entry.teaser, entry.summary, entry.authorship, storyText, ...entry.tags].join(" ").toLowerCase();
     return (activeFilter === "all" || entry.kind === activeFilter) && (!query || haystack.includes(query));
   };
 
@@ -120,6 +121,78 @@
     return `<a class="${link.primary ? "primary" : ""}" href="${escapeHtml(link.href)}"${external ? ' target="_blank" rel="noreferrer"' : ""}>${escapeHtml(link.label)} <span aria-hidden="true">↗</span></a>`;
   };
 
+  const storyMarkup = (entry) => {
+    const story = entry.story;
+    if (!story) {
+      return `
+        <div class="casefile-copy">
+          <section><span>What it is</span><p>${escapeHtml(entry.summary)}</p></section>
+          <section><span>Why it matters</span><p>${escapeHtml(entry.why)}</p></section>
+        </div>`;
+    }
+
+    const scenarioSteps = story.scenario?.steps || [];
+    const capabilities = story.capabilities || [];
+    const proof = story.proof || [];
+    const possibilities = story.possibilities || [];
+
+    return `
+      <section class="casefile-pitch">
+        <span>The pitch</span>
+        <h3>${escapeHtml(story.promise)}</h3>
+      </section>
+      <div class="casefile-friction">
+        <article><span>The friction</span><p>${escapeHtml(story.problem)}</p></article>
+        <article><span>The shift</span><p>${escapeHtml(story.shift)}</p></article>
+      </div>
+      <section class="casefile-scenario">
+        <div class="scenario-heading">
+          <span>${escapeHtml(story.scenario?.label || "See it work")}</span>
+          <h3>${escapeHtml(story.scenario?.title || entry.name)}</h3>
+          <p>${escapeHtml(story.scenario?.intro || "")}</p>
+        </div>
+        <div class="scenario-steps">
+          ${scenarioSteps.map(step => `
+            <article>
+              <span>${escapeHtml(step.label)}</span>
+              <h4>${escapeHtml(step.title)}</h4>
+              <p>${escapeHtml(step.body)}</p>
+            </article>`).join("")}
+        </div>
+      </section>
+      <section class="casefile-deep-dive">
+        <div class="deep-dive-heading">
+          <span>Expand the case</span>
+          <p>The orientation lives here. GitHub owns the implementation.</p>
+        </div>
+        <div class="casefile-accordions">
+          <details name="casefile-sections">
+            <summary><span>01</span><b>What it can do</b><i aria-hidden="true"></i></summary>
+            <div class="accordion-body capability-list">
+              ${capabilities.map(item => `<article><h4>${escapeHtml(item.title)}</h4><p>${escapeHtml(item.body)}</p></article>`).join("")}
+            </div>
+          </details>
+          <details name="casefile-sections">
+            <summary><span>02</span><b>Why believe it</b><i aria-hidden="true"></i></summary>
+            <div class="accordion-body proof-grid">
+              ${proof.map(item => `<article><strong>${escapeHtml(item.value)}</strong><span>${escapeHtml(item.label)}</span><p>${escapeHtml(item.detail)}</p></article>`).join("")}
+            </div>
+          </details>
+          <details name="casefile-sections">
+            <summary><span>03</span><b>Where it could take you</b><i aria-hidden="true"></i></summary>
+            <div class="accordion-body possibility-body">
+              <ul>${possibilities.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+              <div class="fit-boundary">
+                <article><span>Best for</span><p>${escapeHtml(story.audience)}</p></article>
+                <article><span>Honest boundary</span><p>${escapeHtml(story.boundary)}</p></article>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+      <blockquote class="casefile-closeout">${escapeHtml(story.close)}</blockquote>`;
+  };
+
   const openEntry = (id, updateHash = true) => {
     const entry = entries.find(item => item.id === id);
     if (!entry) return;
@@ -135,21 +208,30 @@
       <div><span>Authorship</span><b>${escapeHtml(entry.authorship)}</b></div>
       <div><span>Availability</span><b>${escapeHtml(entry.availability)}</b></div>
       <div><span>Reviewed</span><b>${escapeHtml(entry.reviewed)}</b></div>`;
-    dialog.querySelector("[data-casefile-copy]").innerHTML = `
-      <section><span>What it is</span><p>${escapeHtml(entry.summary)}</p></section>
-      <section><span>Why it matters</span><p>${escapeHtml(entry.why)}</p></section>`;
+    dialog.querySelector("[data-casefile-story]").innerHTML = storyMarkup(entry);
+
+    const casefileDetails = [...dialog.querySelectorAll(".casefile-accordions details")];
+    casefileDetails.forEach(detail => {
+      detail.addEventListener("toggle", () => {
+        if (!detail.open) return;
+        casefileDetails.forEach(other => {
+          if (other !== detail) other.open = false;
+        });
+      });
+    });
 
     const guide = dialog.querySelector("[data-casefile-guide]");
     guide.hidden = !entry.guide;
     if (entry.guide?.mode === "inline") {
       guide.innerHTML = `<span>${escapeHtml(entry.guide.label)}</span><h3>${escapeHtml(entry.guide.title)}</h3><ol>${entry.guide.steps.map(step => `<li>${escapeHtml(step)}</li>`).join("")}</ol>`;
     } else if (entry.guide?.mode === "page") {
-      guide.innerHTML = `<span>${escapeHtml(entry.guide.label)}</span><h3>This entry has a full operator path.</h3><p>The dedicated page owns the dependencies, decisions, sharp edges, and contribution trail.</p><a href="${escapeHtml(entry.guide.href)}">Open the guide <i aria-hidden="true">→</i></a>`;
+      guide.innerHTML = `<span>${escapeHtml(entry.guide.label)}</span><h3>The casefile explains why. The guide gets you there.</h3><p>The dedicated page owns the dependencies, decisions, sharp edges, and contribution trail.</p><a href="${escapeHtml(entry.guide.href)}">Open the guide <i aria-hidden="true">→</i></a>`;
     } else {
       guide.innerHTML = "";
     }
 
     dialog.querySelector("[data-casefile-links]").innerHTML = entry.links.map(linkMarkup).join("");
+    dialog.querySelector(".casefile-shell").scrollTop = 0;
     if (!dialog.open) dialog.showModal();
     if (updateHash) history.replaceState(null, "", `#${entry.id}`);
   };
