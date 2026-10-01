@@ -26,8 +26,12 @@ date, links, and display copy. The optional `guide` field supports either:
 - `mode: "inline"` for a compact operator note inside the casefile
 - `mode: "page"` for a dedicated setup or explanation route
 
-The browser layer renders the featured stage, searchable rack, filters,
-deep-linkable casefiles, and link actions from that same manifest.
+The browser layer renders the featured stage, compact searchable rack, filters,
+deep-linkable casefiles, and link actions from that same manifest. An optional
+`story` object turns a casefile into the full visitor orientation layer:
+problem, shift, three-step scenario, capabilities, proof, possibilities,
+audience, honest boundary, and closing pitch. The rack uses the optional
+`teaser` field so richer casefiles do not make browsing cards feel expanded.
 
 ## Deploy
 
