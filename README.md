@@ -5,7 +5,7 @@ Sean's public OpenClaw command center.
 ## Scope
 
 - `index.html` — front door: fresco origin, Sean personality, interactive system map, operated products, provider routing, and public receipts
-- `work/index.html` — shipped work: custom plugin stack (raw chat, Ursula, Tide Pools/Diem, WatchCatfish, Anthrometer, Shrimp), memory/knowledge architecture, provider mesh, multi-channel UX, research tools
+- `work/index.html` — data-driven catalog for selected systems, apps, plugins, skills, and guides; `catalog-data.js` is the public entry manifest and `catalog.js` powers search, filters, casefiles, and deep links
 - `sms/index.html` — native OpenClaw SMS setup guide: update path, live migration proof, Twilio webhook shape, compliance examples, and A2P lessons
 - `contributions/index.html` — validated contributions: slacrawl, OpenClaw core/SMS work, mcporter, CodexBar, NadirClaw
 - `ops/index.html` — infrastructure: VPS, MacBook node architecture, provider routing, Caddy deployment, browser tooling
@@ -16,6 +16,18 @@ See `VISION.md` for route strategy and anti-drift rules.
 Static site, git-backed.
 
 The current homepage hero uses a JPop-provided "Creation of Adam" lobster image as responsive WebP background art, with a JPEG social preview.
+
+## Catalog entries
+
+`work/catalog-data.js` is the single public content source for `/work/`. Each
+entry carries a stable ID, kind, authorship, readiness, availability, review
+date, links, and display copy. The optional `guide` field supports either:
+
+- `mode: "inline"` for a compact operator note inside the casefile
+- `mode: "page"` for a dedicated setup or explanation route
+
+The browser layer renders the featured stage, searchable rack, filters,
+deep-linkable casefiles, and link actions from that same manifest.
 
 ## Deploy
 

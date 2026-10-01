@@ -45,8 +45,8 @@ The front door is Sean's personality. A visitor should immediately understand wh
 
 | Route | Purpose |
 |---|---|
-| `/` | Front door. Sean personality introduction. Routes to Work, SMS, Contributions, Ops. |
-| `/work/` | Digestible path of valuable shipped work — the portfolio. Send this link to show what Sean can do. |
+| `/` | Front door. Sean personality introduction. Routes to Catalog, SMS, Contributions, Ops. |
+| `/work/` | Browsable catalog of selected custom systems, apps, plugins, skills, and guides. Send this link to explore what Sean and JPop built. |
 | `/sms/` | Native OpenClaw SMS setup guide: update first, use the official Twilio-backed `sms` channel, prepare compliance pages, configure webhooks, and test pairing. |
 | `/contributions/` | Validated/published contributions with concrete receipts. Three strong PR cards. |
 | `/ops/` | Infrastructure: VPS, MacBook node, Caddy, deployment, browser tooling. Architecture is descriptive, not prescriptive. |
@@ -54,15 +54,15 @@ The front door is Sean's personality. A visitor should immediately understand wh
 
 ## Nav Order
 
-All pages: `Home` → `Work` → `SMS` → `Contributions` → `Ops` → `GitHub`
+All pages: `Home` → `Catalog` → `SMS` → `Contributions` → `Ops` → `GitHub`
 
 ## Site Structure
 
 ### `/` — Sean Introduction (front door)
 The homepage is Sean. Personality first: the lobster, the voice, what Sean actually does day-to-day. This page should feel like meeting Sean, not reading a product spec. Proof tiles and capability status are supporting texture, not the headline.
 
-### `/work/` — Valuable Work (digestible, shareable)
-A clear path through the concrete things Sean has built and shipped. This is the page you'd send someone to show what Sean can do. Skills, plugins, multi-channel conversation UX, research tools, workflow glue — organized so a reader can scan it in 30 seconds or dig deeper.
+### `/work/` — Catalog (browsable, shareable)
+A curated collection of concrete things Sean and JPop have built and shipped. A public-safe manifest feeds featured work, search, filters, cards, and deep-linkable casefiles. Entries can point to source or a live demo, carry a compact operator note, or route complex setup into a dedicated guide. The catalog should stay easy to scan as it grows without flattening every kind of work into identical cards.
 
 ### `/sms/` — Native SMS Setup Guide
 The guide for people who want to set up SMS themselves. Sean/JPop built a
