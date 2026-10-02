@@ -4,12 +4,25 @@
   const catalogGrid = document.querySelector("[data-catalog-grid]");
   const search = document.querySelector("[data-catalog-search]");
   const filters = [...document.querySelectorAll("[data-filter]")];
+  const viewButtons = [...document.querySelectorAll("[data-catalog-view]")];
   const count = document.querySelector("[data-result-count]");
   const empty = document.querySelector("[data-catalog-empty]");
   const dialog = document.querySelector("[data-casefile]");
+  const siteHeader = document.querySelector(".site-header");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   if (!featuredGrid || !catalogGrid || !dialog || !entries.length) return;
+
+  const syncToolbarOffset = () => {
+    if (!siteHeader) return;
+    const offset = Math.ceil(siteHeader.getBoundingClientRect().height) + 12;
+    document.documentElement.style.setProperty("--catalog-toolbar-top", `${offset}px`);
+  };
+
+  syncToolbarOffset();
+  if (siteHeader && "ResizeObserver" in window) {
+    new ResizeObserver(syncToolbarOffset).observe(siteHeader);
+  }
 
   const escapeHtml = (value = "") => String(value)
     .replaceAll("&", "&amp;")
@@ -65,6 +78,34 @@
   let activeFilter = "all";
   let currentEntry = null;
   let activeTransition = null;
+  const viewStorageKey = "sean-catalog-view";
+
+  const storedView = () => {
+    try {
+      return localStorage.getItem(viewStorageKey);
+    } catch {
+      return null;
+    }
+  };
+
+  const persistView = (view) => {
+    try {
+      localStorage.setItem(viewStorageKey, view);
+    } catch {
+      // The view still works when storage is blocked.
+    }
+  };
+
+  const applyView = (view, persist = true) => {
+    const nextView = view === "compact" ? "compact" : "visual";
+    catalogGrid.dataset.view = nextView;
+    viewButtons.forEach(button => {
+      button.setAttribute("aria-pressed", String(button.dataset.catalogView === nextView));
+    });
+    if (persist) persistView(nextView);
+  };
+
+  applyView(storedView(), false);
 
   const matches = (entry) => {
     const query = search.value.trim().toLowerCase();
@@ -85,22 +126,32 @@
     catalogGrid.hidden = visible.length === 0;
   };
 
-  const updateFilter = () => {
+  const transition = (render) => {
     if (!reducedMotion.matches && document.startViewTransition && !activeTransition) {
-      activeTransition = document.startViewTransition(renderFilter);
+      activeTransition = document.startViewTransition(render);
       activeTransition.finished.catch(() => {}).finally(() => {
         activeTransition = null;
       });
     } else {
-      renderFilter();
+      render();
     }
   };
+
+  const updateFilter = () => transition(renderFilter);
 
   filters.forEach(button => {
     button.addEventListener("click", () => {
       activeFilter = button.dataset.filter;
       filters.forEach(item => item.setAttribute("aria-pressed", String(item === button)));
       updateFilter();
+    });
+  });
+
+  viewButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const view = button.dataset.catalogView;
+      if (catalogGrid.dataset.view === view) return;
+      transition(() => applyView(view));
     });
   });
 
