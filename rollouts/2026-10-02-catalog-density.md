@@ -51,3 +51,22 @@ change in this release.
    focus restoration.
 5. Confirm zero browser errors and update project/site records with commit, PR,
    rollback, and proof receipts.
+
+## Production receipt
+
+- Merged source: PR `#7`, commit `ab5d4fba673668f262ef8105660740525dec2422`
+  (GitHub verification: valid).
+- Rollback: `/root/rollbacks/sean-before-catalog-density-20261002-073253.tar.gz`
+  (SHA-256
+  `c668ba8e33a6291d1fc428c5382d0e42c879d9bda3123bdfc4e1f0f4b337d714`).
+- All four deployed files match merged-source SHA-256 hashes and are
+  `caddy:caddy` / `0644`.
+- Public proof passed at `390`, `768`, `1280`, and `1440px` with zero overflow,
+  zero browser/console errors, correct `1 / 2 / 3 / 3` columns, all seven cards
+  immediately visible, a 13px sticky-header gap, view persistence, filtering,
+  and casefile focus restoration.
+- Thirty-card simulation passed with zero overflow at desktop and mobile; mobile
+  Visual retains 356px cards and 146px artwork.
+- Temporary preview was retired recoverably to
+  `/root/rollbacks/retired-previews/catalog-density-20261002-20261002-073447`;
+  its former public route returns HTTP 404.
