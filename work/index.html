@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750;800&amp;family=JetBrains+Mono:wght@500;650;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css?v=20260917b">
-  <link rel="stylesheet" href="catalog.css?v=20260930b">
+  <link rel="stylesheet" href="catalog.css?v=20261002a">
 </head>
 <body class="catalog-page">
   <header class="site-header">
@@ -103,10 +103,15 @@
             <button type="button" data-filter="app" aria-pressed="false">Apps</button>
             <button type="button" data-filter="guide" aria-pressed="false">Guides</button>
           </div>
+          <div class="catalog-view-switch" role="group" aria-label="Catalog card density">
+            <span>View</span>
+            <button type="button" data-catalog-view="visual" aria-pressed="true">Visual</button>
+            <button type="button" data-catalog-view="compact" aria-pressed="false">Compact</button>
+          </div>
           <output class="catalog-result-count" aria-live="polite" data-result-count>07 signals</output>
         </div>
 
-        <div class="catalog-rack" data-catalog-grid></div>
+        <div class="catalog-rack" data-catalog-grid data-view="visual"></div>
         <div class="catalog-empty" data-catalog-empty hidden>
           <span aria-hidden="true">∅</span>
           <h3>No signal on that frequency.</h3>
@@ -167,7 +172,7 @@
   </footer>
 
   <script src="../site.js"></script>
-  <script src="catalog-data.js?v=20260930b"></script>
-  <script src="catalog.js?v=20260930b"></script>
+  <script src="catalog-data.js?v=20261002a"></script>
+  <script src="catalog.js?v=20261002a"></script>
 </body>
 </html>
