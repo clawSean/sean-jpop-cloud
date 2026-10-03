@@ -18,6 +18,18 @@ Status: Showcase site live, restructured around vision.
   horizontal overflow.
 - Static density, storytelling, motion, JavaScript syntax, and diff checks pass;
   local desktop proof confirms the original full navigation remains intact.
+- Merged feature PR `#11` as `290a5c9`. Deployed only the eight reviewed public
+  files from that exact merge commit after preserving rollback
+  `/root/rollbacks/sean-before-mobile-density-20261003-045646.tar.gz`
+  (SHA-256
+  `c6ff56de62038f0b941c155c4e9652e93489e1a0ce34b1a5524e1dfa58b003cf`).
+- Source and production SHA-256 hashes match for all eight files. The four route
+  directories are `caddy:caddy` / `0755`, deployed files are `caddy:caddy` /
+  `0644`, and all five routes plus four cache-busted assets return HTTP 200.
+- Public HTTPS repeated the full iPhone interaction proof and 393/768/1280/1440
+  matrix with zero overflow or browser errors. The mobile header is 59px, the
+  collapsed catalog controls are 112px and non-sticky, the rack anchor shows a
+  complete card, and desktop remains three columns with full navigation.
 
 ## 2026-10-02 — Catalog Reader-First Feedback Pass
 
