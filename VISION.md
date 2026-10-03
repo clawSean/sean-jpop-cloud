@@ -67,6 +67,11 @@ The homepage is Sean. Personality first: the lobster, the voice, what Sean actua
 ### `/work/` — Catalog (browsable, shareable)
 A curated collection of concrete things Sean and JPop have built and shipped. A public-safe manifest feeds featured work, search, filters, cards, and deep-linkable casefiles. Entries can point to source or a live demo, carry a compact operator note, or route complex setup into a dedicated guide. The catalog should stay easy to scan as it grows without flattening every kind of work into identical cards.
 
+Featured work is a visual shortcut, never a gate in front of the catalog. On
+phones, the complete featured stage must fit inside one usable viewport, retain
+its project artwork through a horizontal swipe rail, and keep focused search
+available in one tap from the fixed header.
+
 ### `/sms/` — Native SMS Setup Guide
 The guide for people who want to set up SMS themselves. Sean/JPop built a
 custom Twilio lane, proposed SMS upstream, helped prove and land the native

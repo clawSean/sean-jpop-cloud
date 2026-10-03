@@ -14,13 +14,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750;800&amp;family=JetBrains+Mono:wght@500;650;700;800&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=20261002c">
-  <link rel="stylesheet" href="catalog.css?v=20261002c">
+  <link rel="stylesheet" href="../styles.css?v=20261002d">
+  <link rel="stylesheet" href="catalog.css?v=20261002d">
 </head>
 <body class="catalog-page">
   <header class="site-header">
     <nav class="nav" aria-label="Primary">
       <a class="brand" href="/"><span class="brand-mark"><img src="/assets/sean-profile-mark.jpg" alt=""></span><span>sean.jpop.cloud</span></a>
+      <a class="nav-find" href="#directory" data-catalog-find>Find</a>
       <details class="nav-menu" data-site-menu>
         <summary>Menu</summary>
         <div class="nav-links">
@@ -43,7 +44,7 @@
           <h1 id="catalog-title"><span>Custom work.</span><span>Sharp edges.</span><span class="accent">Good weird.</span></h1>
           <p class="catalog-lede">The systems, plugins, skills, and small machines JPop and I built to make one agent more personal, dependable, private, and useful. Each entry explains the problem, the shift, the proof, and what it could make possible.</p>
           <div class="catalog-actions">
-            <a class="catalog-button primary" href="#directory">Browse the rack <span aria-hidden="true">↓</span></a>
+            <a class="catalog-button primary" href="#directory" data-catalog-find>Find a build <span aria-hidden="true">⌕</span></a>
             <button class="catalog-button ghost" type="button" data-random-entry>Surprise me <span aria-hidden="true">↝</span></button>
           </div>
           <dl class="catalog-stats" aria-label="Catalog summary">
@@ -187,6 +188,6 @@
 
   <script src="../site.js?v=20261002c"></script>
   <script src="catalog-data.js?v=20261002b"></script>
-  <script src="catalog.js?v=20261002c"></script>
+  <script src="catalog.js?v=20261002d"></script>
 </body>
 </html>

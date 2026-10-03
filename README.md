@@ -27,7 +27,9 @@ date, links, and display copy. The optional `guide` field supports either:
 - `mode: "page"` for a dedicated setup or explanation route
 
 The browser layer renders the featured stage, compact searchable rack, filters,
-deep-linkable casefiles, and link actions from that same manifest. An optional
+deep-linkable casefiles, and link actions from that same manifest. On phones,
+the featured stage becomes a one-screen swipe rail and the header's Find action
+jumps directly to focused search. An optional
 `story` object turns a casefile into the full visitor orientation layer:
 problem, shift, three-step scenario, capabilities, proof, possibilities,
 audience, honest boundary, and closing pitch. The rack uses the optional

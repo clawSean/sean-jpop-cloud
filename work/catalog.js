@@ -329,12 +329,25 @@
     openEntry(pool[Math.floor(Math.random() * pool.length)].id);
   });
 
+  const focusCatalogSearch = () => {
+    const directory = document.querySelector("#directory");
+    const mobile = window.matchMedia("(max-width: 820px)").matches;
+    directory.scrollIntoView({ behavior: mobile || reducedMotion.matches ? "auto" : "smooth", block: "start" });
+    search.focus({ preventScroll: true });
+  };
+
+  document.querySelectorAll("[data-catalog-find]").forEach(trigger => {
+    trigger.addEventListener("click", event => {
+      event.preventDefault();
+      focusCatalogSearch();
+    });
+  });
+
   document.addEventListener("keydown", event => {
     const typing = ["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement?.tagName);
     if (event.key === "/" && !typing && !dialog.open) {
       event.preventDefault();
-      search.focus();
-      document.querySelector("#directory").scrollIntoView({ behavior: reducedMotion.matches ? "auto" : "smooth", block: "start" });
+      focusCatalogSearch();
     }
   });
 

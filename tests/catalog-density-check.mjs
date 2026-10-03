@@ -10,7 +10,9 @@ const [uiSource, htmlSource, cssSource] = await Promise.all([
 assert.match(htmlSource, /data-catalog-grid data-view="visual"/, "visual rack must remain the default");
 assert.match(htmlSource, /data-catalog-view="visual"/, "visual view control is missing");
 assert.match(htmlSource, /data-catalog-view="compact"/, "compact view control is missing");
-assert.match(htmlSource, /catalog\.css\?v=20261002c/, "mobile density CSS must use the release cache key");
+assert.match(htmlSource, /catalog\.css\?v=20261002d/, "mobile feature-access CSS must use the release cache key");
+assert.match(htmlSource, /class="nav-find"[^>]*data-catalog-find/, "mobile navigation needs a direct catalog search action");
+assert.match(uiSource, /focusCatalogSearch/, "catalog search shortcuts must focus the actual search field");
 assert.doesNotMatch(uiSource, /entries\.slice\s*\(/, "the complete catalog must not be truncated");
 assert.doesNotMatch(htmlSource, /load more/i, "the complete catalog must not hide behind load-more controls");
 assert.match(uiSource, /sean-catalog-view/, "the visitor's rack preference must be remembered");
@@ -21,6 +23,8 @@ assert.match(cssSource, /\.catalog-rack\s*\{\s*grid-template-columns:\s*1fr;/s, 
 assert.match(cssSource, /\.catalog-card\s*\{\s*min-height:\s*356px;/s, "mobile visual cards must retain meaningful height");
 assert.match(cssSource, /\.catalog-card \.signal-art\s*\{\s*height:\s*146px;/s, "mobile visual artwork must stay prominent");
 assert.match(cssSource, /@media \(max-width: 620px\)[\s\S]*?\.catalog-toolbar\s*\{[\s\S]*?position:\s*relative;/, "mobile catalog controls must scroll away instead of covering the rack");
+assert.match(cssSource, /scroll-snap-type:\s*inline mandatory/, "mobile featured projects must use a compact swipe rail");
+assert.match(cssSource, /@media \(max-width: 620px\)[\s\S]*?\.featured-card,[\s\S]*?\.featured-hero\s*\{[\s\S]*?height:\s*372px;/, "mobile featured cards must retain artwork without becoming a vertical stack");
 assert.match(cssSource, /top:\s*var\(--catalog-toolbar-top/, "sticky controls must use the measured header offset");
 
 console.log("Catalog density checks: PASS");

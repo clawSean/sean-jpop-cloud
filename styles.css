@@ -109,6 +109,10 @@ a {
   display: none;
 }
 
+.nav-find {
+  display: none;
+}
+
 .nav-links a,
 .text-link {
   min-height: 38px;
@@ -681,6 +685,28 @@ main {
     list-style: none;
     text-transform: uppercase;
     cursor: pointer;
+  }
+
+  .nav-find {
+    min-height: 38px;
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 10px;
+    border: 1px solid rgba(87, 216, 201, 0.28);
+    border-radius: 4px;
+    color: var(--teal);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .nav-find + .nav-menu {
+    margin-left: 0;
   }
 
   .nav-menu > summary::-webkit-details-marker {
