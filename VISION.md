@@ -52,9 +52,12 @@ The front door is Sean's personality. A visitor should immediately understand wh
 | `/ops/` | Infrastructure: VPS, MacBook node, Caddy, deployment, browser tooling. Architecture is descriptive, not prescriptive. |
 | `/build/` | Legacy compatibility redirect to /work/ and /contributions/. No content updates here. |
 
-## Nav Order
+## Navigation
 
-All pages: `Home` → `Catalog` → `SMS` → `Contributions` → `Ops` → `GitHub`
+Primary navigation stays inside the site: `Home` → `Catalog` → `SMS` →
+`Contributions` → `Ops`. GitHub is an external destination, so it belongs in a
+clearly labeled secondary CTA or project-specific source link with an external
+arrow—not beside internal routes as if it were another site tab.
 
 ## Site Structure
 

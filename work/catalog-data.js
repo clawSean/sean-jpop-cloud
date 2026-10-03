@@ -409,5 +409,181 @@ window.SEAN_CATALOG = [
       { label: "Open setup guide", href: "/sms/", primary: true },
       { label: "Contribution receipts", href: "/contributions/" }
     ]
+  },
+  {
+    id: "telegram-workspace",
+    index: "008",
+    name: "Telegram workspace",
+    kind: "app",
+    kindLabel: "Telegram app layer",
+    status: "Live",
+    statusTone: "live",
+    authorship: "Original system",
+    availability: "Public source",
+    featured: false,
+    visual: "telegram",
+    tone: "blue",
+    lead: "Turn Telegram from one endless bot chat into a structured operating surface for projects, people, and live work.",
+    teaser: "Groups, topics, rich controls, media, and agent-managed navigation make Telegram feel like an interface—not an inbox.",
+    summary: "Our Telegram setup separates projects and intentions into distinct rooms, uses topics for active workstreams, and gives Sean native controls for polls, files, edits, reactions, media, status, and group management.",
+    why: "OpenClaw can meet people across many channels, but Telegram becomes much more useful when the conversation architecture and the interface are designed together.",
+    story: {
+      promise: "Your agent does not need to live in one immortal DM. Telegram can become the organized, mobile control surface around the work.",
+      problem: "Most Telegram bot setups collapse everything into one scroll. Projects collide, old context becomes hard to find, and the interface never grows beyond alternating text bubbles.",
+      shift: "Use groups as durable context boundaries, topics as focused workstreams, and Telegram's native interaction controls as part of the product. The agent can help create, navigate, and maintain that structure instead of merely replying inside it.",
+      scenario: {
+        label: "From chat to workspace",
+        title: "Give every kind of work a place to live.",
+        intro: "The structure stays legible on a phone while the agent retains the context and tools needed to act.",
+        steps: [
+          { label: "01 / Separate", title: "Create rooms with a purpose", body: "Use a dedicated group for a project, household lane, or recurring intention instead of forcing unrelated work through one history." },
+          { label: "02 / Focus", title: "Use topics for active workstreams", body: "Split releases, research, feedback, or support into named threads that remain easy to return to and hand off." },
+          { label: "03 / Operate", title: "Let the interface do real work", body: "The agent can use buttons, polls, files, media, edits, reactions, status updates, and topic controls when those are clearer than another paragraph." }
+        ]
+      },
+      capabilities: [
+        { title: "Conversation architecture", body: "Groups and topics create visible boundaries for projects and workstreams while commands such as /new give people deliberate context control." },
+        { title: "Agent-managed navigation", body: "With the right permissions, the agent can create or edit topics, manage group structure, and place information where it will remain useful." },
+        { title: "Native interaction design", body: "Rich formatting, controls, polls, reactions, media, files, and edits turn the conversation into a usable mobile interface." }
+      ],
+      proof: [
+        { value: "Live", label: "daily workspace", detail: "Projects and recurring intentions already run in dedicated Telegram groups instead of one permanent bot DM." },
+        { value: "Public", label: "UI skill", detail: "The live-calibrated Telegram UI runbook, action recipes, and rendering evidence are published for other agents." },
+        { value: "Native", label: "platform controls", detail: "The experience uses Telegram's own groups, topics, polls, reactions, files, media, and administrative actions." }
+      ],
+      possibilities: [
+        "Give each important project a durable mobile room with a recognizable purpose and history.",
+        "Let an agent organize new workstreams and surface the right controls instead of waiting for manual chat housekeeping.",
+        "Build richer support, family, operations, or collaboration experiences without asking people to learn a new app."
+      ],
+      audience: "OpenClaw users who already talk to an agent in Telegram and want the channel to feel organized, intentional, and genuinely useful.",
+      boundary: "Telegram supplies the rooms and controls; identity, durable project context, and safe authority still need their own systems.",
+      close: "The channel stops feeling like a bot window when the conversations, controls, and agent behavior are designed as one workspace."
+    },
+    tags: ["Telegram", "Topics", "Mobile UI"],
+    reviewed: "Oct 2026",
+    links: [
+      { label: "View Telegram UI source", href: "https://github.com/clawSean/telegram-ui", primary: true }
+    ]
+  },
+  {
+    id: "action-button-voice-inbox",
+    index: "009",
+    name: "Action Button voice inbox",
+    kind: "app",
+    kindLabel: "iPhone voice shortcut",
+    status: "Live",
+    statusTone: "live",
+    authorship: "Original build",
+    availability: "Casefile + setup pattern",
+    featured: false,
+    visual: "shortcut",
+    tone: "gold",
+    lead: "Your agent as Siri: press one physical button, speak, and send a real request into the full agent workflow.",
+    teaser: "One press turns a spoken thought into a normal Telegram request with the agent's memory, tools, and follow-through behind it.",
+    summary: "An iPhone Shortcut captures dictation, posts the text to an authenticated relay, and delivers it through a dedicated Telegram user session into a private voice inbox. OpenClaw receives an ordinary human message and handles it normally.",
+    why: "The smallest requests often die in the friction between having a thought and opening the right app. A physical button makes the agent available at the speed of the thought.",
+    story: {
+      promise: "Press, speak, pocket the phone. The request reaches the same agent that can remember, research, operate tools, and follow through.",
+      problem: "Voice assistants are quick but shallow; full agents are capable but usually hidden behind an app, a chat, and several taps. That friction is enough to lose reminders, questions, and useful ideas in motion.",
+      shift: "The iPhone Action Button becomes a direct capture surface. iOS performs the dictation, a bounded relay delivers only the text to one private destination, and the message enters OpenClaw through the normal human Telegram path.",
+      scenario: {
+        label: "Your agent as Siri",
+        title: "A physical button becomes the front door.",
+        intro: "There is no separate voice-agent product to remember or launch.",
+        steps: [
+          { label: "01 / Press", title: "Capture the thought immediately", body: "The Action Button starts a tiny Shortcut and iOS turns the spoken request into text on the phone." },
+          { label: "02 / Deliver", title: "Send it through a bounded relay", body: "An authenticated HTTPS request reaches a fixed relay that can post only into the designated private Telegram inbox." },
+          { label: "03 / Act", title: "Use the whole agent", body: "Because the message arrives as ordinary human input, the agent can apply its normal context, tools, memory, and reply behavior." }
+        ]
+      },
+      capabilities: [
+        { title: "One-button capture", body: "The physical Action Button reduces a useful agent request to one press and one sentence." },
+        { title: "Normal OpenClaw intake", body: "The relay produces a genuine inbound Telegram message instead of a bot echo that bypasses the usual conversation path." },
+        { title: "Bounded delivery", body: "A fixed destination, bearer authentication, rate limits, size limits, and blocked slash commands keep the relay deliberately narrow." }
+      ],
+      proof: [
+        { value: "1 press", label: "capture cost", detail: "No app hunt, chat selection, or model picker stands between the thought and the agent." },
+        { value: "0", label: "audio uploads", detail: "iOS performs dictation and the relay receives text, so no recording needs server-side transcription." },
+        { value: "Daily", label: "real use", detail: "The workflow is a proven everyday voice inbox rather than a speculative Shortcut diagram." }
+      ],
+      possibilities: [
+        "Capture reminders, research questions, shopping needs, and operational tasks while walking, cooking, or carrying something.",
+        "Give a capable personal agent the same reflexive access people expect from a phone's built-in assistant.",
+        "Route different physical or on-screen triggers into separate private inboxes for family, work, travel, or quick capture."
+      ],
+      audience: "People who want hands-free access to a real agent without living inside a chat app.",
+      boundary: "It needs an iPhone Shortcut, a private Telegram destination, and an always-on authenticated relay. The Telegram user session is sensitive and must be protected accordingly.",
+      close: "Siri-speed capture becomes useful when the request lands with an agent that can actually do something about it."
+    },
+    tags: ["iPhone", "Voice", "Shortcut"],
+    reviewed: "Oct 2026",
+    guide: {
+      mode: "inline",
+      label: "Setup shape",
+      title: "Three pieces connect the button to the agent",
+      steps: [
+        "Create an iOS Shortcut that dictates text and posts it as JSON to one authenticated HTTPS endpoint.",
+        "Run a narrow relay that can deliver only to the intended private Telegram group through an authorized user session.",
+        "Assign the Shortcut to the Action Button, then prove relay health, dry-run authentication, Telegram delivery, and OpenClaw response in order."
+      ]
+    },
+    links: []
+  },
+  {
+    id: "active-initiative-docs",
+    index: "010",
+    name: "AID — Active Initiative Docs",
+    kind: "system",
+    kindLabel: "Continuity system",
+    status: "Maintained",
+    statusTone: "maintained",
+    authorship: "Original system",
+    availability: "Public source",
+    featured: false,
+    visual: "aid",
+    tone: "green",
+    lead: "A lightweight project-context system that preserves vision, decisions, current truth, and the next action across every session.",
+    teaser: "Keep long-running agent work aligned across chats, channels, handoffs, and restarts without rebuilding the project from memory.",
+    summary: "Active Initiative Docs gives durable work a small operating floor: VISION for direction, STATUS for current truth, LOG for history, and optional ROADMAP, DECISIONS, and rollout files only when the work earns them.",
+    why: "Multi-channel agents are powerful precisely because work can begin anywhere. Without a canonical project floor, that same flexibility causes stale assumptions, repeated decisions, and drift.",
+    story: {
+      promise: "Start a fresh chat, change channels, hand the project to another capable agent—and recover the same vision, decisions, and next move.",
+      problem: "Long-running work accumulates plans, chat promises, code changes, review notes, and one-off status updates. After a restart or handoff, the next session has to guess which fragments still describe reality.",
+      shift: "AID gives each real initiative a tiny canonical operating floor. Direction, current state, history, settled decisions, and rollout mechanics live in separate files with clear jobs and update rules.",
+      scenario: {
+        label: "Continuity without prompt soup",
+        title: "The chat changes. The project does not drift.",
+        intro: "AID makes the project's own docs the handoff surface instead of expecting one conversation to remain alive forever.",
+        steps: [
+          { label: "01 / Orient", title: "Read the durable direction", body: "VISION states why the initiative exists, what it will not become, and what done means before new work starts." },
+          { label: "02 / Reconcile", title: "Check truth against reality", body: "STATUS records observable current state, blockers, and exactly one next action; the agent verifies external state before trusting it." },
+          { label: "03 / Record", title: "Update when reality changes", body: "LOG and decision records capture what changed and why, so later sessions do not reopen settled questions or repeat old mistakes." }
+        ]
+      },
+      capabilities: [
+        { title: "Cross-session continuity", body: "A fresh session can recover the project without depending on a giant transcript or one model's hidden conversational state." },
+        { title: "Decision and vision control", body: "The reason for the work and the choices already made remain visible beside the current implementation state." },
+        { title: "Bounded documentation", body: "Small initiatives stay small; ROADMAP, DECISIONS, and rollout files appear only when they have a real job." }
+      ],
+      proof: [
+        { value: "3", label: "core documents", detail: "VISION, STATUS, and LOG separate direction, truth, and history without turning the project into paperwork." },
+        { value: "1", label: "next action", detail: "STATUS keeps one exact next move so resumed work does not restart as an open-ended planning exercise." },
+        { value: "Public", label: "portable protocol", detail: "The canon, template, minimal example, and install prompt are available for other agent-led projects." }
+      ],
+      possibilities: [
+        "Maintain one product vision while work moves between Telegram groups, topics, coding sessions, and contributors.",
+        "Give every agent a reliable resume packet after compaction, interruption, or model changes.",
+        "Prevent duplicate side projects by checking the existing estate and reusing the right initiative before creating another folder."
+      ],
+      audience: "Anyone using agents for projects that last longer than one chat, especially across multiple channels or collaborators.",
+      boundary: "AID preserves project truth only when the files are kept honest. It is a small operating ritual, not automatic memory or a substitute for proof.",
+      close: "The goal is not more documentation. It is the same project, the same decisions, and the right next move—wherever the next session begins."
+    },
+    tags: ["Continuity", "Projects", "Anti-drift"],
+    reviewed: "Oct 2026",
+    links: [
+      { label: "View AID source", href: "https://github.com/clawSean/active-initiative-docs", primary: true }
+    ]
   }
 ];

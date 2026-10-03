@@ -40,7 +40,10 @@
       reef: `<div class="reef-grid"><span>WEB</span><span>UI</span><span>OPS</span><span>MEM</span><span>QA</span><span>VOICE</span><i></i><i></i><i></i></div>`,
       swap: `<div class="swap-routes"><div><span>SOL</span><i></i><b>ASTRA</b></div><div><span>FAST</span><i></i><b>HIGH</b></div><em>SESSION PATCHED · NO RESTART</em></div>`,
       uptime: `<div class="uptime-monitor"><div class="uptime-head"><span>EDGE WATCH</span><b>LIVE</b></div><svg viewBox="0 0 320 100" role="presentation"><path class="pulse-track" d="M0 56 H64 L76 56 L90 16 L112 88 L132 42 L148 56 H320"></path><path class="pulse-glow" d="M0 56 H64 L76 56 L90 16 L112 88 L132 42 L148 56 H320"></path></svg><div class="uptime-states"><span>MAC</span><span>GATEWAY</span><span>SMS</span></div></div>`,
-      sms: `<div class="sms-device"><div class="sms-screen"><span>INBOUND</span><p>pairing approved</p><i></i><span>OUTBOUND</span><p>delivery verified</p></div><b>A2P · WEBHOOK · NATIVE</b></div>`
+      sms: `<div class="sms-device"><div class="sms-screen"><span>INBOUND</span><p>pairing approved</p><i></i><span>OUTBOUND</span><p>delivery verified</p></div><b>A2P · WEBHOOK · NATIVE</b></div>`,
+      telegram: `<div class="telegram-workspace"><div class="telegram-sidebar"><b>PROJECTS</b><span class="active">BUILD</span><span>HOME</span><span>TRAVEL</span></div><div class="telegram-thread"><span class="telegram-topic">TOPIC / RELEASE</span><p><i></i>Proof is green.</p><p class="outbound">Ship it. <i></i></p><div><b>POLL</b><b>FILE</b><b>STATUS</b></div></div></div>`,
+      shortcut: `<div class="shortcut-flow"><span class="action-button"><i></i></span><div class="shortcut-line"><b>PRESS</b><i></i><b>SPEAK</b><i></i><b>ACT</b></div><p>PHYSICAL BUTTON → FULL AGENT</p><div class="voice-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>`,
+      aid: `<div class="aid-stack"><article><span>VISION</span><b>why + boundaries</b></article><article><span>STATUS</span><b>truth + next action</b></article><article><span>LOG</span><b>what changed</b></article><div><i></i><strong>CONTEXT RESTORED</strong><i></i></div></div>`
     };
     return `<div class="signal-art signal-${escapeHtml(entry.visual)} signal-${size}" data-tone="${escapeHtml(entry.tone)}" aria-label="Abstract visualization for ${label}">${shells[entry.visual] || shells.reef}</div>`;
   };
@@ -120,7 +123,7 @@
       const show = visible.some(entry => entry.id === card.dataset.entryId);
       card.hidden = !show;
     });
-    const label = visible.length === 1 ? "signal" : "signals";
+    const label = visible.length === 1 ? "build" : "builds";
     count.textContent = `${String(visible.length).padStart(2, "0")} ${label}`;
     empty.hidden = visible.length !== 0;
     catalogGrid.hidden = visible.length === 0;
@@ -281,7 +284,10 @@
       guide.innerHTML = "";
     }
 
-    dialog.querySelector("[data-casefile-links]").innerHTML = entry.links.map(linkMarkup).join("");
+    const links = entry.links || [];
+    const linkMount = dialog.querySelector("[data-casefile-links]");
+    linkMount.hidden = links.length === 0;
+    linkMount.innerHTML = links.map(linkMarkup).join("");
     dialog.querySelector(".casefile-shell").scrollTop = 0;
     if (!dialog.open) dialog.showModal();
     if (updateHash) history.replaceState(null, "", `#${entry.id}`);

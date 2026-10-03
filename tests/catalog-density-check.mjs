@@ -10,7 +10,7 @@ const [uiSource, htmlSource, cssSource] = await Promise.all([
 assert.match(htmlSource, /data-catalog-grid data-view="visual"/, "visual rack must remain the default");
 assert.match(htmlSource, /data-catalog-view="visual"/, "visual view control is missing");
 assert.match(htmlSource, /data-catalog-view="compact"/, "compact view control is missing");
-assert.match(htmlSource, /catalog\.(?:css|js)\?v=20261002a/g, "density assets must use the release cache key");
+assert.match(htmlSource, /catalog\.(?:css|js)\?v=20261002b/g, "density assets must use the release cache key");
 assert.doesNotMatch(uiSource, /entries\.slice\s*\(/, "the complete catalog must not be truncated");
 assert.doesNotMatch(htmlSource, /load more/i, "the complete catalog must not hide behind load-more controls");
 assert.match(uiSource, /sean-catalog-view/, "the visitor's rack preference must be remembered");

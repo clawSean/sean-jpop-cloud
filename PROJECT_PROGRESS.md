@@ -2,6 +2,30 @@
 
 Status: Showcase site live, restructured around vision.
 
+## 2026-10-02 — Catalog Reader-First Feedback Pass
+
+- Expanded Collection 001 from seven to ten reviewed entries with full
+  casefiles for the Telegram workspace, the iPhone Action Button voice inbox,
+  and AID — Active Initiative Docs.
+- Classified Telegram and the Action Button experience under Apps, gave all
+  three additions custom catalog artwork, and kept the Action Button source
+  boundary honest with an inline setup pattern instead of a dead private-repo
+  link.
+- Replaced the awkward selected-signal wording and the fourth-wall Collection
+  Rules copy with reader-first language: understand it, try or inspect it, and
+  put it to work.
+- Removed GitHub from every primary-navigation peer group. Public GitHub links
+  remain available through clearly external page CTAs and project-specific
+  source links; `VISION.md` now owns that navigation rule.
+- Preserved the three/two/one-column density floor, all-entries-visible rule,
+  remembered Visual/Compact modes, persuasive casefiles, and mobile-first card
+  artwork.
+- Static storytelling, density, motion, syntax, and diff checks pass. Local
+  browser proof passed at 390, 768, 1280, and 1440px for the catalog, plus
+  mobile/desktop checks of every public route: zero overflow, internal-only
+  primary navigation, visible GitHub CTAs, correct Apps filtering, working
+  Action Button inline guidance, and AID deep links.
+
 ## 2026-09-21 — Motion Preview Copy Audit
 
 - Kept the Signal Journey and Claw Machine simulator implementation unchanged.
