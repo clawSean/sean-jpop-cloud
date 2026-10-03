@@ -2,6 +2,23 @@
 
 Status: Showcase site live, restructured around vision.
 
+## 2026-10-02 — Catalog Mobile Viewport Pass
+
+- Replaced the two-row mobile route navigation with a 59px one-row header and
+  an accessible progressive Menu overlay; desktop navigation stays unchanged.
+- Changed the catalog controls from a 179px permanently sticky block to a
+  112px search/refine bar that scrolls away. Filters and Visual/Compact view
+  controls remain one tap away and collapse after a selection.
+- Tightened mobile hero, feature, directory, and closing-section spacing while
+  preserving the visual-first 356px project cards.
+- Tested as an actual iPhone 15 Pro interaction at 393x852: the rack anchor
+  shows one complete project card in the first viewport, browsing leaves only
+  the 59px header fixed, Apps filtering remains exact, the Menu closes by
+  outside tap/Escape/link selection, and all non-home routes have zero
+  horizontal overflow.
+- Static density, storytelling, motion, JavaScript syntax, and diff checks pass;
+  local desktop proof confirms the original full navigation remains intact.
+
 ## 2026-10-02 — Catalog Reader-First Feedback Pass
 
 - Expanded Collection 001 from seven to ten reviewed entries with full

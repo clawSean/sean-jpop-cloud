@@ -5,6 +5,7 @@
   const search = document.querySelector("[data-catalog-search]");
   const filters = [...document.querySelectorAll("[data-filter]")];
   const viewButtons = [...document.querySelectorAll("[data-catalog-view]")];
+  const refine = document.querySelector("[data-catalog-refine]");
   const count = document.querySelector("[data-result-count]");
   const empty = document.querySelector("[data-catalog-empty]");
   const dialog = document.querySelector("[data-casefile]");
@@ -17,6 +18,10 @@
     if (!siteHeader) return;
     const offset = Math.ceil(siteHeader.getBoundingClientRect().height) + 12;
     document.documentElement.style.setProperty("--catalog-toolbar-top", `${offset}px`);
+  };
+
+  const closeMobileRefine = () => {
+    if (refine && window.matchMedia("(max-width: 620px)").matches) refine.open = false;
   };
 
   syncToolbarOffset();
@@ -147,14 +152,15 @@
       activeFilter = button.dataset.filter;
       filters.forEach(item => item.setAttribute("aria-pressed", String(item === button)));
       updateFilter();
+      closeMobileRefine();
     });
   });
 
   viewButtons.forEach(button => {
     button.addEventListener("click", () => {
       const view = button.dataset.catalogView;
-      if (catalogGrid.dataset.view === view) return;
-      transition(() => applyView(view));
+      if (catalogGrid.dataset.view !== view) transition(() => applyView(view));
+      closeMobileRefine();
     });
   });
 

@@ -46,6 +46,9 @@ assert.match(htmlSource, /data-casefile-story/, "casefile storytelling mount is 
 for (const [route, source] of [["home", homeSource], ["catalog", htmlSource], ["sms", smsSource], ["contributions", contributionsSource], ["ops", opsSource]]) {
   assert.doesNotMatch(source, /<a href="https:\/\/github\.com\/clawSean"(?: rel="me")?>GitHub(?: ↗)?<\/a>/, `${route}: external GitHub must not masquerade as primary navigation`);
 }
+for (const [route, source] of [["catalog", htmlSource], ["sms", smsSource], ["contributions", contributionsSource], ["ops", opsSource]]) {
+  assert.match(source, /<details class="nav-menu" data-site-menu>/, `${route}: compact progressive mobile navigation is missing`);
+}
 assert.match(htmlSource, /Explore clawSean on GitHub/, "GitHub must remain available as a clearly external CTA");
 assert.doesNotMatch(htmlSource, /Browse every selected signal/, "reader-facing directory copy must not use the awkward selected-signal phrase");
 assert.doesNotMatch(htmlSource, /Source when there is source/, "the closer must not explain the internal content model");
