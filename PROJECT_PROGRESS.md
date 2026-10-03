@@ -17,6 +17,18 @@ Status: Showcase site live, restructured around vision.
   behavior, horizontal project swiping, zero clipped feature copy, and zero
   horizontal overflow at 320/393/768/1280/1440px. Desktop keeps the original
   asymmetric featured stage and full navigation.
+- Merged feature PR `#13` as `f20ca94`. Deployed only `styles.css` and the
+  three changed `/work/` assets from that exact merge after preserving rollback
+  `/root/rollbacks/sean-before-feature-access-20261003-051435.tar.gz`
+  (SHA-256
+  `3cd77aeab3d5778746e8baa2eb39541d67c5c3a1ee3e89177efcabbd03627364`).
+- Public source/live SHA-256 hashes match for all four files. All five routes
+  and three cache-busted assets return HTTP 200 with `caddy:caddy` / `0755`
+  route-directory and `0644` file modes.
+- Public HTTPS repeated the strict 393x660 touch proof, exact AID search,
+  horizontal featured swipe, non-catalog route navigation, and
+  320/393/768/1280/1440 responsive matrix with zero clipping, overflow, or
+  browser errors.
 
 ## 2026-10-02 — Catalog Mobile Viewport Pass
 
