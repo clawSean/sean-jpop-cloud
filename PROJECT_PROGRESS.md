@@ -25,6 +25,22 @@ Status: Showcase site live, restructured around vision.
   mobile/desktop checks of every public route: zero overflow, internal-only
   primary navigation, visible GitHub CTAs, correct Apps filtering, working
   Action Button inline guidance, and AID deep links.
+- Merged feature PR `#9` as `f682813`. Deployed only the eight changed public
+  files from that exact merge commit after preserving rollback
+  `/root/rollbacks/sean-before-catalog-feedback-20261003-042346.tar.gz`
+  (SHA-256
+  `ead1e5235e00f6fbf81225eaf55aa88dfe29a275fce657be9a33140449945523`).
+- Public HTTPS proof repeated the four-width catalog matrix with ten visible
+  entries, correct one/two/three/three-column layouts, zero horizontal
+  overflow, internal-only primary navigation, exact Apps filtering, working
+  Action Button guidance, an AID deep link, and zero browser errors. All five
+  public routes and three cache-busted catalog assets return HTTP 200; deployed
+  hashes match source exactly with `caddy:caddy` ownership, `0755` route
+  directories, and `0644` files.
+- Production verification caught a macOS `rsync` permission regression on the
+  four route directories before handoff. Normalizing those directories to
+  `caddy:caddy` / `0755` restored every route; this is recorded so future
+  static deploys normalize directories as well as files.
 
 ## 2026-09-21 — Motion Preview Copy Audit
 
