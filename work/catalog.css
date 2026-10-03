@@ -2314,22 +2314,65 @@ html {
   }
 
   .featured-grid {
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto;
+    display: flex;
+    gap: 14px;
+    margin-top: 28px;
+    padding: 0 0 10px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-padding-inline: 1px;
+    scroll-snap-type: inline mandatory;
+    scrollbar-color: rgba(94, 228, 212, 0.34) transparent;
   }
 
   .featured-card,
   .featured-hero {
+    flex: 0 0 min(76vw, 520px);
     grid-row: auto;
     grid-template-columns: 1fr;
-    min-height: 560px;
+    grid-template-rows: 230px minmax(0, 1fr);
+    height: 470px;
+    min-height: 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
 
   .featured-card .featured-visual,
   .featured-hero .featured-visual {
-    min-height: 280px;
+    height: 230px;
+    min-height: 0;
     border-right: 0;
     border-bottom: 1px solid var(--catalog-line);
+  }
+
+  .featured-copy {
+    min-height: 0;
+    padding: 22px;
+  }
+
+  .featured-copy h3 {
+    margin-top: 14px;
+    font-size: clamp(1.45rem, 4vw, 2rem);
+  }
+
+  .featured-copy > p {
+    display: -webkit-box;
+    margin-top: 10px;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .tag-strip {
+    margin-top: 12px;
+  }
+
+  .tag-strip span:nth-child(n + 3) {
+    display: none;
+  }
+
+  .featured-copy button {
+    padding-top: 14px;
   }
 
   .catalog-toolbar {
@@ -2430,8 +2473,8 @@ html {
   .orbit-node { font-size: 0.51rem; }
 
   .catalog-featured {
-    padding-top: 66px;
-    padding-bottom: 70px;
+    padding-top: 34px;
+    padding-bottom: 34px;
   }
 
   .catalog-principle {
@@ -2445,9 +2488,64 @@ html {
     font-size: clamp(2.1rem, 11vw, 3.3rem);
   }
 
+  .catalog-section-head {
+    gap: 8px;
+  }
+
+  .catalog-section-head h2 {
+    font-size: clamp(1.8rem, 8vw, 2rem);
+    line-height: 0.98;
+  }
+
+  .catalog-section-head > p {
+    display: none;
+  }
+
+  .featured-grid {
+    gap: 12px;
+    margin-top: 14px;
+  }
+
   .featured-card,
   .featured-hero {
-    min-height: 540px;
+    flex-basis: min(86vw, 338px);
+    grid-template-rows: 156px minmax(0, 1fr);
+    height: 372px;
+    min-height: 0;
+  }
+
+  .featured-card .featured-visual,
+  .featured-hero .featured-visual {
+    height: 156px;
+    min-height: 0;
+  }
+
+  .featured-copy {
+    padding: 15px;
+  }
+
+  .featured-copy h3 {
+    margin-top: 12px;
+    font-size: 1.28rem;
+  }
+
+  .featured-copy > p {
+    margin-top: 9px;
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+
+  .tag-strip {
+    margin-top: 10px;
+  }
+
+  .tag-strip span {
+    padding: 3px 6px;
+    font-size: 0.52rem;
+  }
+
+  .featured-copy button {
+    padding-top: 12px;
   }
 
   .catalog-directory {

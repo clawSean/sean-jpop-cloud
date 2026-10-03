@@ -2,6 +2,22 @@
 
 Status: Showcase site live, restructured around vision.
 
+## 2026-10-02 — Catalog Featured Access Pass
+
+- Measured the full public iPhone path after the header fix: the three-project
+  Featured section was still 2,151px tall and search began 3,453px down the
+  document.
+- Preserved every interactive project visual while converting Featured into a
+  touch-native horizontal snap rail. At a strict 393x660 effective mobile
+  viewport, the complete section is now 559px and fits below the 59px header.
+- Added a persistent mobile Find action beside Menu. One tap jumps directly to
+  the directory and focuses the real search field; the hero CTA shares the same
+  direct behavior.
+- Local touch proof covers Find focus, an immediate AID search, Menu/Escape
+  behavior, horizontal project swiping, zero clipped feature copy, and zero
+  horizontal overflow at 320/393/768/1280/1440px. Desktop keeps the original
+  asymmetric featured stage and full navigation.
+
 ## 2026-10-02 — Catalog Mobile Viewport Pass
 
 - Replaced the two-row mobile route navigation with a 59px one-row header and
