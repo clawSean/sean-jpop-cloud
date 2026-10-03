@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750;800&amp;family=JetBrains+Mono:wght@500;650;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css?v=20260917b">
-  <link rel="stylesheet" href="catalog.css?v=20261002a">
+  <link rel="stylesheet" href="catalog.css?v=20261002b">
 </head>
 <body class="catalog-page">
   <header class="site-header">
@@ -27,7 +27,6 @@
         <a href="/sms/">SMS</a>
         <a href="/contributions/">Contributions</a>
         <a href="/ops/">Ops</a>
-        <a href="https://github.com/clawSean">GitHub</a>
       </div>
     </nav>
   </header>
@@ -39,15 +38,15 @@
         <div class="catalog-intro">
           <p class="catalog-kicker"><span></span> The ClawSean catalog / collection 001</p>
           <h1 id="catalog-title"><span>Custom work.</span><span>Sharp edges.</span><span class="accent">Good weird.</span></h1>
-          <p class="catalog-lede">The systems, plugins, skills, and small machines JPop and I built to make one agent more personal, dependable, private, and useful. Every signal opens into the problem, the shift, the proof, and the possibilities.</p>
+          <p class="catalog-lede">The systems, plugins, skills, and small machines JPop and I built to make one agent more personal, dependable, private, and useful. Each entry explains the problem, the shift, the proof, and what it could make possible.</p>
           <div class="catalog-actions">
             <a class="catalog-button primary" href="#directory">Browse the rack <span aria-hidden="true">↓</span></a>
             <button class="catalog-button ghost" type="button" data-random-entry>Surprise me <span aria-hidden="true">↝</span></button>
           </div>
           <dl class="catalog-stats" aria-label="Catalog summary">
-            <div><dt>07</dt><dd>selected builds</dd></div>
-            <div><dt>05</dt><dd>public sources</dd></div>
-            <div><dt>02</dt><dd>setup paths</dd></div>
+            <div><dt>10</dt><dd>selected builds</dd></div>
+            <div><dt>07</dt><dd>public sources</dd></div>
+            <div><dt>03</dt><dd>setup paths</dd></div>
           </dl>
         </div>
 
@@ -59,7 +58,7 @@
           <span class="orbit-node node-b"><i></i> reliability</span>
           <span class="orbit-node node-c"><i></i> interaction</span>
           <span class="orbit-node node-d"><i></i> operations</span>
-          <div class="orbit-readout"><span>PUBLIC-SAFE</span><b>07 / 07</b></div>
+          <div class="orbit-readout"><span>CATALOG ONLINE</span><b>10 / 10</b></div>
         </div>
       </div>
       <div class="catalog-marquee" aria-hidden="true">
@@ -83,7 +82,7 @@
         <div class="directory-heading">
           <div>
             <p class="catalog-kicker">The rack</p>
-            <h2 id="directory-title">Browse every selected signal.</h2>
+            <h2 id="directory-title">Explore every build.</h2>
           </div>
           <p class="directory-note">The rack stays quick to scan. Open any casefile for the full pitch, proof, possibilities, and path to source.</p>
         </div>
@@ -108,13 +107,13 @@
             <button type="button" data-catalog-view="visual" aria-pressed="true">Visual</button>
             <button type="button" data-catalog-view="compact" aria-pressed="false">Compact</button>
           </div>
-          <output class="catalog-result-count" aria-live="polite" data-result-count>07 signals</output>
+          <output class="catalog-result-count" aria-live="polite" data-result-count>10 builds</output>
         </div>
 
         <div class="catalog-rack" data-catalog-grid data-view="visual"></div>
         <div class="catalog-empty" data-catalog-empty hidden>
           <span aria-hidden="true">∅</span>
-          <h3>No signal on that frequency.</h3>
+          <h3>No builds match that search.</h3>
           <p>Try a broader word or clear the active filter.</p>
           <button type="button" data-clear-catalog>Reset the rack</button>
         </div>
@@ -131,6 +130,9 @@
               <li><a href="https://github.com/clawSean/shell-swap">Shell Swap</a></li>
               <li><a href="https://github.com/clawSean/gateway-uptime-watch">Gateway Uptime Watch</a></li>
               <li><a href="/sms/">Native SMS setup guide</a></li>
+              <li><a href="https://github.com/clawSean/telegram-ui">Telegram workspace</a></li>
+              <li>Action Button voice inbox</li>
+              <li><a href="https://github.com/clawSean/active-initiative-docs">AID — Active Initiative Docs</a></li>
             </ul>
           </div>
         </noscript>
@@ -138,13 +140,17 @@
     </section>
 
     <section class="catalog-principle" aria-labelledby="principle-title">
-      <p class="catalog-kicker">Collection rules</p>
-      <h2 id="principle-title">Source when there is source. Guidance when guidance helps.</h2>
+      <p class="catalog-kicker">Where to go next</p>
+      <h2 id="principle-title">Find the thing that helps. Then take the shortest path to using it.</h2>
       <div class="principle-grid">
-        <article><span>01</span><h3>Project</h3><p>Open the casefile, understand the outcome, then go to the canonical source or live demo.</p></article>
-        <article><span>02</span><h3>Operator note</h3><p>Small setup advice can live inside an entry when a whole page would be bureaucratic theater.</p></article>
-        <article><span>03</span><h3>Deep guide</h3><p>When the workflow has real decisions, dependencies, or sharp edges, the entry links to a dedicated guide.</p></article>
+        <article><span>01</span><h3>Understand it</h3><p>Each casefile shows the problem, the change, and a concrete way the build helps in practice.</p></article>
+        <article><span>02</span><h3>Try or inspect it</h3><p>Open the live experience when one exists, or inspect the public source when you want to see how it works.</p></article>
+        <article><span>03</span><h3>Put it to work</h3><p>Use the setup note, guide, or repository to hand the idea to your agent and adapt it to your own environment.</p></article>
       </div>
+      <a class="catalog-github-cta" href="https://github.com/clawSean" target="_blank" rel="noreferrer">
+        <span><small>Want the complete public shelf?</small><strong>Explore clawSean on GitHub</strong></span>
+        <i aria-hidden="true">↗</i>
+      </a>
     </section>
   </main>
 
@@ -172,7 +178,7 @@
   </footer>
 
   <script src="../site.js"></script>
-  <script src="catalog-data.js?v=20261002a"></script>
-  <script src="catalog.js?v=20261002a"></script>
+  <script src="catalog-data.js?v=20261002b"></script>
+  <script src="catalog.js?v=20261002b"></script>
 </body>
 </html>
