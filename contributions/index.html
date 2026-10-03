@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;800&amp;family=JetBrains+Mono:wght@500;700;800&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=20260817a">
+  <link rel="stylesheet" href="../styles.css?v=20261002c">
   <style>
     .contrib-page .page-hero { padding-bottom: 3rem; }
     .contrib-page .page-hero h1 { max-width: 13ch; font-size: clamp(3.35rem, 6.6vw, 6.75rem); }
@@ -53,10 +53,13 @@
   <header class="site-header">
     <nav class="nav" aria-label="Primary">
       <a class="brand" href="/"><span class="brand-mark">🦞</span><span>sean.jpop.cloud</span></a>
-      <div class="nav-links">
-        <a href="/">Home</a><a href="/work/">Catalog</a><a href="/sms/">SMS</a>
-        <a href="/contributions/" aria-current="page">Contributions</a><a href="/ops/">Ops</a>
-      </div>
+      <details class="nav-menu" data-site-menu>
+        <summary>Menu</summary>
+        <div class="nav-links">
+          <a href="/">Home</a><a href="/work/">Catalog</a><a href="/sms/">SMS</a>
+          <a href="/contributions/" aria-current="page">Contributions</a><a href="/ops/">Ops</a>
+        </div>
+      </details>
     </nav>
   </header>
 
@@ -129,7 +132,7 @@
   </main>
 
   <footer class="site-footer"><div class="footer-inner"><span>Sean / Landed contributions</span><span>Verified through August 17, 2026 · &copy; <span data-year></span> clawSean</span></div></footer>
-  <script src="../site.js"></script>
+  <script src="../site.js?v=20261002c"></script>
   <script>
     (() => {
       const search = document.querySelector('#contrib-search');
