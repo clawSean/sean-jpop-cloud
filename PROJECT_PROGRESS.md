@@ -11,6 +11,15 @@ Status: Showcase site live, restructured around vision.
 - Kept the external clawSean GitHub CTA, reduced the closer's vertical space,
   and added static contracts preventing the numbered repetition or a stale CSS
   cache key from returning.
+- Merged source PR `#15` as `7e4d2b5` and the cache-key follow-up PR `#16` as
+  `263e756`. Deployed only `work/index.html` and `work/catalog.css` from the
+  exact merged tree with `caddy:caddy` ownership and `0644` modes.
+- Public iPhone proof at 394x660 reduced the closer from 1,013px to 411px with
+  zero horizontal overflow and zero browser errors. The HTML and fresh-cache
+  stylesheet both return HTTP 200 and match merged-source SHA-256 hashes.
+- Rollback: `/root/rollbacks/sean-before-catalog-closer-20261005-175029.tar.gz`
+  (SHA-256
+  `91864b36ad60f717d40a294405a88d538a9b209bc0cfb7b609c1b5d752dc8bbb`).
 
 ## 2026-10-02 — Catalog Featured Access Pass
 
