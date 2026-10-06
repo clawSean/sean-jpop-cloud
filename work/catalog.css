@@ -945,46 +945,19 @@ html {
 }
 
 .catalog-principle {
-  padding: 76px 0 86px;
+  padding: 64px 0 72px;
 }
 
 .catalog-principle > h2 {
   width: min(930px, 100%);
 }
 
-.principle-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1px;
-  margin-top: 30px;
-  border: 1px solid var(--catalog-line);
-  background: var(--catalog-line);
-}
-
-.principle-grid article {
-  min-height: 168px;
-  padding: 24px;
-  background: #0d1113;
-}
-
-.principle-grid article > span {
-  color: var(--catalog-red);
-  font-family: var(--mono);
-  font-size: 0.66rem;
-  font-weight: 800;
-}
-
-.principle-grid h3 {
-  margin: 24px 0 0;
-  font-family: var(--mono);
-  font-size: 1.12rem;
-}
-
-.principle-grid p {
-  margin: 10px 0 0;
+.catalog-principle-copy {
+  width: min(720px, 100%);
+  margin: 20px 0 0;
   color: #958c86;
-  font-size: 0.88rem;
-  line-height: 1.5;
+  font-size: clamp(1rem, 1.6vw, 1.18rem);
+  line-height: 1.65;
 }
 
 .catalog-github-cta {
@@ -992,7 +965,7 @@ html {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  margin-top: 16px;
+  margin-top: 28px;
   padding: 22px 24px;
   border: 1px solid rgba(94, 228, 212, 0.24);
   background:
@@ -1001,18 +974,6 @@ html {
   color: var(--catalog-cream);
   text-decoration: none;
   transition: border-color 180ms ease, transform 180ms ease, background 180ms ease;
-}
-
-.catalog-github-cta span {
-  display: grid;
-  gap: 6px;
-}
-
-.catalog-github-cta small {
-  color: #837b75;
-  font: 0.57rem var(--mono);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 .catalog-github-cta strong {
@@ -2379,18 +2340,6 @@ html {
     top: var(--catalog-toolbar-top, 132px);
   }
 
-  .principle-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .principle-grid article {
-    min-height: 210px;
-  }
-
-  .principle-grid h3 {
-    margin-top: 36px;
-  }
-
   .casefile-shell {
     grid-template-columns: 1fr;
     max-height: none;
@@ -2478,8 +2427,8 @@ html {
   }
 
   .catalog-principle {
-    padding-top: 52px;
-    padding-bottom: 56px;
+    padding-top: 42px;
+    padding-bottom: 48px;
   }
 
   .catalog-section-head h2,
@@ -2697,20 +2646,8 @@ html {
     -webkit-line-clamp: 2;
   }
 
-  .principle-grid {
-    margin-top: 24px;
-  }
-
-  .principle-grid article {
-    min-height: 0;
-    padding: 22px 20px;
-  }
-
-  .principle-grid h3 {
-    margin-top: 16px;
-  }
-
   .catalog-github-cta {
+    margin-top: 22px;
     padding: 19px 18px;
   }
 

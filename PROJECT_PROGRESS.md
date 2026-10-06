@@ -2,6 +2,15 @@
 
 Status: Showcase site live, restructured around vision.
 
+## 2026-10-05 — Catalog Closer Simplification
+
+- Removed the three numbered cards that repeated the catalog's existing
+  casefile flow.
+- Replaced them with one direct next step: open a useful build's casefile, then
+  try the live build, inspect the source, or follow the setup guide.
+- Kept the external clawSean GitHub CTA, reduced the closer's vertical space,
+  and added a static contract preventing the numbered repetition from returning.
+
 ## 2026-10-02 — Catalog Featured Access Pass
 
 - Measured the full public iPhone path after the header fix: the three-project
