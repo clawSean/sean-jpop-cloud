@@ -10,7 +10,7 @@ const [uiSource, htmlSource, cssSource] = await Promise.all([
 assert.match(htmlSource, /data-catalog-grid data-view="visual"/, "visual rack must remain the default");
 assert.match(htmlSource, /data-catalog-view="visual"/, "visual view control is missing");
 assert.match(htmlSource, /data-catalog-view="compact"/, "compact view control is missing");
-assert.match(htmlSource, /catalog\.css\?v=20261002d/, "mobile feature-access CSS must use the release cache key");
+assert.match(htmlSource, /catalog\.css\?v=20261005a/, "catalog CSS must use the current release cache key");
 assert.match(htmlSource, /class="nav-find"[^>]*data-catalog-find/, "mobile navigation needs a direct catalog search action");
 assert.match(uiSource, /focusCatalogSearch/, "catalog search shortcuts must focus the actual search field");
 assert.doesNotMatch(uiSource, /entries\.slice\s*\(/, "the complete catalog must not be truncated");
