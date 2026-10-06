@@ -9,7 +9,8 @@ Status: Showcase site live, restructured around vision.
 - Replaced them with one direct next step: open a useful build's casefile, then
   try the live build, inspect the source, or follow the setup guide.
 - Kept the external clawSean GitHub CTA, reduced the closer's vertical space,
-  and added a static contract preventing the numbered repetition from returning.
+  and added static contracts preventing the numbered repetition or a stale CSS
+  cache key from returning.
 
 ## 2026-10-02 — Catalog Featured Access Pass
 
