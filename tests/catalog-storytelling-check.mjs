@@ -49,10 +49,12 @@ for (const [route, source] of [["home", homeSource], ["catalog", htmlSource], ["
 for (const [route, source] of [["catalog", htmlSource], ["sms", smsSource], ["contributions", contributionsSource], ["ops", opsSource]]) {
   assert.match(source, /<details class="nav-menu" data-site-menu>/, `${route}: compact progressive mobile navigation is missing`);
 }
-assert.match(htmlSource, /Explore clawSean on GitHub/, "GitHub must remain available as a clearly external CTA");
+assert.match(htmlSource, /Explore all public work on GitHub/, "GitHub must remain available as a clearly external CTA");
 assert.doesNotMatch(htmlSource, /Browse every selected signal/, "reader-facing directory copy must not use the awkward selected-signal phrase");
 assert.doesNotMatch(htmlSource, /Source when there is source/, "the closer must not explain the internal content model");
-assert.match(htmlSource, /Find the thing that helps/, "the closer must lead with reader value");
+assert.match(htmlSource, /Found something useful\?/, "the closer must lead with reader value");
+assert.match(htmlSource, /try the live build, inspect the source, or follow the setup guide/, "the closer must offer one compact action path");
+assert.doesNotMatch(htmlSource, /Understand it|Try or inspect it|Put it to work|principle-grid/, "the closer must not repeat its action path as numbered steps");
 assert.match(cssSource, /\.casefile-accordions details\[open\]/, "open expansion state is not styled");
 assert.match(cssSource, /-webkit-line-clamp: 3/, "rack cards should remain teaser-sized");
 
