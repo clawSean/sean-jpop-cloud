@@ -2,6 +2,21 @@
 
 Status: Showcase site live, restructured around vision.
 
+## 2026-10-15 — Get Schwifty Discovery Route
+
+- Added a direct **Get Schwifty ↗** route to Sean's primary homepage
+  navigation, linking to the canonical `https://schwifty.jpop.cloud/`
+  experience.
+- Added static and real-browser regression coverage for the route, responsive
+  menu behavior, touch target, and zero-overflow contract.
+- Merged source PR `#18` as `ae85f73` and deployed the exact merged homepage.
+  Source, VPS, and public SHA-256 match
+  `74e4a4320a56a61413f0fa8eaae96ab79375a42d78b6738b84c8385ea592d160`.
+- Public HTTPS proof passes at 320/390/768/1440px. Rollback:
+  `/root/rollbacks/sean-before-schwifty-nav-20261015T180017Z.tar.gz`
+  (SHA-256
+  `6691bf8018932b39b81a9ea87b4c482dadbb17dc1943eea55f0acb8bf4798872`).
+
 ## 2026-10-05 — Catalog Closer Simplification
 
 - Removed the three numbered cards that repeated the catalog's existing
