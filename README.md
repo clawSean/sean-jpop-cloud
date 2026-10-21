@@ -41,4 +41,9 @@ The current Caddy route serves `/srv/websites/sean.jpop.cloud`.
 
 For launch/update, copy this source into `/srv/websites/sean.jpop.cloud-mvp` and point `/srv/websites/sean.jpop.cloud` at that deploy root. Caddy cannot serve directly from `/root/projects/...`.
 
+The local macOS checkout can carry private `0600` / `0700` modes. Any deploy
+must normalize route directories to `0755`, public files to `0644`, and the
+deployed files to `caddy:caddy` before public verification; do not preserve
+local modes onto the VPS.
+
 Deployment excludes `.git`, `verification`, `README.md`, `PROJECT_PROGRESS.md`, `VISION.md`, `.gitignore`, and the large source PNG.
