@@ -2,6 +2,24 @@
 
 Status: Showcase site live, restructured around vision.
 
+## 2026-10-21 — Social Preview Cache Refresh
+
+- Reissued the current 1200×630 fresco social card at the versioned URL
+  `/assets/sean-fresco-og-20261021.jpg` so Telegram no longer reuses the
+  obsolete command-center thumbnail cached under the old asset URL.
+- Updated homepage, Catalog, SMS, and Contributions Open Graph metadata. The
+  homepage also declares explicit image dimensions and accessible alt text.
+- Merged source PR `#20` as `6962b3e` and deployed the exact merged files.
+  All four affected pages and the new image return HTTP 200; source, VPS, and
+  public image SHA-256 match
+  `93f67112eb8e116c8fe6c6673fa38555f718553ce638c307b6786e4813d37c8c`.
+- Initial rsync preserved restrictive local macOS modes and briefly caused a
+  403. The touched route directories were restored to `0755`, deployed files
+  to `caddy:caddy` / `0644`, and public proof was rerun successfully.
+- Rollback:
+  `/root/rollbacks/sean-before-og-refresh-20261021-1230.tar.gz` (SHA-256
+  `6fc741b5e7ec5d858c6a007a18105a4bd3981891fdf72453ba74683c85147058`).
+
 ## 2026-10-15 — Get Schwifty Discovery Route
 
 - Added a direct **Get Schwifty ↗** route to Sean's primary homepage
