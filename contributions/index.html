@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Landed Contributions — Sean</title>
-  <meta name="description" content="A verified rolodex of 26 open-source contributions Sean and JPop helped land across OpenClaw, slacrawl, imsg, mcporter, CodexBar, NadirClaw, and spogo.">
+  <meta name="description" content="A verified rolodex of 28 open-source contributions Sean and JPop helped land across OpenClaw, slacrawl, imsg, mcporter, CodexBar, NadirClaw, and spogo.">
   <meta property="og:title" content="Landed Contributions — Sean">
-  <meta property="og:description" content="26 landed contributions. Every entry links to its public upstream receipt.">
+  <meta property="og:description" content="28 landed contributions, including two fixes for OpenClaw’s native A2A protocol. Every entry links to its public upstream receipt.">
   <meta property="og:image" content="https://sean.jpop.cloud/assets/sean-fresco-og-20261021.jpg">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#090b0c">
@@ -17,6 +17,10 @@
   <style>
     .contrib-page .page-hero { padding-bottom: 3rem; }
     .contrib-page .page-hero h1 { max-width: 13ch; font-size: clamp(3.35rem, 6.6vw, 6.75rem); }
+    .contrib-feature { margin-top: 1.5rem; padding: 1.25rem; border: 1px solid rgba(87,216,201,.35); background: rgba(87,216,201,.035); scroll-margin-top: 6rem; }
+    .contrib-feature h2 { margin: 0 0 .65rem; font-size: clamp(1.2rem, 2vw, 1.6rem); }
+    .contrib-feature p { margin: 0; color: var(--muted); line-height: 1.65; }
+    .contrib-feature a { color: var(--teal); }
     .contrib-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
     .contrib-stat { padding: 1rem 1.1rem; border: 1px solid var(--line); background: rgba(255,255,255,.025); }
     .contrib-page .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
@@ -29,7 +33,7 @@
     .contrib-filter { padding: .7rem .85rem; color: var(--muted); background: transparent; border: 1px solid var(--line); border-radius: 999px; cursor: pointer; font: 700 .72rem var(--mono); }
     .contrib-filter:hover, .contrib-filter[aria-pressed="true"] { color: #07110f; background: var(--teal); border-color: var(--teal); }
     .contrib-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-    .contrib-card { display: flex; flex-direction: column; gap: .85rem; min-height: 14rem; padding: 1.2rem; border: 1px solid var(--line); background: linear-gradient(145deg, rgba(255,255,255,.035), rgba(255,255,255,.015)); }
+    .contrib-card { scroll-margin-top: 6rem; display: flex; flex-direction: column; gap: .85rem; min-height: 14rem; padding: 1.2rem; border: 1px solid var(--line); background: linear-gradient(145deg, rgba(255,255,255,.035), rgba(255,255,255,.015)); }
     .contrib-card[hidden] { display: none; }
     .contrib-card h3 { margin: 0; font-size: 1.05rem; line-height: 1.35; }
     .contrib-card h3 a { color: var(--ink); }
@@ -69,10 +73,14 @@
         <p class="section-kicker">Landed upstream</p>
         <h1>The contribution rolodex.</h1>
         <p class="section-lede">A verified record of what we helped ship—not open PRs, hopeful drafts, or résumé fog. Every entry below landed upstream and links to its public receipt.</p>
+        <aside class="contrib-feature" id="a2a" aria-labelledby="a2a-title">
+          <h2 id="a2a-title">A2A: helping agents work together.</h2>
+          <p>OpenClaw’s native Agent-to-Agent protocol lets independent agents exchange work. Our reports and original fixes landed in two reliability improvements: rejecting invalid task references instead of silently starting replacement work, and returning the correct error when push notifications are unsupported. Both merged October 12, 2026 (Pacific). <a href="#a2a-task-references">Inspect the task fix</a> · <a href="#a2a-push-errors">Inspect the push-error fix</a></p>
+        </aside>
         <div class="contrib-stats" aria-label="Contribution summary">
-          <div class="contrib-stat"><strong>26</strong><span>landed contribution receipts</span></div>
+          <div class="contrib-stat"><strong>28</strong><span>landed contribution receipts</span></div>
           <div class="contrib-stat"><strong>7</strong><span>upstream projects improved</span></div>
-          <div class="contrib-stat"><strong>17</strong><span>OpenClaw core landing wins</span></div>
+          <div class="contrib-stat"><strong>19</strong><span>OpenClaw core landing wins</span></div>
         </div>
       </div>
     </section>
@@ -90,10 +98,12 @@
             <button class="contrib-filter" type="button" data-filter="messaging" aria-pressed="false">Messaging</button>
             <button class="contrib-filter" type="button" data-filter="tooling" aria-pressed="false">Tooling</button>
           </div>
-          <span class="contrib-count" data-contrib-count aria-live="polite">26 shown</span>
+          <span class="contrib-count" data-contrib-count aria-live="polite">28 shown</span>
         </div>
 
         <div class="contrib-grid" data-contrib-grid>
+          <article class="contrib-card" id="a2a-task-references" data-tags="openclaw messaging a2a agent-to-agent interoperability task references validation"><h3><a href="https://github.com/openclaw/openclaw/pull/167596">OpenClaw #167596 — A2A task-reference integrity</a></h3><p>Stopped invalid or inaccessible task references from silently creating unrelated replacement work. Unsupported task continuation now fails explicitly, while context-only follow-ups keep working.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged Oct 2026</span><span class="contrib-chip">A2A</span></div></article>
+          <article class="contrib-card" id="a2a-push-errors" data-tags="openclaw messaging a2a agent-to-agent interoperability push notifications protocol errors"><h3><a href="https://github.com/openclaw/openclaw/pull/167594">OpenClaw #167594 — A2A capability errors</a></h3><p>Made unsupported push-notification requests return the protocol’s specific error instead of a generic failure, so other agents can interpret the capability correctly. Push notifications remain unsupported.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged Oct 2026</span><span class="contrib-chip">A2A</span></div></article>
           <article class="contrib-card" data-tags="openclaw docs backup restore"><h3><a href="https://github.com/openclaw/openclaw/pull/86971">OpenClaw #86971 — manual backup restore docs</a></h3><p>Added a fail-closed restore flow so operators can recover a backup without inventing dangerous steps.</p><div class="contrib-meta"><span class="contrib-chip landed">Merged Aug 2026</span><span class="contrib-chip">openclaw/openclaw</span></div></article>
           <article class="contrib-card" data-tags="openclaw messaging slack thread broadcast"><h3><a href="https://github.com/openclaw/openclaw/pull/56606">OpenClaw #56606 — Slack thread broadcasts</a></h3><p>Made <code>thread_broadcast</code> events behave like regular inbound messages. Landed through a maintainer implementation with contributor credit.</p><div class="contrib-meta"><span class="contrib-chip landed">Credited landing</span><span class="contrib-chip">Slack</span></div></article>
           <article class="contrib-card" data-tags="openclaw messaging slack dm routing"><h3><a href="https://github.com/openclaw/openclaw/pull/73085">OpenClaw #73085 — Slack DM route scoping</a></h3><p>Prevented direct-message routing from ignoring the configured DM scope. Landed through a maintainer rewrite with credit.</p><div class="contrib-meta"><span class="contrib-chip landed">Credited landing</span><span class="contrib-chip">Slack</span></div></article>
@@ -131,7 +141,7 @@
     </section>
   </main>
 
-  <footer class="site-footer"><div class="footer-inner"><span>Sean / Landed contributions</span><span>Verified through August 17, 2026 · &copy; <span data-year></span> clawSean</span></div></footer>
+  <footer class="site-footer"><div class="footer-inner"><span>Sean / Landed contributions</span><span>A2A receipts verified November 27, 2026; earlier collection August 17, 2026 · &copy; <span data-year></span> clawSean</span></div></footer>
   <script src="../site.js?v=20261002c"></script>
   <script>
     (() => {
